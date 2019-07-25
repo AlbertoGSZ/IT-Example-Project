@@ -1,7 +1,7 @@
-<h3>Épica:</h3> <span>Mapa de organicaciones criminales. </span>
+**ÉPICA** | Mapa de organicaciones criminales.
 
-<h3>Como:</h3> Usuario del sistema. 
+ **COMO** | Usuario del sistema.  
+ 
+**QUIERO** | Trazar un mapa de la organización criminal.  
 
-<h3>Quiero:</h3> Trazar un mapa de la organización criminal.
-
-<h3>Para:</h3> Poder visualizar rápidamente la conexión entre sus miembros.
+**PARA** | Poder visualizar rápidamente la conexión entre sus miembros.  
