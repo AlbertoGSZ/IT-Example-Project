@@ -1,0 +1,7 @@
+Épica: Mapa de organicaciones criminales.
+
+Como: Usuario del sistema. 
+
+Quiero: Trazar un mapa de la organización criminal.
+
+Para: Poder visualizar rápidamente la conexión entre sus miembros.

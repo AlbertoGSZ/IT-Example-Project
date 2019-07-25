@@ -1,0 +1,7 @@
+Épica: Creación de sistema informático.
+
+Como: Usuario del sistema. 
+
+Quiero: Creación de sistema informático.
+
+Para: Almacenar y manipular registros sobre la composición de grupos criminales.
