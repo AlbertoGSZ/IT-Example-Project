@@ -1,7 +1,0 @@
-Épica: Definición de VIP.
-
-Como: Usuario del sistema.
-
-Quiero: Ver quienes son los miembros más importantes de la organización criminal.
-
-Para: Poder poner los recursos adecuados orientados a su captura.
