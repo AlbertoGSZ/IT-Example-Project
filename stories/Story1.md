@@ -1,5 +1,4 @@
-### Épica: <span>Mapa de organicaciones criminales. </span>
-## SQUARESPACE <span>has great templates and I am learning how to customize them.</span>
+<h3>Épica:</h3> <span>Mapa de organicaciones criminales. </span>
 
 <h3>Como:</h3> Usuario del sistema. 
 
