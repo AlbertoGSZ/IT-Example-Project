@@ -1,7 +1,7 @@
-…pica: Mapa de organicaciones criminales.
+### √âpica: Mapa de organicaciones criminales.
 
-Como: Usuario del sistema. 
+### Como: Usuario del sistema. 
 
-Quiero: Trazar un mapa de la organizaciÛn criminal.
+### Quiero: Trazar un mapa de la organizaci√≥n criminal.
 
-Para: Poder visualizar r·pidamente la conexiÛn entre sus miembros.
+### Para: Poder visualizar r√°pidamente la conexi√≥n entre sus miembros.
