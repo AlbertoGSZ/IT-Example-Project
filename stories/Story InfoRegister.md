@@ -1,6 +1,6 @@
 ﻿**ÉPICA** | Registro de información.
 
- **COMO** | Usuario del sistema.  
+**COMO** | Usuario del sistema.  
  
 **QUIERO** | Registrar información sobre delincuentes en el sistema informático.  
 
