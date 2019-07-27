@@ -1,6 +1,6 @@
-﻿**ÉPICA** | Definición de VIP.
+**ÉPICA** | Identificación de VIPs.
 
- **COMO** | Usuario del sistema.  
+**COMO** | Usuario del sistema.  
  
 **QUIERO** | Ver quienes son los miembros más importantes de la organización criminal.  
 
