@@ -1,6 +1,6 @@
 **ÉPICA** | Identificación de VIPs.
 
-**COMO** | Usuario del sistema.  
+**COMO** | Usuario con credenciales del sistema.  
  
 **QUIERO** | Ver quienes son los miembros más importantes de la organización criminal.  
 
