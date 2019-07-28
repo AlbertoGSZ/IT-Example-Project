@@ -1,5 +1,5 @@
-﻿# IT-Example-Proyect - Entidades
-#### *Documentación.*
+﻿# IT-Example-Proyect || Documentación entidades
+
 
 
 ### **Relaciones**
