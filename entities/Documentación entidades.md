@@ -20,6 +20,9 @@ Cada persona puede tener un jefe o no así como una lista de personas bajo su ma
 - DNI: Cadena de caracteres.
 - Alias: Cadena de caracteres.
 - Historial delictivo: Lista MAP de fechas (objetos DATE) y documentos PDF. NO VACÍO.
+- Rango: ENUM.
+- Jefe: Objeto Person.
+- Subordinados: Lista de objetos Person.
 
 Por lógica solo he querido designar como necesaria la presencia de un delito para crear un objeto Person dado que en muchos casos no ya faltarán datos, sino que solo tendrémos un delito que ha llamado la atención y necesidad de crear una ficha delictiva, aun sin lograr saber el sexo siquiera del delincuente. 
 
