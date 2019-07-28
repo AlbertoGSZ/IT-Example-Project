@@ -1,6 +1,6 @@
 ﻿**ÉPICA** | Modificación de información.
 
-**COMO** | Usuario del sistema.  
+**COMO** | Usuario con credenciales administradoras del sistema.  
  
 **QUIERO** | Modificar información sobre delincuentes en el sistema informático.  
 
