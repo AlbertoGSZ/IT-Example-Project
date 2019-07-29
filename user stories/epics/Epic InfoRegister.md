@@ -1,6 +1,6 @@
 ﻿**ÉPICA** | Registro de información.
 
-**COMO** | Usuario con credenciales administradoras del sistema.  
+**YO COMO** | Usuario con credenciales administradoras del sistema.  
  
 **QUIERO** | Registrar información sobre delincuentes en el sistema informático.  
 

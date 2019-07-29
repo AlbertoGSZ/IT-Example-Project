@@ -1,6 +1,6 @@
-**ÉPICA** | Visualización de criminales.
+﻿**ÉPICA** | Visualización de criminales.
 
- **COMO** | Usuario con credenciales del sistema.  
+ **YO COMO** | Usuario con credenciales del sistema.  
  
 **QUIERO** | Ver la información de un criminal registrado en el sistema.  
 
