@@ -22,18 +22,11 @@ De igual manera, la entidad ¨Person¨, tendrá una lista de objetos ¨CaseRepor
 - Sex: ENUM.
 - ID: Cadena de caracteres.
 - Alias: Cadena de caracteres.
-<<<<<<< HEAD
 - FelonyRecordsDigital: Lista de objetos ¨CaseReport¨.
 - FelonyRecordsPDF: Lista de PDF.
 - Rank: Lista de ENUM.
 - Chief: Objeto Person.
 - Subordinates: Lista de objetos Person.
-=======
-- Historial delictivo: Lista MAP de fechas (objetos DATE) y documentos PDF. NO VACÍO.
-- Rango: ENUM.
-- Jefe: Objeto Person.
-- Subordinados: Lista de objetos Person.
->>>>>>> b6a6fe350b979ef1c9e408f457f332ae0a6ef514
 
 Por lógica solo he querido designar como necesaria la presencia de un delito para crear un objeto Person dado que en muchos casos no ya faltarán datos, sino que solo tendrémos un delito que ha llamado la atención y necesidad de crear una ficha delictiva, aun sin lograr saber el sexo siquiera del delincuente. 
 
