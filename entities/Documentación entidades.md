@@ -23,7 +23,6 @@ De igual manera, la entidad ¨Person¨, tendrá una lista de objetos ¨CaseRepor
 - ID: Cadena de caracteres.
 - Alias: Cadena de caracteres.
 - FelonyRecordsDigital: Lista de objetos ¨CaseReport¨.
-- FelonyRecordsPDF: Lista de PDF.
 - Rank: Lista de ENUM.
 - Chief: Objeto Person.
 - Subordinates: Lista de objetos Person.
@@ -41,3 +40,4 @@ Por el mismo motivo no he querido ahondar en ciertos aspectos como la configurac
 - PersonDetails: Cadena de caracteres. No vacío.  
 - EventDescription: Cadena de caracteres. No vacío.
 - EvidencePhotos: Lista de objetos Image.
+- FelonyRecordPDF: Objeto PDF.
