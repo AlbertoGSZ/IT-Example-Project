@@ -10,11 +10,11 @@
 
 ##### STORY 2.1 
 
-     ##### YO COMO | Usuario que modifica valores en los registros del sistema.  
+   ##### YO COMO | Usuario que modifica valores en los registros del sistema.  
 
-     ##### QUIERO | Quiero que al modificar la información de un criminal, también se refleje en los afectados.  
+   ##### QUIERO | Quiero que al modificar la información de un criminal, también se refleje en los afectados.  
 
-     ##### PARA | Para no tener que hacer los cambios en todos ellos de uno en uno.
+   ##### PARA | Para no tener que hacer los cambios en todos ellos de uno en uno.
 --------------------------------------------------------------------------------
 
 ##### STORY 2.2 
