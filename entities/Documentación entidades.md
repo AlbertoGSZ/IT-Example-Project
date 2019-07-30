@@ -20,6 +20,7 @@ De igual manera, la entidad ¨Person¨, tendrá una lista de objetos ¨CaseRepor
 - Adress: Cadena de caracteres.  
 - Nationality: ENUM.
 - Gender: ENUM.
+- Status: ENUM (ALIVE, DECEASED, IMPRISONED).
 - ID: Cadena de caracteres.
 - Alias: Cadena de caracteres.
 - FelonyRecordsDigital: Lista de objetos ¨CaseReport¨.
