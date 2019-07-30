@@ -19,7 +19,7 @@ De igual manera, la entidad ¨Person¨, tendrá una lista de objetos ¨CaseRepor
 - Age: Número entero no menor que cero, actualizado en base a la fecha de nacimiento (seguramente innecesario).
 - Adress: Cadena de caracteres.  
 - Nationality: ENUM.
-- Sex: ENUM.
+- Gender: ENUM.
 - ID: Cadena de caracteres.
 - Alias: Cadena de caracteres.
 - FelonyRecordsDigital: Lista de objetos ¨CaseReport¨.
