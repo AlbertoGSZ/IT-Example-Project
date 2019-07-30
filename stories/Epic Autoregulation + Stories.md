@@ -8,7 +8,7 @@
 
 --------------------------------------------------------------------------------
 
-##### STORY 1 
+##### STORY 1.1 
 
 ##### YO COMO | Usuario que modifica valores en los registros del sistema.  
  
