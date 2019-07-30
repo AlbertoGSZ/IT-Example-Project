@@ -1,35 +1,29 @@
-### ÉPICA 2  
+### ÉPICA 3  
 
-### YO COMO  | Agente que precisa de información organizada.  
+### YO COMO  | Administrador del sistema de datos del FBI.  
  
-### QUIERO  | Ver los datos del registro organizados.  
+### QUIERO  | Gestionar la entrada y manipulación de información.  
 
-### PARA  | Agilizar mi trabajo.  
+### PARA  | Mantener una organización y seguimiento controlado y eficiente.  
 
 --------------------------------------------------------------------------------
 
-##### STORY 2.1 
+##### STORY 3.1 
 
-##### YO COMO | Agente en labor de vigilancia.  
+##### YO COMO | Administrador del sistema de datos del FBI.  
 
-##### QUIERO | Quiero que el sistema me permita visualizar a aquellos sujetos con 50 o más subordinados a su cargo.  
+##### QUIERO | Efectuar altas/bajas/modificaciones en el sistema.  
 
-##### PARA | Para poder organizar dispositivos de vigilancia especial.
+##### PARA |  Agregar/eliminar/modificar valores de un sujeto.
 --------------------------------------------------------------------------------
 
-##### STORY 2.2 
+##### STORY 3.2 
 
-##### YO COMO | Agente en labor de investigación.  
+##### YO COMO | Agente judicial del FBI.  
  
-##### QUIERO | Realizar búsquedas en el sistema bajo criterios personalizados.  
+##### QUIERO | Ordenar encarcelamientos y liberaciones.  
 
-##### PARA | Para poder encontrar coincidencias con algún sujeto registrado en el sistema.
---------------------------------------------------------------------------------
+##### PARA |  Reorganizar el organigrama.
 
-##### STORY 2.3 
 
-##### YO COMO | Agente en labor de investigación.   
- 
-##### QUIERO | Ver un organigrama de la organización mafiosa.
 
-##### PARA | Para poder ver de un vistazo general quién se relaciona con quién.
