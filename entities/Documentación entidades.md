@@ -13,6 +13,7 @@ De igual manera, la entidad ¨Person¨, tendrá una lista de objetos ¨CaseRepor
 
 ### **Información de entidad: Person**
 
+- ID: Número entero, autogenerado no repetible.
 - Name: Cadena de caracteres.
 - Surname: Cadena de caracteres.
 - BirthDate: Objeto Date (). Requisito fecha anterior al dia que transcurre (límite a valorar).
@@ -21,7 +22,6 @@ De igual manera, la entidad ¨Person¨, tendrá una lista de objetos ¨CaseRepor
 - Nationality: ENUM.
 - Gender: ENUM.
 - Status: ENUM (ALIVE, DECEASED, IMPRISONED).
-- ID: Cadena de caracteres.
 - Alias: Cadena de caracteres.
 - FelonyRecordsDigital: Lista de objetos ¨CaseReport¨.
 - Rank: Lista de ENUM.
