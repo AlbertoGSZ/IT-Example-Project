@@ -1,6 +1,6 @@
-**Imprison person**
+**Imprison/Release/RankUp/RankDown person**
 ----
-  Returns code 200.
+  Returns json data about person's changed info.
 
 * **URL**
 
@@ -38,7 +38,7 @@
 * **Success Response:**
 
   * **Code:** 200 OK<br />
-    **Content:** `{ "Person imprisoned." }`
+    **Content:** `{"iD": "int","status": "Enum","name": "String","surname": "String","birthDate": "Date","age": "int","adress": "String","nationality": "Enum","sex": "Enum","alias": "String","felonyRecordsDigital": "List","rank": "int","chief": "Person","subordinates": "List"}`
  
 * **Error Response:**
 
