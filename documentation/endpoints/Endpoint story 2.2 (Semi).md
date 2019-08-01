@@ -14,22 +14,24 @@
 
    **Required:**
  
-| NAME                  |  TYPE         | REQUIRED |
-|-----------------------|---------------|----------|
-| id                    | int           | No       |
-| status                | Enum          | No       |
-| name                  | String        | No       |
-| surname               | String        | No       |
-| birthDate             | Date          | No       |
-| age                   | int           | No       |
-| surname               | string        | No       | 
-| adress                | String        | No       |
-| alias                 | String        | No       |
-| nationality           | Enum          | No       | 
-| felonyRecordsDigital  | List          | No       |
-| rank                  | int           | No       |
-| chief                 | Person        | No       |
-| subordinates          | List          | No       |
+   None of the params is required.
+ 
+| NAME                  |  TYPE         | 
+|-----------------------|---------------|
+| id                    | int           | 
+| status                | Enum          | 
+| name                  | String        |
+| surname               | String        | 
+| birthDate             | Date          | 
+| age                   | int           |
+| surname               | string        | 
+| adress                | String        | 
+| alias                 | String        |
+| nationality           | Enum          | 
+| felonyRecordsDigital  | List          |
+| rank                  | int           | 
+| chief                 | Person        | 
+| subordinates          | List          | 
 
 * **Data Params**
 
@@ -41,6 +43,11 @@
     **Content:** `{["iD": "int","status": "Enum","name": "String","surname": "String","birthDate": "Date","age": "int","adress": "String","nationality": "Enum","sex": "Enum","alias": "String","felonyRecordsDigital": "List","rank": "int","chief": "Person","subordinates": "List", "iD": "int","status": "Enum","name": "String","surname": "String","birthDate": "Date","age": "int","adress": "String","nationality": "Enum","sex": "Enum","alias": "String","felonyRecordsDigital": "List","rank": "int","chief": "Person","subordinates": "List"...]}`
  
 * **Error Response:**
+
+  * **Code:** 400 BAD REQUEST <br />
+    **Content:** `{ error : "At least a param must be entered" }`
+
+   OR
 
   * **Code:** 404 NOT FOUND <br />
     **Content:** `{ error : "No person matches with the specified info" }`
