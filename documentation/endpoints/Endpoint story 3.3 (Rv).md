@@ -4,7 +4,7 @@
 
 * **URL**
 
-  /person/imprison/{id}
+  /person/{id}
 
 * **Method:**
 
@@ -18,7 +18,7 @@
 
 * **Data Params**
 
-  None
+    `IMPRISONED=[ENUM]`
 
 * **Success Response:**
 
