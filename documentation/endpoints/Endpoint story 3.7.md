@@ -39,9 +39,6 @@
   * **Code:** 400 BAD REQUEST <br />
     **Content:** `{ error : "Invalid specified syntax" }`
 
-  OR
 
-  * **Code:** 401 UNAUTHORIZED <br />
-    **Content:** `{ error : "You are unauthorized to make this request." }`
 
 
