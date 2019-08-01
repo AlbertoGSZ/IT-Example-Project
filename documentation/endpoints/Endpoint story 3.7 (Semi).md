@@ -14,19 +14,25 @@
 
    **Required:**
  
-   `id=[integer]`
+   None
 
 * **Data Params**
-
-  XXXXXXXXXXXXXXXXXXXXXX 
-  XXXXXXXXXXXXXXXXXXXXXX 
-  XXXXXXXXXXXXXXXXXXXXXX 
-  XXXXXXXXXXXXXXXXXXXXXX 
+    {
+    "status": "Enum",
+    "name": "String",
+    "idCode": "String",
+    "date": "Date",
+    "mugshot": "Image",
+    "personDetails": "String",
+    "eventDescription": "String",
+    "evidencePhotos": "List",
+    "felonyRecordPDF": "PDF"
+    }
   
 * **Success Response:**
 
-  * **Code:** 200 <br />
-    **Content:** `{ XXXXXXXXX JSON CASE REPORT XXXXXXXX" }`
+  * **Code:** 200 OK<br />
+    **Content:** `{"status": "Enum","name": "String","idCode": "String","date": "Date","mugshot": "Image","personDetails": "String","eventDescription": "String","evidencePhotos": "List","felonyRecordPDF": "PDF"}`
  
 * **Error Response:**
 
