@@ -20,7 +20,7 @@ De igual manera, la entidad ¨Person¨, tendrá una lista de objetos ¨CaseRepor
 - Adress: Cadena de caracteres.  
 - Nationality: ENUM.
 - Sex: ENUM.
-- ID: Cadena de caracteres.
+- ID: int. Generación aleatoria no repetible.
 - Alias: Cadena de caracteres.
 - FelonyRecordsDigital: Lista de objetos ¨CaseReport¨.
 - Rank: int.
@@ -34,7 +34,7 @@ Por el mismo motivo no he querido ahondar en ciertos aspectos como la configurac
 
 ### **Información de entidad: CaseReport**
 
-- IDCode: Cadena de caracteres. Generación aleatoria no repetible.
+- IDCode: int. Generación aleatoria no repetible.
 - Date: Objeto Date. Fecha final, momento de creación del informe.
 - Mugshot: Objeto Image.
 - PersonDetails: Cadena de caracteres. No vacío.  
