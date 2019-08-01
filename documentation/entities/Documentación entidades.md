@@ -23,7 +23,7 @@ De igual manera, la entidad ¨Person¨, tendrá una lista de objetos ¨CaseRepor
 - ID: Cadena de caracteres.
 - Alias: Cadena de caracteres.
 - FelonyRecordsDigital: Lista de objetos ¨CaseReport¨.
-- Rank: Lista de ENUM.
+- Rank: int.
 - Chief: Objeto Person.
 - Subordinates: Lista de objetos Person.
 
