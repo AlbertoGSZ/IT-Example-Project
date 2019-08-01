@@ -20,19 +20,19 @@
 
     This endpoint is intended to modify only one of the following atributes at a time from the ¨Person¨ entity
     
-     {"Status": "IMPRISONED"}
+     {"status": "IMPRISONED"}
      
   OR
   
-     {"Status": "ALIVE"} <!--- Understood as released from prison --->
+     {"status": "ALIVE"} <!--- Understood as released from prison --->
      
   OR
   
-     {"Rank": "RankUp"}
+     {"rank": "rank +1"}
      
   OR
   
-     {"Rank": "RankDown"}
+     {"rank": "rank -1"}
      
 
 * **Success Response:**
