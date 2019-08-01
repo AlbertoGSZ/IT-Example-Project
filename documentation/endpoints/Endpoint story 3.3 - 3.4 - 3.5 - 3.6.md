@@ -43,7 +43,7 @@
 * **Error Response:**
 
   * **Code:** 400 BAD REQUEST <br />
-    **Content:** `{ error : "Syntax not understood" }`
+    **Content:** `{ error : "Invalid specified syntax" }`
 
   OR
 
