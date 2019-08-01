@@ -14,10 +14,21 @@
 
    **Required:**
  
-| status:[Enum]   | name:[String]      | surname:[String]    | birthDate:[Date] | age:[int]                   |
-|-----------------|--------------------|---------------------|------------------|-----------------------------|
-| adress:[String] | nationality:[Enum] | sex:[Enum]          | alias:[String]   | felonyRecordsDigital:[List] |
-| rank:[int]      | chief:[Person]     | subordinates:[List] |                  |                             |
+| NAME                  | REQUIRED TYPE |
+|-----------------------|---------------|
+| status                | Enum          |
+| name                  | String        |
+| surname               | String        |
+| birthDate             | Date          |
+| age                   | int           |
+| surname               | string        | 
+| adress                | String        |
+| alias                 | String        |
+| nationality           | Enum          | 
+| felonyRecordsDigital  | List          |
+| rank                  | int           |
+| chief                 | Person        |
+| subordinates          | List          |
 
 * **Data Params**
 
