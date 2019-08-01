@@ -22,7 +22,7 @@
 
 * **Success Response:**
 
-  * **Code:** 200 <br />
+  * **Code:** 200 OK<br />
     **Content:** `{["iD": "ID", "status": "Enum","name": "String","idCode": "String","date": "Date","mugshot": "Image","personDetails": "String","eventDescription": "String","evidencePhotos": "List","felonyRecordPDF": "PDF","iD": "ID", "status": "Enum","name": "String","idCode": "String","date": "Date","mugshot": "Image","personDetails": "String","eventDescription": "String","evidencePhotos": "List","felonyRecordPDF": "PDF",...]}`
  
 * **Error Response:**
