@@ -1,14 +1,14 @@
-**Show User**
+**Delete case report**
 ----
-  Returns json data about a single user.
+  Returns code 200.
 
 * **URL**
 
-  /users/:id
+  /caseReport/{id}
 
 * **Method:**
 
-  `GET`
+  `DELETE`
   
 *  **URL Params**
 
@@ -17,18 +17,17 @@
    `id=[integer]`
 
 * **Data Params**
-
   None
 
 * **Success Response:**
 
   * **Code:** 200 <br />
-    **Content:** `{ id : 12, name : "Michael Bloom" }`
+    **Content:** `{ "Case report deleted" }`
  
 * **Error Response:**
 
   * **Code:** 404 NOT FOUND <br />
-    **Content:** `{ error : "User doesn't exist" }`
+    **Content:** `{ error : "Case report doesn't exist" }`
 
   OR
 
@@ -39,9 +38,9 @@
 
   ```javascript
     $.ajax({
-      url: "/users/1",
+      url: "/caseReport/75",
       dataType: "json",
-      type : "GET",
+      type : "DELETE",
       success : function(r) {
         console.log(r);
       }
