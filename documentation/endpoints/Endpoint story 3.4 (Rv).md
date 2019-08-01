@@ -4,7 +4,7 @@
 
 * **URL**
 
-  /person/release/{id}
+  /person/{id}
 
 * **Method:**
 
@@ -14,7 +14,7 @@
 
    **Required:**
  
-   `id=[integer]`
+   `ALIVE=[ENUM]`
 
 * **Data Params**
 
