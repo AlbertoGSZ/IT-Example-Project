@@ -16,22 +16,22 @@
  
    None of the params is required.
  
-| NAME                  |  TYPE         | 
-|-----------------------|---------------|
-| id                    | int           | 
-| status                | Enum          | 
-| name                  | String        |
-| surname               | String        | 
-| birthDate             | Date          | 
-| age                   | int           |
-| surname               | string        | 
-| adress                | String        | 
-| alias                 | String        |
-| nationality           | Enum          | 
-| felonyRecordsDigital  | List          |
-| rank                  | int           | 
-| chief                 | Person        | 
-| subordinates          | List          | 
+  | NAME                  |  TYPE         | 
+  |-----------------------|---------------|
+  | id                    | int           | 
+  | status                | Enum          | 
+  | name                  | String        |
+  | surname               | String        | 
+  | birthDate             | Date          | 
+  | age                   | int           |
+  | surname               | string        | 
+  | adress                | String        | 
+  | alias                 | String        |
+  | nationality           | Enum          | 
+  | felonyRecordsDigital  | List          |
+  | rank                  | int           | 
+  | chief                 | Person        | 
+  | subordinates          | List          | 
 
 * **Data Params**
 
