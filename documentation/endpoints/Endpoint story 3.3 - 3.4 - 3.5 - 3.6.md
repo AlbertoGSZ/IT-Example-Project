@@ -55,9 +55,5 @@
     * **Code:** 403 FORBIDDEN <br />
     **Content:** `{ error : "Person is deceased" }`
 
-  OR
-
-  * **Code:** 401 UNAUTHORIZED <br />
-    **Content:** `{ error : "You are unauthorized to make this request." }`
 
 
