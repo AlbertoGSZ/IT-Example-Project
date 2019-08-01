@@ -23,7 +23,7 @@
 * **Success Response:**
 
   * **Code:** 200 <br />
-    **Content:** `{ XXXXXXXXXXXXX PERSON JSON XXXXXXXXXXXX }`
+    **Content:** `{"ID": "int","status": "Enum","name": "String","surname": "String","birthDate": "Date","age": "int","adress": "String","nationality": "Enum","sex": "Enum","alias": "String","felonyRecordsDigital": "List","rank": "int","chief": "Person","subordinates": "List"}`
  
 * **Error Response:**
 
