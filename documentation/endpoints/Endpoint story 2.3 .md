@@ -4,8 +4,9 @@
 
 * **URL**
 
-  /person
-
+  /person.php?status=status&name=name&surname=String&birthDate=Date&age=int&adress=String&nationality=Enum&sex=Enum&alias=String&
+    felonyRecordsDigital=List&rank=int&chief=Person&subordinates=List
+    
 * **Method:**
 
   `GET`
@@ -13,9 +14,22 @@
 *  **URL Params**
 
    **Required:**
- 
-  None
-
+    {
+    "status": "Enum",
+    "name": "String",
+    "surname": "String",
+    "birthDate": "Date",
+    "age": "int",
+    "adress": "String",
+    "nationality": "Enum",
+    "sex": "Enum",
+    "alias": "String",
+    "felonyRecordsDigital": "List",
+    "rank": "int",
+    "chief": "Person",
+    "subordinates": "List"
+    }
+    
 * **Data Params**
 
   None
