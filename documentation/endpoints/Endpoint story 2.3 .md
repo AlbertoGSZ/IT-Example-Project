@@ -30,8 +30,4 @@
   * **Code:** 404 NOT FOUND <br />
     **Content:** `{ error : "No people registered in database" }`
 
-  OR
-
-  * **Code:** 401 UNAUTHORIZED <br />
-    **Content:** `{ error : "You are unauthorized to make this request." }`
 
