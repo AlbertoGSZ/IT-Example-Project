@@ -45,15 +45,4 @@
   * **Code:** 401 UNAUTHORIZED <br />
     **Content:** `{ error : "You are unauthorized to make this request." }`
 
-* **Sample Call:**
 
-  ```javascript
-    $.ajax({
-      url: "/person/imprison/6",
-      dataType: "json",
-      type : "PATCH",
-      success : function(r) {
-        console.log(r);
-      }
-    });
-  ```
