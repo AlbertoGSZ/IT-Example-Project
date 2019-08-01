@@ -37,7 +37,7 @@
 
 * **Success Response:**
 
-  * **Code:** 200 <br />
+  * **Code:** 200 OK<br />
     **Content:** `{ "Person imprisoned." }`
  
 * **Error Response:**
