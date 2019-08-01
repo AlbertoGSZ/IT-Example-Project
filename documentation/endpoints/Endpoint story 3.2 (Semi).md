@@ -37,12 +37,13 @@
 * **Success Response:**
 
   * **Code:** 200 <br />
-    **Content:** `{ XXXXXXXXXXXX JSON EDITED PERSON XXXXXXXXXXXX }`
+    **Content:** `{"ID": "int","status": "Enum","name": "String","surname": "String","birthDate": "Date","age": "int","adress": "String","nationality": "Enum","sex": "Enum","alias": "String","felonyRecordsDigital": "List","rank": "int","chief": "Person","subordinates": "List"}`
+
  
 * **Error Response:**
 
   * **Code:** 404 NOT FOUND <br />
-    **Content:** `{"ID": "int","status": "Enum","name": "String","surname": "String","birthDate": "Date","age": "int","adress": "String","nationality": "Enum","sex": "Enum","alias": "String","felonyRecordsDigital": "List","rank": "int","chief": "Person","subordinates": "List"}`
+    **Content:** `{ error : "No people registered in database" }`
 
   OR
 
