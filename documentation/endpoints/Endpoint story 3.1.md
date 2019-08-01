@@ -45,8 +45,4 @@
   * **Code:** 403 FORBIDDEN <br />
     **Content:** `{ error : "Person already exists" }`
 
-  OR
-
-  * **Code:** 401 UNAUTHORIZED <br />
-    **Content:** `{ error : "You are unauthorized to make this request." }`
 
