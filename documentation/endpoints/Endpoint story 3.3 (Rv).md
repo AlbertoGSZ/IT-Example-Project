@@ -8,7 +8,7 @@
 
 * **Method:**
 
-  `PUT`
+  `PATCH`
   
 *  **URL Params**
 
@@ -41,7 +41,7 @@
     $.ajax({
       url: "/person/imprison/6",
       dataType: "json",
-      type : "PUT",
+      type : "PATCH",
       success : function(r) {
         console.log(r);
       }
