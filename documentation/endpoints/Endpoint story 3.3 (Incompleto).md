@@ -1,14 +1,14 @@
-**Show User**
+**Imprison person**
 ----
-  Returns json data about a single user.
+  Returns code 200.
 
 * **URL**
 
-  /users/:id
+  /person/imprison/{id}
 
 * **Method:**
 
-  `GET`
+  `PUT`
   
 *  **URL Params**
 
@@ -23,12 +23,12 @@
 * **Success Response:**
 
   * **Code:** 200 <br />
-    **Content:** `{ id : 12, name : "Michael Bloom" }`
+    **Content:** `{ "Person imprisoned." }`
  
 * **Error Response:**
 
   * **Code:** 404 NOT FOUND <br />
-    **Content:** `{ error : "User doesn't exist" }`
+    **Content:** `{ error : "Person doesn't exist" }`
 
   OR
 
@@ -39,9 +39,9 @@
 
   ```javascript
     $.ajax({
-      url: "/users/1",
+      url: "/person/imprison/6",
       dataType: "json",
-      type : "GET",
+      type : "PUT",
       success : function(r) {
         console.log(r);
       }
