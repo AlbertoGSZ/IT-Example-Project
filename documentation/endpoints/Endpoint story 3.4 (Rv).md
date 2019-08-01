@@ -1,14 +1,14 @@
-**Show User**
+**Release person**
 ----
-  Returns json data about a single user.
+  Returns code 200.
 
 * **URL**
 
-  /users/:id
+  /person/release/{id}
 
 * **Method:**
 
-  `GET`
+  `PATCH`
   
 *  **URL Params**
 
@@ -23,12 +23,22 @@
 * **Success Response:**
 
   * **Code:** 200 <br />
-    **Content:** `{ id : 12, name : "Michael Bloom" }`
+    **Content:** `{ "Person released" }`
  
 * **Error Response:**
 
   * **Code:** 404 NOT FOUND <br />
-    **Content:** `{ error : "User doesn't exist" }`
+    **Content:** `{ error : "Person doesn't exist" }`
+
+  OR
+  
+    * **Code:** 403 FORBIDDEN <br />
+    **Content:** `{ error : "Person is already released" }`
+
+  OR
+    
+    * **Code:** 403 FORBIDDEN <br />
+    **Content:** `{ error : "Person is deceased" }`
 
   OR
 
@@ -39,9 +49,9 @@
 
   ```javascript
     $.ajax({
-      url: "/users/1",
+      url: "/person/release/8",
       dataType: "json",
-      type : "GET",
+      type : "PATCH",
       success : function(r) {
         console.log(r);
       }
