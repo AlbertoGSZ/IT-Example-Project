@@ -1,14 +1,14 @@
-**Show User**
+**Create case report**
 ----
-  Returns json data about a single user.
+  Returns json data about a case report.
 
 * **URL**
 
-  /users/:id
+  /caseReport
 
 * **Method:**
 
-  `GET`
+  `POST`
   
 *  **URL Params**
 
@@ -18,17 +18,20 @@
 
 * **Data Params**
 
-  None
-
+  XXXXXXXXXXXXXXXXXXXXXX 
+  XXXXXXXXXXXXXXXXXXXXXX 
+  XXXXXXXXXXXXXXXXXXXXXX 
+  XXXXXXXXXXXXXXXXXXXXXX 
+  
 * **Success Response:**
 
   * **Code:** 200 <br />
-    **Content:** `{ id : 12, name : "Michael Bloom" }`
+    **Content:** `{ XXXXXXXXX JSON CASE REPORT XXXXXXXX" }`
  
 * **Error Response:**
 
-  * **Code:** 404 NOT FOUND <br />
-    **Content:** `{ error : "User doesn't exist" }`
+  * **Code:** 400 BAD REQUEST <br />
+    **Content:** `{ error : "Invalid specified syntax" }`
 
   OR
 
@@ -39,9 +42,9 @@
 
   ```javascript
     $.ajax({
-      url: "/users/1",
+      url: "/caseReport",
       dataType: "json",
-      type : "GET",
+      type : "POST",
       success : function(r) {
         console.log(r);
       }
