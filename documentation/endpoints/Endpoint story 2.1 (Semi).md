@@ -4,7 +4,7 @@
 
 * **URL**
 
-  /vips
+  /person/vips
 
 * **Method:**
 
@@ -39,7 +39,7 @@
 
   ```javascript
     $.ajax({
-      url: "/vips",
+      url: "/person/vips",
       dataType: "json",
       type : "GET",
       success : function(r) {
