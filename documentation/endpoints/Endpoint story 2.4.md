@@ -23,8 +23,8 @@
 
 * **Success Response:**
 
-  * **Code:** 200 <br />
-    **Content:** `{ XXXXXXXXXXX JSON CaseReport XXXXXXXXXXX}`
+  * **Code:** 200 OK<br />
+    **Content:** `{"iD": "ID", "status": "Enum","name": "String","idCode": "String","date": "Date","mugshot": "Image","personDetails": "String","eventDescription": "String","evidencePhotos": "List","felonyRecordPDF": "PDF"}`
  
 * **Error Response:**
 
