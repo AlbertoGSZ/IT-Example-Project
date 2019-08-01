@@ -4,7 +4,7 @@
 
 * **URL**
 
-  /person.php?status=ALIVE&name=Alberto&surname=García&birthDate=15051990&age=29&adress=CalleBonito&nationality=ESPAÑA&sex=HOMBRE&alias=Tardón& felonyRecordsDigital=List&rank=2&chief=JoseJulian&subordinates=List
+  /person.php?status=ALIVE&name=Alberto&surname=García&birthDate=15051990&age=29&adress=CalleBonito&nationality=ESPAÑA&sex=HOMBRE&alias=Tardón& felonyRecordsDigital=[]&rank=2&chief=JoseJulian&subordinates=[]
 
 * **Method:**
 
@@ -14,19 +14,10 @@
 
    **Required:**
  
-  `status:[Enum]`
-  `name:[String]`
-  `surname:[String]`
-  `birthDate:[Date]`
-  `age:[int]`
-  `adress:[String]`
-  `nationality:[Enum]`
-  `sex:[Enum]`
-  `alias:[String]`
-  `felonyRecordsDigital:[List]`
-  `rank:[int]`
-  `chief:[Person]`
-  `subordinates:[List]`
+| status:[Enum]   | name:[String]      | surname:[String]    | birthDate:[Date] | age:[int]                   |
+|-----------------|--------------------|---------------------|------------------|-----------------------------|
+| adress:[String] | nationality:[Enum] | sex:[Enum]          | alias:[String]   | felonyRecordsDigital:[List] |
+| rank:[int]      | chief:[Person]     | subordinates:[List] |                  |                             |
 
 * **Data Params**
 
