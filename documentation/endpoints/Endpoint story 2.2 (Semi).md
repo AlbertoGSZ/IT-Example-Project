@@ -1,4 +1,4 @@
-**Search Person**
+**Matching Person**
 ----
   Returns json data about a single person.
 
