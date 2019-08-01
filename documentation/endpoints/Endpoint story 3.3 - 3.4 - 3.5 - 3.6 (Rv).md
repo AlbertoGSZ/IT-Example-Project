@@ -18,7 +18,22 @@
 
 * **Data Params**
 
-    `IMPRISONED=[ENUM]`
+    This endpoint is intended to modify only one of the following atributes at a time from the ¨Person¨ entity
+    
+     {"Status": "IMPRISONED"}
+     
+  OR
+  
+     {"Status": "ALIVE"} <!--- Understood as released from prison --->
+     
+  OR
+  
+     {"Rank": "RankUp"}
+     
+  OR
+  
+     {"Rank": "RankDown"}
+     
 
 * **Success Response:**
 
