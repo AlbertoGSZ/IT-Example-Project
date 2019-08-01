@@ -18,12 +18,21 @@
 
 * **Data Params**
 
-  XXXXXXXXXXXXXXXXXXXXXXXXX
-  XXXXXXXXXXXXXXXXXXXXXXXXX
-  XXXXXXXXXXXXXXXXXXXXXXXXX
-  XXXXXXXXXXXXXXXXXXXXXXXXX
-  XXXXXXXXXXXXXXXXXXXXXXXXX
-
+  {
+  "status": "Enum",
+  "name": "String",
+  "surname": "String",
+  "birthDate": "Date",
+  "age": "int",
+  "adress": "String",
+  "nationality": "Enum",
+  "sex": "Enum",
+  "alias": "String",
+  "felonyRecordsDigital": "List",
+  "rank": "int",
+  "chief": "Person",
+  "subordinates": "List"
+  }
 
 * **Success Response:**
 
@@ -33,7 +42,7 @@
 * **Error Response:**
 
   * **Code:** 404 NOT FOUND <br />
-    **Content:** `{ error : "User doesn't exist" }`
+    **Content:** `{"ID": "int","status": "Enum","name": "String","surname": "String","birthDate": "Date","age": "int","adress": "String","nationality": "Enum","sex": "Enum","alias": "String","felonyRecordsDigital": "List","rank": "int","chief": "Person","subordinates": "List"}`
 
   OR
 
