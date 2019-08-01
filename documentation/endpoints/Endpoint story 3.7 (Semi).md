@@ -38,15 +38,4 @@
   * **Code:** 401 UNAUTHORIZED <br />
     **Content:** `{ error : "You are unauthorized to make this request." }`
 
-* **Sample Call:**
 
-  ```javascript
-    $.ajax({
-      url: "/caseReport",
-      dataType: "json",
-      type : "POST",
-      success : function(r) {
-        console.log(r);
-      }
-    });
-  ```
