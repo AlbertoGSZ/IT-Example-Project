@@ -42,6 +42,11 @@
  
 * **Error Response:**
 
+  * **Code:** 400 BAD REQUEST <br />
+    **Content:** `{ error : "Syntax not understood" }`
+
+  OR
+
   * **Code:** 404 NOT FOUND <br />
     **Content:** `{ error : "Person doesn't exist" }`
 
