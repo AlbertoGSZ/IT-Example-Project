@@ -47,12 +47,12 @@
 
   OR
 
-    * **Code:** 403 FORBIDDEN <br />
+    * **Code:** 409 CONFLICT <br />
     **Content:** `{ error : "Person is already imprisoned" }`
 
   OR
     
-    * **Code:** 403 FORBIDDEN <br />
+    * **Code:** 409 CONFLICT <br />
     **Content:** `{ error : "Person is deceased" }`
 
 
