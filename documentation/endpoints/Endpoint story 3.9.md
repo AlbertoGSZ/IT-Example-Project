@@ -1,6 +1,6 @@
 **Delete case report**
 ----
-  Returns code 200.
+  Returns json data about a deleted case report.
 
 * **URL**
 
@@ -22,7 +22,7 @@
 * **Success Response:**
 
   * **Code:** 200 <br />
-    **Content:** `{ "Case report deleted" }`
+    **Content:** `{"iD": "ID", "status": "Enum","name": "String","idCode": "String","date": "Date","mugshot": "Image","personDetails": "String","eventDescription": "String","evidencePhotos": "List","felonyRecordPDF": "PDF"}`
  
 * **Error Response:**
 
