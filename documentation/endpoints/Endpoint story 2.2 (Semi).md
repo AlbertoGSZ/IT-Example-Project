@@ -14,21 +14,22 @@
 
    **Required:**
  
-| NAME                  | REQUIRED TYPE |
-|-----------------------|---------------|
-| status                | Enum          |
-| name                  | String        |
-| surname               | String        |
-| birthDate             | Date          |
-| age                   | int           |
-| surname               | string        | 
-| adress                | String        |
-| alias                 | String        |
-| nationality           | Enum          | 
-| felonyRecordsDigital  | List          |
-| rank                  | int           |
-| chief                 | Person        |
-| subordinates          | List          |
+| NAME                  |  TYPE         | REQUIRED |
+|-----------------------|---------------|----------|
+| id                    | int           | No       |
+| status                | Enum          | No       |
+| name                  | String        | No       |
+| surname               | String        | No       |
+| birthDate             | Date          | No       |
+| age                   | int           | No       |
+| surname               | string        | No       | 
+| adress                | String        | No       |
+| alias                 | String        | No       |
+| nationality           | Enum          | No       | 
+| felonyRecordsDigital  | List          | No       |
+| rank                  | int           | No       |
+| chief                 | Person        | No       |
+| subordinates          | List          | No       |
 
 * **Data Params**
 
