@@ -13,15 +13,15 @@ De igual manera, la entidad ¨Person¨, tendrá una lista de objetos ¨CaseRepor
 
 ### **Información de entidad: Person**
 
-- Name: Cadena de caracteres.
-- Surname: Cadena de caracteres.
+- Name: String.
+- Surname: String.
 - BirthDate: Objeto Date (). Requisito fecha anterior al dia que transcurre (límite a valorar).
 - Age: Número entero no menor que cero, actualizado en base a la fecha de nacimiento (seguramente innecesario).
-- Adress: Cadena de caracteres.  
+- Adress: String.  
 - Nationality: ENUM.
 - Sex: ENUM.
 - ID: int. Generación aleatoria no repetible.
-- Alias: Cadena de caracteres.
+- Alias: String.
 - FelonyRecordsDigital: Lista de objetos ¨CaseReport¨.
 - Rank: int.
 - Chief: Objeto Person.
@@ -37,7 +37,7 @@ Por el mismo motivo no he querido ahondar en ciertos aspectos como la configurac
 - IDCode: int. Generación aleatoria no repetible.
 - Date: Objeto Date. Fecha final, momento de creación del informe.
 - Mugshot: Objeto Image.
-- PersonDetails: Cadena de caracteres. No vacío.  
-- EventDescription: Cadena de caracteres. No vacío.
-- EvidencePhotos: Lista de objetos Image.
-- FelonyRecordPDF: Objeto PDF.
+- PersonDetails: String. No vacío.  
+- EventDescription: String. No vacío.
+- EvidencePhotos: Lista de String.
+- FelonyRecordPDF: Lista de String.
