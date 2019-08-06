@@ -34,7 +34,7 @@ Por el mismo motivo no he querido ahondar en ciertos aspectos como la configurac
 
 ### **Información de entidad: CaseReport**
 
-- IDCode: int. Generación aleatoria no repetible.
+- ID: int. Generación aleatoria no repetible.
 - Date: Objeto Date. Fecha final, momento de creación del informe.
 - Mugshot: Objeto Image.
 - PersonDetails: String. No vacío.  
