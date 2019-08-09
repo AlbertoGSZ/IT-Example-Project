@@ -1,0 +1,47 @@
+entity Person {
+    name String,
+    surname String,
+    birthDate Instant,
+    age Integer,
+    adress String,
+    nationality Nationality,
+    sex Sex,
+    id Integer,
+    alias String,
+    rank Integer
+
+}
+
+entity CaseReport {
+    id Integer,
+    date Instant,
+    mugshot String,
+    personDetails String,
+    eventDescription String,
+    evidencePhotos String
+}
+
+relationship OneToMany {
+  Person{subordinates} to Person {chief}, 
+  Person{felonyRecordsDigital} to CaseReport
+}
+
+enum Nationality {
+   NORTH_AMERICAN, 
+   ENGLISH, 
+   SPANISH,
+   FRENCH,
+   CANADIAN,
+   ITALIAN,
+   RUSSIAN
+}
+
+enum Sex {
+   Male, 
+   Female
+}
+
+paginate Person, CaseReport with pagination
+
+service all with serviceImpl
+
