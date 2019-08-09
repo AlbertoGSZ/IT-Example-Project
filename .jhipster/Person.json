@@ -1,0 +1,73 @@
+{
+    "name": "Person",
+    "fields": [
+        {
+            "fieldName": "name",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "surname",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "birthDate",
+            "fieldType": "LocalDate"
+        },
+        {
+            "fieldName": "age",
+            "fieldType": "ZonedDateTime"
+        },
+        {
+            "fieldName": "adress",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "nationality",
+            "fieldType": "Nationality",
+            "fieldValues": "NORTH_AMERICAN,ENGLISH,SPANISH,FRENCH,CANADIAN,ITALIAN,RUSSIAN"
+        },
+        {
+            "fieldName": "sex",
+            "fieldType": "Sex",
+            "fieldValues": "Male,Female"
+        },
+        {
+            "fieldName": "alias",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "rank",
+            "fieldType": "Integer"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "one-to-many",
+            "otherEntityName": "person",
+            "otherEntityRelationshipName": "chief",
+            "relationshipName": "subordinates"
+        },
+        {
+            "relationshipType": "one-to-many",
+            "otherEntityName": "caseReport",
+            "otherEntityRelationshipName": "person",
+            "relationshipName": "felonyRecordsDigital"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "person",
+            "otherEntityRelationshipName": "subordinates",
+            "relationshipName": "chief",
+            "otherEntityField": "id"
+        }
+    ],
+    "changelogDate": "20190809013046",
+    "entityTableName": "person",
+    "dto": "no",
+    "pagination": "pagination",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*"
+}

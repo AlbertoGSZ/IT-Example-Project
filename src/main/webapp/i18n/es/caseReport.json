@@ -1,0 +1,27 @@
+{
+  "criminalBbddApp": {
+    "caseReport": {
+      "home": {
+        "title": "Case Reports",
+        "createLabel": "Crear nuevo Case Report",
+        "createOrEditLabel": "Crear o editar Case Report",
+        "notFound": "No Case Reports found"
+      },
+      "created": "Un nuevo Case Report ha sido creado con el identificador {{ param }}",
+      "updated": "Un Case Report ha sido actualizado con el identificador {{ param }}",
+      "deleted": "Un Case Report ha sido eliminado con el identificador {{ param }}",
+      "delete": {
+        "question": "¿Seguro que quiere eliminar Case Report {{ id }}?"
+      },
+      "detail": {
+        "title": "Case Report"
+      },
+      "date": "Date",
+      "mugshot": "Mugshot",
+      "personDetails": "Person Details",
+      "eventDescription": "Event Description",
+      "evidencePhotos": "Evidence Photos",
+      "person": "Person"
+    }
+  }
+}

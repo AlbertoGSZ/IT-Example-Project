@@ -1,0 +1,42 @@
+{
+    "name": "CaseReport",
+    "fields": [
+        {
+            "fieldName": "date",
+            "fieldType": "LocalDate"
+        },
+        {
+            "fieldName": "mugshot",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "personDetails",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "eventDescription",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "evidencePhotos",
+            "fieldType": "String"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipName": "person",
+            "otherEntityName": "person",
+            "relationshipType": "many-to-one",
+            "otherEntityField": "id"
+        }
+    ],
+    "changelogDate": "20190809013047",
+    "entityTableName": "case_report",
+    "dto": "no",
+    "pagination": "pagination",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*"
+}

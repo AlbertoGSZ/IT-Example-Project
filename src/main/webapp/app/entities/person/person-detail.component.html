@@ -1,0 +1,65 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="person">
+            <h2><span jhiTranslate="criminalBbddApp.person.detail.title">Person</span> {{person.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="criminalBbddApp.person.name">Name</span></dt>
+                <dd>
+                    <span>{{person.name}}</span>
+                </dd>
+                <dt><span jhiTranslate="criminalBbddApp.person.surname">Surname</span></dt>
+                <dd>
+                    <span>{{person.surname}}</span>
+                </dd>
+                <dt><span jhiTranslate="criminalBbddApp.person.birthDate">Birth Date</span></dt>
+                <dd>
+                    <span>{{person.birthDate}}</span>
+                </dd>
+                <dt><span jhiTranslate="criminalBbddApp.person.age">Age</span></dt>
+                <dd>
+                    <span>{{person.age}}</span>
+                </dd>
+                <dt><span jhiTranslate="criminalBbddApp.person.adress">Adress</span></dt>
+                <dd>
+                    <span>{{person.adress}}</span>
+                </dd>
+                <dt><span jhiTranslate="criminalBbddApp.person.nationality">Nationality</span></dt>
+                <dd>
+                    <span jhiTranslate="{{'criminalBbddApp.Nationality.' + person.nationality}}">{{person.nationality}}</span>
+                </dd>
+                <dt><span jhiTranslate="criminalBbddApp.person.sex">Sex</span></dt>
+                <dd>
+                    <span jhiTranslate="{{'criminalBbddApp.Sex.' + person.sex}}">{{person.sex}}</span>
+                </dd>
+                <dt><span jhiTranslate="criminalBbddApp.person.alias">Alias</span></dt>
+                <dd>
+                    <span>{{person.alias}}</span>
+                </dd>
+                <dt><span jhiTranslate="criminalBbddApp.person.rank">Rank</span></dt>
+                <dd>
+                    <span>{{person.rank}}</span>
+                </dd>
+                <dt><span jhiTranslate="criminalBbddApp.person.chief">Chief</span></dt>
+                <dd>
+                    <div *ngIf="person.chief">
+                        <a [routerLink]="['/person', person.chief?.id, 'view']">{{person.chief?.id}}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/person', person.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

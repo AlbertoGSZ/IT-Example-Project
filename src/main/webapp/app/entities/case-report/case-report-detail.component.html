@@ -1,0 +1,49 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="caseReport">
+            <h2><span jhiTranslate="criminalBbddApp.caseReport.detail.title">Case Report</span> {{caseReport.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="criminalBbddApp.caseReport.date">Date</span></dt>
+                <dd>
+                    <span>{{caseReport.date}}</span>
+                </dd>
+                <dt><span jhiTranslate="criminalBbddApp.caseReport.mugshot">Mugshot</span></dt>
+                <dd>
+                    <span>{{caseReport.mugshot}}</span>
+                </dd>
+                <dt><span jhiTranslate="criminalBbddApp.caseReport.personDetails">Person Details</span></dt>
+                <dd>
+                    <span>{{caseReport.personDetails}}</span>
+                </dd>
+                <dt><span jhiTranslate="criminalBbddApp.caseReport.eventDescription">Event Description</span></dt>
+                <dd>
+                    <span>{{caseReport.eventDescription}}</span>
+                </dd>
+                <dt><span jhiTranslate="criminalBbddApp.caseReport.evidencePhotos">Evidence Photos</span></dt>
+                <dd>
+                    <span>{{caseReport.evidencePhotos}}</span>
+                </dd>
+                <dt><span jhiTranslate="criminalBbddApp.caseReport.person">Person</span></dt>
+                <dd>
+                    <div *ngIf="caseReport.person">
+                        <a [routerLink]="['/person', caseReport.person?.id, 'view']">{{caseReport.person?.id}}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/case-report', caseReport.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

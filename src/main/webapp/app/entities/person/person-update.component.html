@@ -1,0 +1,90 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+            <h2 id="jhi-person-heading" jhiTranslate="criminalBbddApp.person.home.createOrEditLabel">Create or edit a Person</h2>
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+                <div class="form-group" [hidden]="!editForm.get('id').value">
+                    <label for="id" jhiTranslate="global.field.id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id" formControlName="id"
+                        readonly />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="criminalBbddApp.person.name" for="field_name">Name</label>
+                    <input type="text" class="form-control" name="name" id="field_name"
+                           formControlName="name"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="criminalBbddApp.person.surname" for="field_surname">Surname</label>
+                    <input type="text" class="form-control" name="surname" id="field_surname"
+                           formControlName="surname"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="criminalBbddApp.person.birthDate" for="field_birthDate">Birth Date</label>
+                    <div class="input-group">
+                        <input id="field_birthDate" type="text" class="form-control" name="birthDate" ngbDatepicker  #birthDateDp="ngbDatepicker" formControlName="birthDate"/>
+                        <span class="input-group-append">
+                            <button type="button" class="btn btn-secondary" (click)="birthDateDp.toggle()"><fa-icon [icon]="'calendar-alt'"></fa-icon></button>
+                        </span>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="criminalBbddApp.person.age" for="field_age">Age</label>
+                    <div class="d-flex">
+                        <input id="field_age" type="datetime-local" class="form-control" name="age" formControlName="age" placeholder="YYYY-MM-DD HH:mm"/>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="criminalBbddApp.person.adress" for="field_adress">Adress</label>
+                    <input type="text" class="form-control" name="adress" id="field_adress"
+                           formControlName="adress"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="criminalBbddApp.person.nationality" for="field_nationality">Nationality</label>
+                    <select class="form-control" name="nationality" formControlName="nationality" id="field_nationality">
+                        <option value="NORTH_AMERICAN">{{'criminalBbddApp.Nationality.NORTH_AMERICAN' | translate}}</option>
+                        <option value="ENGLISH">{{'criminalBbddApp.Nationality.ENGLISH' | translate}}</option>
+                        <option value="SPANISH">{{'criminalBbddApp.Nationality.SPANISH' | translate}}</option>
+                        <option value="FRENCH">{{'criminalBbddApp.Nationality.FRENCH' | translate}}</option>
+                        <option value="CANADIAN">{{'criminalBbddApp.Nationality.CANADIAN' | translate}}</option>
+                        <option value="ITALIAN">{{'criminalBbddApp.Nationality.ITALIAN' | translate}}</option>
+                        <option value="RUSSIAN">{{'criminalBbddApp.Nationality.RUSSIAN' | translate}}</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="criminalBbddApp.person.sex" for="field_sex">Sex</label>
+                    <select class="form-control" name="sex" formControlName="sex" id="field_sex">
+                        <option value="Male">{{'criminalBbddApp.Sex.Male' | translate}}</option>
+                        <option value="Female">{{'criminalBbddApp.Sex.Female' | translate}}</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="criminalBbddApp.person.alias" for="field_alias">Alias</label>
+                    <input type="text" class="form-control" name="alias" id="field_alias"
+                           formControlName="alias"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="criminalBbddApp.person.rank" for="field_rank">Rank</label>
+                    <input type="number" class="form-control" name="rank" id="field_rank"
+                           formControlName="rank"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="criminalBbddApp.person.chief" for="field_chief">Chief</label>
+                    <select class="form-control" id="field_chief" name="chief" formControlName="chief">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="personOption.id === editForm.get('chief').value?.id ? editForm.get('chief').value : personOption" *ngFor="let personOption of people; trackBy: trackPersonById">{{personOption.id}}</option>
+                    </select>
+                </div>
+            </div>
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary"  (click)="previousState()">
+                    <fa-icon [icon]="'ban'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+                </button>
+                <button type="submit" id="save-entity" [disabled]="editForm.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon [icon]="'save'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

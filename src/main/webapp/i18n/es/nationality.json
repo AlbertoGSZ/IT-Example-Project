@@ -1,0 +1,14 @@
+{
+  "criminalBbddApp": {
+    "Nationality": {
+      "null": "",
+      "NORTH_AMERICAN": "NORTH_AMERICAN",
+      "ENGLISH": "ENGLISH",
+      "SPANISH": "SPANISH",
+      "FRENCH": "FRENCH",
+      "CANADIAN": "CANADIAN",
+      "ITALIAN": "ITALIAN",
+      "RUSSIAN": "RUSSIAN"
+    }
+  }
+}
