@@ -51,8 +51,7 @@ export class PersonService {
 
   protected convertDateFromClient(person: IPerson): IPerson {
     const copy: IPerson = Object.assign({}, person, {
-      birthDate: person.birthDate != null && person.birthDate.isValid() ? person.birthDate.format(DATE_FORMAT) : null,
-      age: person.age != null && person.age.isValid() ? person.age.toJSON() : null
+      birthDate: person.birthDate != null && person.birthDate.isValid() ? person.birthDate.toJSON() : null
     });
     return copy;
   }
@@ -60,7 +59,6 @@ export class PersonService {
   protected convertDateFromServer(res: EntityResponseType): EntityResponseType {
     if (res.body) {
       res.body.birthDate = res.body.birthDate != null ? moment(res.body.birthDate) : null;
-      res.body.age = res.body.age != null ? moment(res.body.age) : null;
     }
     return res;
   }
@@ -69,7 +67,6 @@ export class PersonService {
     if (res.body) {
       res.body.forEach((person: IPerson) => {
         person.birthDate = person.birthDate != null ? moment(person.birthDate) : null;
-        person.age = person.age != null ? moment(person.age) : null;
       });
     }
     return res;

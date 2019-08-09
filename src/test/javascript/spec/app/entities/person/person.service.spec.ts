@@ -5,7 +5,7 @@ import { HttpClient, HttpResponse } from '@angular/common/http';
 import { of } from 'rxjs';
 import { take, map } from 'rxjs/operators';
 import * as moment from 'moment';
-import { DATE_FORMAT, DATE_TIME_FORMAT } from 'app/shared/constants/input.constants';
+import { DATE_TIME_FORMAT } from 'app/shared/constants/input.constants';
 import { PersonService } from 'app/entities/person/person.service';
 import { IPerson, Person, Nationality, Sex } from 'app/shared/model/person.model';
 
@@ -27,26 +27,14 @@ describe('Service Tests', () => {
       httpMock = injector.get(HttpTestingController);
       currentDate = moment();
 
-      elemDefault = new Person(
-        0,
-        'AAAAAAA',
-        'AAAAAAA',
-        currentDate,
-        currentDate,
-        'AAAAAAA',
-        Nationality.NORTH_AMERICAN,
-        Sex.Male,
-        'AAAAAAA',
-        0
-      );
+      elemDefault = new Person(0, 'AAAAAAA', 'AAAAAAA', currentDate, 0, 'AAAAAAA', Nationality.NORTH_AMERICAN, Sex.Male, 'AAAAAAA', 0);
     });
 
     describe('Service methods', () => {
       it('should find an element', async () => {
         const returnedFromService = Object.assign(
           {
-            birthDate: currentDate.format(DATE_FORMAT),
-            age: currentDate.format(DATE_TIME_FORMAT)
+            birthDate: currentDate.format(DATE_TIME_FORMAT)
           },
           elemDefault
         );
@@ -64,15 +52,13 @@ describe('Service Tests', () => {
         const returnedFromService = Object.assign(
           {
             id: 0,
-            birthDate: currentDate.format(DATE_FORMAT),
-            age: currentDate.format(DATE_TIME_FORMAT)
+            birthDate: currentDate.format(DATE_TIME_FORMAT)
           },
           elemDefault
         );
         const expected = Object.assign(
           {
-            birthDate: currentDate,
-            age: currentDate
+            birthDate: currentDate
           },
           returnedFromService
         );
@@ -90,8 +76,8 @@ describe('Service Tests', () => {
           {
             name: 'BBBBBB',
             surname: 'BBBBBB',
-            birthDate: currentDate.format(DATE_FORMAT),
-            age: currentDate.format(DATE_TIME_FORMAT),
+            birthDate: currentDate.format(DATE_TIME_FORMAT),
+            age: 1,
             adress: 'BBBBBB',
             nationality: 'BBBBBB',
             sex: 'BBBBBB',
@@ -103,8 +89,7 @@ describe('Service Tests', () => {
 
         const expected = Object.assign(
           {
-            birthDate: currentDate,
-            age: currentDate
+            birthDate: currentDate
           },
           returnedFromService
         );
@@ -122,8 +107,8 @@ describe('Service Tests', () => {
           {
             name: 'BBBBBB',
             surname: 'BBBBBB',
-            birthDate: currentDate.format(DATE_FORMAT),
-            age: currentDate.format(DATE_TIME_FORMAT),
+            birthDate: currentDate.format(DATE_TIME_FORMAT),
+            age: 1,
             adress: 'BBBBBB',
             nationality: 'BBBBBB',
             sex: 'BBBBBB',
@@ -134,8 +119,7 @@ describe('Service Tests', () => {
         );
         const expected = Object.assign(
           {
-            birthDate: currentDate,
-            age: currentDate
+            birthDate: currentDate
           },
           returnedFromService
         );

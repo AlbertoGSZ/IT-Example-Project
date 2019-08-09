@@ -22,7 +22,7 @@ export interface IPerson {
   name?: string;
   surname?: string;
   birthDate?: Moment;
-  age?: Moment;
+  age?: number;
   adress?: string;
   nationality?: Nationality;
   sex?: Sex;
@@ -39,7 +39,7 @@ export class Person implements IPerson {
     public name?: string,
     public surname?: string,
     public birthDate?: Moment,
-    public age?: Moment,
+    public age?: number,
     public adress?: string,
     public nationality?: Nationality,
     public sex?: Sex,

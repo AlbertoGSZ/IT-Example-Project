@@ -6,7 +6,7 @@ import org.hibernate.annotations.CacheConcurrencyStrategy;
 import javax.persistence.*;
 
 import java.io.Serializable;
-import java.time.LocalDate;
+import java.time.Instant;
 
 /**
  * A CaseReport.
@@ -24,7 +24,7 @@ public class CaseReport implements Serializable {
     private Long id;
 
     @Column(name = "date")
-    private LocalDate date;
+    private Instant date;
 
     @Column(name = "mugshot")
     private String mugshot;
@@ -51,16 +51,16 @@ public class CaseReport implements Serializable {
         this.id = id;
     }
 
-    public LocalDate getDate() {
+    public Instant getDate() {
         return date;
     }
 
-    public CaseReport date(LocalDate date) {
+    public CaseReport date(Instant date) {
         this.date = date;
         return this;
     }
 
-    public void setDate(LocalDate date) {
+    public void setDate(Instant date) {
         this.date = date;
     }
 

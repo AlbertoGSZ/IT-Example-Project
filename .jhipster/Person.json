@@ -11,11 +11,11 @@
         },
         {
             "fieldName": "birthDate",
-            "fieldType": "LocalDate"
+            "fieldType": "Instant"
         },
         {
             "fieldName": "age",
-            "fieldType": "ZonedDateTime"
+            "fieldType": "Integer"
         },
         {
             "fieldName": "adress",

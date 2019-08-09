@@ -30,7 +30,7 @@
             <tbody>
             <tr *ngFor="let caseReport of caseReports ;trackBy: trackId">
                 <td><a [routerLink]="['/case-report', caseReport.id, 'view' ]">{{caseReport.id}}</a></td>
-                <td>{{caseReport.date | date:'mediumDate'}}</td>
+                <td>{{caseReport.date | date:'medium'}}</td>
                 <td>{{caseReport.mugshot}}</td>
                 <td>{{caseReport.personDetails}}</td>
                 <td>{{caseReport.eventDescription}}</td>

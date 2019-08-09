@@ -23,11 +23,11 @@
                 <constraints nullable="true" />
             </column>
 
-            <column name="birth_date" type="date">
+            <column name="birth_date" type="datetime">
                 <constraints nullable="true" />
             </column>
 
-            <column name="age" type="datetime">
+            <column name="age" type="integer">
                 <constraints nullable="true" />
             </column>
 
@@ -58,7 +58,7 @@
             <!-- jhipster-needle-liquibase-add-column - JHipster will add columns here, do not remove-->
         </createTable>
 
-        <dropDefaultValue tableName="person" columnName="age" columnDataType="datetime"/>
+        <dropDefaultValue tableName="person" columnName="birth_date" columnDataType="datetime"/>
     </changeSet>
 
     <changeSet id="20190809013046-1-relations" author="jhipster">
@@ -82,8 +82,8 @@
             <column name="id" type="numeric"/>
             <column name="name" type="string"/>
             <column name="surname" type="string"/>
-            <column name="birth_date" type="date"/>
-            <column name="age" type="datetime"/>
+            <column name="birth_date" type="datetime"/>
+            <column name="age" type="numeric"/>
             <column name="adress" type="string"/>
             <column name="nationality" type="string"/>
             <column name="sex" type="string"/>

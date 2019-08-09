@@ -6,8 +6,7 @@ import org.hibernate.annotations.CacheConcurrencyStrategy;
 import javax.persistence.*;
 
 import java.io.Serializable;
-import java.time.LocalDate;
-import java.time.ZonedDateTime;
+import java.time.Instant;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -37,10 +36,10 @@ public class Person implements Serializable {
     private String surname;
 
     @Column(name = "birth_date")
-    private LocalDate birthDate;
+    private Instant birthDate;
 
     @Column(name = "age")
-    private ZonedDateTime age;
+    private Integer age;
 
     @Column(name = "adress")
     private String adress;
@@ -106,29 +105,29 @@ public class Person implements Serializable {
         this.surname = surname;
     }
 
-    public LocalDate getBirthDate() {
+    public Instant getBirthDate() {
         return birthDate;
     }
 
-    public Person birthDate(LocalDate birthDate) {
+    public Person birthDate(Instant birthDate) {
         this.birthDate = birthDate;
         return this;
     }
 
-    public void setBirthDate(LocalDate birthDate) {
+    public void setBirthDate(Instant birthDate) {
         this.birthDate = birthDate;
     }
 
-    public ZonedDateTime getAge() {
+    public Integer getAge() {
         return age;
     }
 
-    public Person age(ZonedDateTime age) {
+    public Person age(Integer age) {
         this.age = age;
         return this;
     }
 
-    public void setAge(ZonedDateTime age) {
+    public void setAge(Integer age) {
         this.age = age;
     }
 
@@ -284,7 +283,7 @@ public class Person implements Serializable {
             ", name='" + getName() + "'" +
             ", surname='" + getSurname() + "'" +
             ", birthDate='" + getBirthDate() + "'" +
-            ", age='" + getAge() + "'" +
+            ", age=" + getAge() +
             ", adress='" + getAdress() + "'" +
             ", nationality='" + getNationality() + "'" +
             ", sex='" + getSex() + "'" +

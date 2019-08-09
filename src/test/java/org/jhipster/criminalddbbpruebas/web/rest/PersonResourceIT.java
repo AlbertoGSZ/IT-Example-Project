@@ -20,14 +20,10 @@ import org.springframework.transaction.annotation.Transactional;
 import org.springframework.validation.Validator;
 
 import javax.persistence.EntityManager;
-import java.time.LocalDate;
 import java.time.Instant;
-import java.time.ZonedDateTime;
-import java.time.ZoneOffset;
-import java.time.ZoneId;
+import java.time.temporal.ChronoUnit;
 import java.util.List;
 
-import static org.jhipster.criminalddbbpruebas.web.rest.TestUtil.sameInstant;
 import static org.jhipster.criminalddbbpruebas.web.rest.TestUtil.createFormattingConversionService;
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.hamcrest.Matchers.hasItem;
@@ -48,13 +44,13 @@ public class PersonResourceIT {
     private static final String DEFAULT_SURNAME = "AAAAAAAAAA";
     private static final String UPDATED_SURNAME = "BBBBBBBBBB";
 
-    private static final LocalDate DEFAULT_BIRTH_DATE = LocalDate.ofEpochDay(0L);
-    private static final LocalDate UPDATED_BIRTH_DATE = LocalDate.now(ZoneId.systemDefault());
-    private static final LocalDate SMALLER_BIRTH_DATE = LocalDate.ofEpochDay(-1L);
+    private static final Instant DEFAULT_BIRTH_DATE = Instant.ofEpochMilli(0L);
+    private static final Instant UPDATED_BIRTH_DATE = Instant.now().truncatedTo(ChronoUnit.MILLIS);
+    private static final Instant SMALLER_BIRTH_DATE = Instant.ofEpochMilli(-1L);
 
-    private static final ZonedDateTime DEFAULT_AGE = ZonedDateTime.ofInstant(Instant.ofEpochMilli(0L), ZoneOffset.UTC);
-    private static final ZonedDateTime UPDATED_AGE = ZonedDateTime.now(ZoneId.systemDefault()).withNano(0);
-    private static final ZonedDateTime SMALLER_AGE = ZonedDateTime.ofInstant(Instant.ofEpochMilli(-1L), ZoneOffset.UTC);
+    private static final Integer DEFAULT_AGE = 1;
+    private static final Integer UPDATED_AGE = 2;
+    private static final Integer SMALLER_AGE = 1 - 1;
 
     private static final String DEFAULT_ADRESS = "AAAAAAAAAA";
     private static final String UPDATED_ADRESS = "BBBBBBBBBB";
@@ -213,7 +209,7 @@ public class PersonResourceIT {
             .andExpect(jsonPath("$.[*].name").value(hasItem(DEFAULT_NAME.toString())))
             .andExpect(jsonPath("$.[*].surname").value(hasItem(DEFAULT_SURNAME.toString())))
             .andExpect(jsonPath("$.[*].birthDate").value(hasItem(DEFAULT_BIRTH_DATE.toString())))
-            .andExpect(jsonPath("$.[*].age").value(hasItem(sameInstant(DEFAULT_AGE))))
+            .andExpect(jsonPath("$.[*].age").value(hasItem(DEFAULT_AGE)))
             .andExpect(jsonPath("$.[*].adress").value(hasItem(DEFAULT_ADRESS.toString())))
             .andExpect(jsonPath("$.[*].nationality").value(hasItem(DEFAULT_NATIONALITY.toString())))
             .andExpect(jsonPath("$.[*].sex").value(hasItem(DEFAULT_SEX.toString())))
@@ -235,7 +231,7 @@ public class PersonResourceIT {
             .andExpect(jsonPath("$.name").value(DEFAULT_NAME.toString()))
             .andExpect(jsonPath("$.surname").value(DEFAULT_SURNAME.toString()))
             .andExpect(jsonPath("$.birthDate").value(DEFAULT_BIRTH_DATE.toString()))
-            .andExpect(jsonPath("$.age").value(sameInstant(DEFAULT_AGE)))
+            .andExpect(jsonPath("$.age").value(DEFAULT_AGE))
             .andExpect(jsonPath("$.adress").value(DEFAULT_ADRESS.toString()))
             .andExpect(jsonPath("$.nationality").value(DEFAULT_NATIONALITY.toString()))
             .andExpect(jsonPath("$.sex").value(DEFAULT_SEX.toString()))

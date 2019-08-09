@@ -5,6 +5,7 @@ import { ActivatedRoute } from '@angular/router';
 import { Observable } from 'rxjs';
 import { filter, map } from 'rxjs/operators';
 import * as moment from 'moment';
+import { DATE_TIME_FORMAT } from 'app/shared/constants/input.constants';
 import { JhiAlertService } from 'ng-jhipster';
 import { ICaseReport, CaseReport } from 'app/shared/model/case-report.model';
 import { CaseReportService } from './case-report.service';
@@ -19,7 +20,6 @@ export class CaseReportUpdateComponent implements OnInit {
   isSaving: boolean;
 
   people: IPerson[];
-  dateDp: any;
 
   editForm = this.fb.group({
     id: [],
@@ -56,7 +56,7 @@ export class CaseReportUpdateComponent implements OnInit {
   updateForm(caseReport: ICaseReport) {
     this.editForm.patchValue({
       id: caseReport.id,
-      date: caseReport.date,
+      date: caseReport.date != null ? caseReport.date.format(DATE_TIME_FORMAT) : null,
       mugshot: caseReport.mugshot,
       personDetails: caseReport.personDetails,
       eventDescription: caseReport.eventDescription,
@@ -83,7 +83,7 @@ export class CaseReportUpdateComponent implements OnInit {
     return {
       ...new CaseReport(),
       id: this.editForm.get(['id']).value,
-      date: this.editForm.get(['date']).value,
+      date: this.editForm.get(['date']).value != null ? moment(this.editForm.get(['date']).value, DATE_TIME_FORMAT) : undefined,
       mugshot: this.editForm.get(['mugshot']).value,
       personDetails: this.editForm.get(['personDetails']).value,
       eventDescription: this.editForm.get(['eventDescription']).value,

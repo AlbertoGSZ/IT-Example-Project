@@ -51,7 +51,7 @@ export class CaseReportService {
 
   protected convertDateFromClient(caseReport: ICaseReport): ICaseReport {
     const copy: ICaseReport = Object.assign({}, caseReport, {
-      date: caseReport.date != null && caseReport.date.isValid() ? caseReport.date.format(DATE_FORMAT) : null
+      date: caseReport.date != null && caseReport.date.isValid() ? caseReport.date.toJSON() : null
     });
     return copy;
   }

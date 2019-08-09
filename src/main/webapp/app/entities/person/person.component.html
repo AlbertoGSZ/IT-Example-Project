@@ -36,8 +36,8 @@
                 <td><a [routerLink]="['/person', person.id, 'view' ]">{{person.id}}</a></td>
                 <td>{{person.name}}</td>
                 <td>{{person.surname}}</td>
-                <td>{{person.birthDate | date:'mediumDate'}}</td>
-                <td>{{person.age | date:'medium'}}</td>
+                <td>{{person.birthDate | date:'medium'}}</td>
+                <td>{{person.age}}</td>
                 <td>{{person.adress}}</td>
                 <td jhiTranslate="{{'criminalBbddApp.Nationality.' + person.nationality}}">{{person.nationality}}</td>
                 <td jhiTranslate="{{'criminalBbddApp.Sex.' + person.sex}}">{{person.sex}}</td>

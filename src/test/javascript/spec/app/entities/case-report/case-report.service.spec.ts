@@ -5,7 +5,7 @@ import { HttpClient, HttpResponse } from '@angular/common/http';
 import { of } from 'rxjs';
 import { take, map } from 'rxjs/operators';
 import * as moment from 'moment';
-import { DATE_FORMAT } from 'app/shared/constants/input.constants';
+import { DATE_TIME_FORMAT } from 'app/shared/constants/input.constants';
 import { CaseReportService } from 'app/entities/case-report/case-report.service';
 import { ICaseReport, CaseReport } from 'app/shared/model/case-report.model';
 
@@ -34,7 +34,7 @@ describe('Service Tests', () => {
       it('should find an element', async () => {
         const returnedFromService = Object.assign(
           {
-            date: currentDate.format(DATE_FORMAT)
+            date: currentDate.format(DATE_TIME_FORMAT)
           },
           elemDefault
         );
@@ -52,7 +52,7 @@ describe('Service Tests', () => {
         const returnedFromService = Object.assign(
           {
             id: 0,
-            date: currentDate.format(DATE_FORMAT)
+            date: currentDate.format(DATE_TIME_FORMAT)
           },
           elemDefault
         );
@@ -74,7 +74,7 @@ describe('Service Tests', () => {
       it('should update a CaseReport', async () => {
         const returnedFromService = Object.assign(
           {
-            date: currentDate.format(DATE_FORMAT),
+            date: currentDate.format(DATE_TIME_FORMAT),
             mugshot: 'BBBBBB',
             personDetails: 'BBBBBB',
             eventDescription: 'BBBBBB',
@@ -101,7 +101,7 @@ describe('Service Tests', () => {
       it('should return a list of CaseReport', async () => {
         const returnedFromService = Object.assign(
           {
-            date: currentDate.format(DATE_FORMAT),
+            date: currentDate.format(DATE_TIME_FORMAT),
             mugshot: 'BBBBBB',
             personDetails: 'BBBBBB',
             eventDescription: 'BBBBBB',

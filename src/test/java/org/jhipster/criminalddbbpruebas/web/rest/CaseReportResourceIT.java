@@ -20,8 +20,8 @@ import org.springframework.transaction.annotation.Transactional;
 import org.springframework.validation.Validator;
 
 import javax.persistence.EntityManager;
-import java.time.LocalDate;
-import java.time.ZoneId;
+import java.time.Instant;
+import java.time.temporal.ChronoUnit;
 import java.util.List;
 
 import static org.jhipster.criminalddbbpruebas.web.rest.TestUtil.createFormattingConversionService;
@@ -36,9 +36,9 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 @SpringBootTest(classes = CriminalBbddApp.class)
 public class CaseReportResourceIT {
 
-    private static final LocalDate DEFAULT_DATE = LocalDate.ofEpochDay(0L);
-    private static final LocalDate UPDATED_DATE = LocalDate.now(ZoneId.systemDefault());
-    private static final LocalDate SMALLER_DATE = LocalDate.ofEpochDay(-1L);
+    private static final Instant DEFAULT_DATE = Instant.ofEpochMilli(0L);
+    private static final Instant UPDATED_DATE = Instant.now().truncatedTo(ChronoUnit.MILLIS);
+    private static final Instant SMALLER_DATE = Instant.ofEpochMilli(-1L);
 
     private static final String DEFAULT_MUGSHOT = "AAAAAAAAAA";
     private static final String UPDATED_MUGSHOT = "BBBBBBBBBB";

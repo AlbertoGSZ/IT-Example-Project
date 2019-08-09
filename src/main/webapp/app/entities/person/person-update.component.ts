@@ -18,7 +18,6 @@ export class PersonUpdateComponent implements OnInit {
   isSaving: boolean;
 
   people: IPerson[];
-  birthDateDp: any;
 
   editForm = this.fb.group({
     id: [],
@@ -60,8 +59,8 @@ export class PersonUpdateComponent implements OnInit {
       id: person.id,
       name: person.name,
       surname: person.surname,
-      birthDate: person.birthDate,
-      age: person.age != null ? person.age.format(DATE_TIME_FORMAT) : null,
+      birthDate: person.birthDate != null ? person.birthDate.format(DATE_TIME_FORMAT) : null,
+      age: person.age,
       adress: person.adress,
       nationality: person.nationality,
       sex: person.sex,
@@ -91,8 +90,9 @@ export class PersonUpdateComponent implements OnInit {
       id: this.editForm.get(['id']).value,
       name: this.editForm.get(['name']).value,
       surname: this.editForm.get(['surname']).value,
-      birthDate: this.editForm.get(['birthDate']).value,
-      age: this.editForm.get(['age']).value != null ? moment(this.editForm.get(['age']).value, DATE_TIME_FORMAT) : undefined,
+      birthDate:
+        this.editForm.get(['birthDate']).value != null ? moment(this.editForm.get(['birthDate']).value, DATE_TIME_FORMAT) : undefined,
+      age: this.editForm.get(['age']).value,
       adress: this.editForm.get(['adress']).value,
       nationality: this.editForm.get(['nationality']).value,
       sex: this.editForm.get(['sex']).value,
