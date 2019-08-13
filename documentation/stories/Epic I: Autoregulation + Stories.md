@@ -1,10 +1,10 @@
 ### **EPIC 1**
 
-### **AS A**| User who modifies values in the system records.
+### **AS A** | User who modifies values in the system records.
  
 ### **I WANT** | That the changes in the records be self-regulated.
 
-### **SO THAT** | Not having to do it manually every time.
+### **SO THAT** | i don't have to do it manually every time.
 
 --------------------------------------------------------------------------------
 --------------------------------------------------------------------------------
@@ -13,6 +13,6 @@
 
 ### **AS A** | User who modifies values in the system records.
  
-### **I WANT** | I want to change the information of a criminal, also reflected in those affected.
+### **I WANT** | I want to see the changes i make in a criminal reflected in those others related to the first one.
 
-### **SO THAT** | To avoid having to make changes in all of them one by one.
+### **SO THAT** | I avoid having to make changes in all of them one by one.
