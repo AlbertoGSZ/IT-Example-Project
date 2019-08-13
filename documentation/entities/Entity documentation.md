@@ -15,16 +15,16 @@ In the same way, the ¨Person¨ entity will have a list of ¨CaseReport¨ object
 
 - Name: String.
 - Surname: String.
-- BirthDate: Object Date (). Requirement date before the present day (have to consider the limits).
+- BirthDate: Instant. Requirement date before the present day (have to consider the limits).
 - Adress: String.  
 - Nationality: ENUM.
 - Sex: ENUM.
 - ID: Integer. Non-repeatable random generation.
 - Alias: String.
-- FelonyRecordsDigital: ¨CaseReport¨ objects list.
+- FelonyRecordsDigital: CaseReport list.
 - Rank: Integer.
-- Chief: "Person" object.
-- Subordinates: "Person" objects list.
+- Chief: Person.
+- Subordinates: Person list.
 
 Because of logic reasons, I only wanted to designate the presence of a crime as necessary to create a Person object since in many cases not few data will be missing, but we will only have a crime that has drawn attention and the need to create a criminal record, without achieving to know even the sex of the criminal.
 
@@ -34,8 +34,8 @@ For the same reason I didn´t want to get deeper into certain aspects such as th
 ### **Entity info: CaseReport**
 
 - ID: Integer. Non-repeatable random generation.
-- Date: Date Object. Final date, creation date of the CaseReport.
-- Mugshot: Image object.
+- Date: Instant. (Creation of the CaseReport object)
+- Mugshot: String.
 - PersonDetails: String. Not empty.  
 - EventDescription: String. Not empty.
 - EvidencePhotos: String list.
