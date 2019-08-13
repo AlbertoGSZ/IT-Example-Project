@@ -1,62 +1,68 @@
-﻿** EPIC 2 **
+### **EPIC 2**
 
-** I LIKE ** | User who uses the system.
+### **AS A**| User who uses the system.
  
-** I WANT ** | Be able to see all the information registered under different conditions.
+### **I WANT** | Be able to see all the information registered under different conditions.
 
-** FOR ** | To be able to get and work with that delimited information to my liking.
+### **SO THAT** | To be able to get and work with that delimited information to my liking.
 
--------------------------------------------------- ------------------------------
+   --------------------------------------------------------------------------------
+   --------------------------------------------------------------------------------
 
-** STORY 1 **
+### **STORY 1**
 
-** I LIKE ** | Analyst agent that uses the system.
+### **AS A**| Analyst agent that uses the system.
  
-** I WANT ** | See the list of those considered VIPs.
+### **I WANT** | See the list of those considered VIPs.
 
-** FOR ** | Be able to track them.
--------------------------------------------------- ------------------------------
+### **SO THAT** | Be able to track them.
 
-** STORY 2 **
+   --------------------------------------------------------------------------------
 
-** I LIKE ** | Analyst agent that uses the system.
+### **STORY 2**
+
+### **AS A**| Analyst agent that uses the system.
  
-** I WANT ** | Be able to find people in the database matching the information entered.
+### **I WANT** | Be able to find people in the database matching the information entered.
 
-** FOR ** | Know if someone matches the description provided.
--------------------------------------------------- ------------------------------
+### **SO THAT** | Know if someone matches the description provided.
 
-** STORY 3 **
+   --------------------------------------------------------------------------------
 
-** I LIKE ** | Analyst agent that uses the system.
+### **STORY 3**
+
+### **AS A**| Analyst agent that uses the system.
  
-** I WANT ** | View all the people in the system.
+### **I WANT** | View all the people in the system.
 
-** FOR ** | Knowing how big the DB is in relation to the people you host and how it relates.
--------------------------------------------------- ------------------------------
+### **SO THAT** | Knowing how big the DB is in relation to the people you host and how it relates.
 
-** STORY 4 **
+   --------------------------------------------------------------------------------
 
-** I LIKE ** | Analyst agent that uses the system.
+### **STORY 4**
+
+### **AS A**| Analyst agent that uses the system.
  
-** I WANT ** | Visualize the background of a specific person.
+### **I WANT** | Visualize the background of a specific person.
 
-** FOR ** | Be able to read the information it contains
--------------------------------------------------- ------------------------------
+### **SO THAT** | Be able to read the information it contains.
 
-** STORY 5 **
+   --------------------------------------------------------------------------------
 
-** I LIKE ** | Analyst agent that uses the system.
+### **STORY 5**
+
+### **AS A**| Analyst agent that uses the system.
  
-** I WANT ** | Visualize all the background of a person.
+### **I WANT** | Visualize all the background of a person.
 
-** FOR ** | Be able to consider their danger or assess their participation in other events.
--------------------------------------------------- ------------------------------
+### **SO THAT** | Be able to consider their danger or assess their participation in other events.
 
-** STORY 6 **
+   --------------------------------------------------------------------------------
+   
+### **STORY 6**
 
-** I LIKE ** | Analyst agent that uses the system.
+### **AS A**| Analyst agent that uses the system.
  
-** I WANT ** | View information regarding a person.
+### **I WANT** | View information regarding a person.
 
-** FOR ** | To be able to observe and value your data.
+### **SO THAT** | To be able to observe and value your data.
