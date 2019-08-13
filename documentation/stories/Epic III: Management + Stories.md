@@ -1,6 +1,6 @@
 ### **EPIC 3**
 
-### **AS A**| User who manages the movements of system records.
+### **AS A** | User who manages the movements of system records.
  
 ### **I WANT** | To be able to register, cancel and modify data in general.
 
@@ -11,7 +11,7 @@
 
 ### **STORY 1**
 
-### **AS A**| User who manages the movements of system records.
+### **AS A** | User who manages the movements of system records.
  
 ### **I WANT** | To be able to register a person.
 
@@ -20,7 +20,7 @@
 
 ### **STORY 2**
 
-### **AS A**| User who manages the movements of system records.
+### **AS A** | User who manages the movements of system records.
  
 ### **I WANT** | To edit a person from the DDBB.
 
@@ -29,7 +29,7 @@
 
 ### **STORY 3**
 
-### **AS A**| User who manages the movements of system records.
+### **AS A** | User who manages the movements of system records.
  
 ### **I WANT** | To imprison a person.
 
@@ -38,7 +38,7 @@
 
 ### **STORY 4**
 
-### **AS A**| User who manages the movements of system records.
+### **AS A** | User who manages the movements of system records.
  
 ### **I WANT** | To set free a person.
 
@@ -47,7 +47,7 @@
 
 ### **STORY 5**
 
-### **AS A**| User who manages the movements of system records.
+### **AS A** | User who manages the movements of system records.
  
 ### **I WANT** | To promote a person.
 
@@ -56,7 +56,7 @@
 
 ### **STORY 6**
 
-### **AS A**| User who manages the movements of system records.
+### **AS A** | User who manages the movements of system records.
  
 ### **I WANT** | To jail to degrade a person.
 
@@ -65,7 +65,7 @@
 
 ### **STORY 7**
 
-### **AS A**| User who manages the movements of system records.
+### **AS A** | User who manages the movements of system records.
  
 ### **I WANT** | To create a background report.
 
@@ -74,7 +74,7 @@
 
 ### **STORY 8**
 
-### **AS A**| User who manages the movements of system records.
+### **AS A** | User who manages the movements of system records.
  
 ### **I WANT** | To edit a background report.
 
@@ -83,7 +83,7 @@
 
 ### **STORY 9**
 
-### **AS A**| User who manages the movements of system records.
+### **AS A** | User who manages the movements of system records.
  
 ### **I WANT** | To delete a background report.
 
