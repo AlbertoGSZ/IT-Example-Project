@@ -1,17 +1,17 @@
-﻿**ÉPICA 1** 
+﻿** EPIC 1 **
 
-**YO COMO** | Usuario que modifica valores en los registros del sistema.  
+** I LIKE ** | User who modifies values ​​in the system records.
  
-**QUIERO** | Que se autoregulen los cambios en los registros.  
+** I WANT ** | That the changes in the records be self-regulated.
 
-**PARA** | No tener que hacerlo manualmente cada vez.  
+** FOR ** | Not having to do it manually every time.
 
---------------------------------------------------------------------------------
+-------------------------------------------------- ------------------------------
 
-**STORY 1**
+** STORY 1 **
 
-**YO COMO** | Usuario que modifica valores en los registros del sistema.  
+** I LIKE ** | User who modifies values ​​in the system records.
  
-**QUIERO** | Quiero que al modificar la información de un criminal, también se refleje en los afectados.  
+** I WANT ** | I want to change the information of a criminal, also reflected in those affected.
 
-**PARA** | Para no tener que hacer los cambios en todos ellos de uno en uno.
+** FOR ** | To avoid having to make changes in all of them one by one.
