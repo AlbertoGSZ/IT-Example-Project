@@ -7,6 +7,7 @@
 ### **SO THAT** | Being able to increase and correct the data of the database contributing to its expected use.
 
    --------------------------------------------------------------------------------
+   --------------------------------------------------------------------------------
 
 ### **STORY 1**
 
