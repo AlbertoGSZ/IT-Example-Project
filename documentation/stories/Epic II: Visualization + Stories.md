@@ -1,6 +1,6 @@
 ### **EPIC 2**
 
-### **AS A**| User who uses the system.
+### **AS A** | User who uses the system.
  
 ### **I WANT** | Be able to see all the information registered under different conditions.
 
@@ -11,7 +11,7 @@
 
 ### **STORY 1**
 
-### **AS AN**| Analyst agent that uses the system.
+### **AS AN** | Analyst agent that uses the system.
  
 ### **I WANT** | To see the list of those considered VIPs.
 
@@ -21,7 +21,7 @@
 
 ### **STORY 2**
 
-### **AS AN**| Analyst agent that uses the system.
+### **AS AN** | Analyst agent that uses the system.
  
 ### **I WANT** | To be able to find people in the DDBB matching the information entered.
 
@@ -31,7 +31,7 @@
 
 ### **STORY 3**
 
-### **AS AN**| Analyst agent that uses the system.
+### **AS AN** | Analyst agent that uses the system.
  
 ### **I WANT** | To view all the people in the system.
 
@@ -41,7 +41,7 @@
 
 ### **STORY 4**
 
-### **AS AN**| Analyst agent that uses the system.
+### **AS AN** | Analyst agent that uses the system.
  
 ### **I WANT** | To visualize the background of a specific person.
 
@@ -51,7 +51,7 @@
 
 ### **STORY 5**
 
-### **AS AN**| Analyst agent that uses the system.
+### **AS AN** | Analyst agent that uses the system.
  
 ### **I WANT** | To visualize all the background of a person.
 
@@ -61,7 +61,7 @@
    
 ### **STORY 6**
 
-### **AS AN**| Analyst agent that uses the system.
+### **AS AN** | Analyst agent that uses the system.
  
 ### **I WANT** | To view information regarding a person.
 
