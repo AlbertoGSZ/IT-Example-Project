@@ -40,3 +40,9 @@ For the same reason I didn´t want to get deeper into certain aspects such as th
 - EventDescription: String. Not empty.
 - EvidencePhotos: String list.
 - FelonyRecordPDF: String list.
+
+
+### **Entity info: ResourceURL**
+
+- ID: Integer. Non-repeatable random generation.
+- URL: String. Required.
