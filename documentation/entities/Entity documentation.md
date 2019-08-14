@@ -9,6 +9,7 @@ The entity Person has reflexive relationship because it obeys a structure
 of a tree similar to the genealogical one, in which one figure leaves several in branched structure.
 Each person can have a boss or not as well as a list of people under his command (if any).
 In the same way, the ¨Person¨ entity will have a list of ¨CaseReport¨ objects that will be the criminal history.
+
 "CaseReport" entity has a many to many relationship with "ResourceURL" (which contains a URL to a resource in another site) as a "CaseReport" can have many URLs related and those URLs can be related to many "CaseReports".
 
 
