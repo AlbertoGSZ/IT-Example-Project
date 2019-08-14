@@ -11,6 +11,8 @@ import { ICaseReport, CaseReport } from 'app/shared/model/case-report.model';
 import { CaseReportService } from './case-report.service';
 import { IPerson } from 'app/shared/model/person.model';
 import { PersonService } from 'app/entities/person';
+import { IResourceURL } from 'app/shared/model/resource-url.model';
+import { ResourceURLService } from 'app/entities/resource-url';
 
 @Component({
   selector: 'jhi-case-report-update',
@@ -21,20 +23,22 @@ export class CaseReportUpdateComponent implements OnInit {
 
   people: IPerson[];
 
+  mugshotreports: IResourceURL[];
+
   editForm = this.fb.group({
     id: [],
     date: [],
-    mugshot: [],
     personDetails: [],
     eventDescription: [],
-    evidencePhotos: [],
-    person: []
+    person: [],
+    mugshotReport: []
   });
 
   constructor(
     protected jhiAlertService: JhiAlertService,
     protected caseReportService: CaseReportService,
     protected personService: PersonService,
+    protected resourceURLService: ResourceURLService,
     protected activatedRoute: ActivatedRoute,
     private fb: FormBuilder
   ) {}
@@ -51,17 +55,41 @@ export class CaseReportUpdateComponent implements OnInit {
         map((response: HttpResponse<IPerson[]>) => response.body)
       )
       .subscribe((res: IPerson[]) => (this.people = res), (res: HttpErrorResponse) => this.onError(res.message));
+    this.resourceURLService
+      .query({ filter: 'casereport-is-null' })
+      .pipe(
+        filter((mayBeOk: HttpResponse<IResourceURL[]>) => mayBeOk.ok),
+        map((response: HttpResponse<IResourceURL[]>) => response.body)
+      )
+      .subscribe(
+        (res: IResourceURL[]) => {
+          if (!this.editForm.get('mugshotReport').value || !this.editForm.get('mugshotReport').value.id) {
+            this.mugshotreports = res;
+          } else {
+            this.resourceURLService
+              .find(this.editForm.get('mugshotReport').value.id)
+              .pipe(
+                filter((subResMayBeOk: HttpResponse<IResourceURL>) => subResMayBeOk.ok),
+                map((subResponse: HttpResponse<IResourceURL>) => subResponse.body)
+              )
+              .subscribe(
+                (subRes: IResourceURL) => (this.mugshotreports = [subRes].concat(res)),
+                (subRes: HttpErrorResponse) => this.onError(subRes.message)
+              );
+          }
+        },
+        (res: HttpErrorResponse) => this.onError(res.message)
+      );
   }
 
   updateForm(caseReport: ICaseReport) {
     this.editForm.patchValue({
       id: caseReport.id,
       date: caseReport.date != null ? caseReport.date.format(DATE_TIME_FORMAT) : null,
-      mugshot: caseReport.mugshot,
       personDetails: caseReport.personDetails,
       eventDescription: caseReport.eventDescription,
-      evidencePhotos: caseReport.evidencePhotos,
-      person: caseReport.person
+      person: caseReport.person,
+      mugshotReport: caseReport.mugshotReport
     });
   }
 
@@ -84,11 +112,10 @@ export class CaseReportUpdateComponent implements OnInit {
       ...new CaseReport(),
       id: this.editForm.get(['id']).value,
       date: this.editForm.get(['date']).value != null ? moment(this.editForm.get(['date']).value, DATE_TIME_FORMAT) : undefined,
-      mugshot: this.editForm.get(['mugshot']).value,
       personDetails: this.editForm.get(['personDetails']).value,
       eventDescription: this.editForm.get(['eventDescription']).value,
-      evidencePhotos: this.editForm.get(['evidencePhotos']).value,
-      person: this.editForm.get(['person']).value
+      person: this.editForm.get(['person']).value,
+      mugshotReport: this.editForm.get(['mugshotReport']).value
     };
   }
 
@@ -109,6 +136,10 @@ export class CaseReportUpdateComponent implements OnInit {
   }
 
   trackPersonById(index: number, item: IPerson) {
+    return item.id;
+  }
+
+  trackResourceURLById(index: number, item: IResourceURL) {
     return item.id;
   }
 }

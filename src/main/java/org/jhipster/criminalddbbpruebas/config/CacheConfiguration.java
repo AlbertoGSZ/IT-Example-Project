@@ -47,6 +47,10 @@ public class CacheConfiguration {
             createCache(cm, org.jhipster.criminalddbbpruebas.domain.Person.class.getName() + ".subordinates");
             createCache(cm, org.jhipster.criminalddbbpruebas.domain.Person.class.getName() + ".felonyRecordsDigitals");
             createCache(cm, org.jhipster.criminalddbbpruebas.domain.CaseReport.class.getName());
+            createCache(cm, org.jhipster.criminalddbbpruebas.domain.CaseReport.class.getName() + ".evidencePhotos");
+            createCache(cm, org.jhipster.criminalddbbpruebas.domain.ResourceURL.class.getName());
+            createCache(cm, org.jhipster.criminalddbbpruebas.domain.ResourceURL.class.getName() + ".caseReports");
+            createCache(cm, org.jhipster.criminalddbbpruebas.domain.ResourceURL.class.getName() + ".relatedCaseReports");
             // jhipster-needle-ehcache-add-entry
         };
     }

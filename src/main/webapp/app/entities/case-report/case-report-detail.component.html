@@ -9,10 +9,6 @@
                 <dd>
                     <span>{{caseReport.date}}</span>
                 </dd>
-                <dt><span jhiTranslate="criminalBbddApp.caseReport.mugshot">Mugshot</span></dt>
-                <dd>
-                    <span>{{caseReport.mugshot}}</span>
-                </dd>
                 <dt><span jhiTranslate="criminalBbddApp.caseReport.personDetails">Person Details</span></dt>
                 <dd>
                     <span>{{caseReport.personDetails}}</span>
@@ -21,14 +17,16 @@
                 <dd>
                     <span>{{caseReport.eventDescription}}</span>
                 </dd>
-                <dt><span jhiTranslate="criminalBbddApp.caseReport.evidencePhotos">Evidence Photos</span></dt>
-                <dd>
-                    <span>{{caseReport.evidencePhotos}}</span>
-                </dd>
                 <dt><span jhiTranslate="criminalBbddApp.caseReport.person">Person</span></dt>
                 <dd>
                     <div *ngIf="caseReport.person">
                         <a [routerLink]="['/person', caseReport.person?.id, 'view']">{{caseReport.person?.id}}</a>
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="criminalBbddApp.caseReport.mugshotReport">Mugshot Report</span></dt>
+                <dd>
+                    <div *ngIf="caseReport.mugshotReport">
+                        <a [routerLink]="['/resource-url', caseReport.mugshotReport?.id, 'view']">{{caseReport.mugshotReport?.id}}</a>
                     </div>
                 </dd>
             </dl>

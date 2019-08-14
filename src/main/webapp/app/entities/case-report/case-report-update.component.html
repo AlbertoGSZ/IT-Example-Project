@@ -16,11 +16,6 @@
                     </div>
                 </div>
                 <div class="form-group">
-                    <label class="form-control-label" jhiTranslate="criminalBbddApp.caseReport.mugshot" for="field_mugshot">Mugshot</label>
-                    <input type="text" class="form-control" name="mugshot" id="field_mugshot"
-                           formControlName="mugshot"/>
-                </div>
-                <div class="form-group">
                     <label class="form-control-label" jhiTranslate="criminalBbddApp.caseReport.personDetails" for="field_personDetails">Person Details</label>
                     <input type="text" class="form-control" name="personDetails" id="field_personDetails"
                            formControlName="personDetails"/>
@@ -30,17 +25,19 @@
                     <input type="text" class="form-control" name="eventDescription" id="field_eventDescription"
                            formControlName="eventDescription"/>
                 </div>
-                <div class="form-group">
-                    <label class="form-control-label" jhiTranslate="criminalBbddApp.caseReport.evidencePhotos" for="field_evidencePhotos">Evidence Photos</label>
-                    <input type="text" class="form-control" name="evidencePhotos" id="field_evidencePhotos"
-                           formControlName="evidencePhotos"/>
-                </div>
 
                 <div class="form-group">
                     <label class="form-control-label" jhiTranslate="criminalBbddApp.caseReport.person" for="field_person">Person</label>
                     <select class="form-control" id="field_person" name="person" formControlName="person">
                         <option [ngValue]="null"></option>
                         <option [ngValue]="personOption.id === editForm.get('person').value?.id ? editForm.get('person').value : personOption" *ngFor="let personOption of people; trackBy: trackPersonById">{{personOption.id}}</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="criminalBbddApp.caseReport.mugshotReport" for="field_mugshotReport">Mugshot Report</label>
+                    <select class="form-control" id="field_mugshotReport" name="mugshotReport" formControlName="mugshotReport">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="resourceURLOption.id === editForm.get('mugshotReport').value?.id ? editForm.get('mugshotReport').value : resourceURLOption" *ngFor="let resourceURLOption of mugshotreports; trackBy: trackResourceURLById">{{resourceURLOption.id}}</option>
                     </select>
                 </div>
             </div>

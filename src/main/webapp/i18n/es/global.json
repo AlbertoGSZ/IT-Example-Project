@@ -9,6 +9,7 @@
         "main": "Entidades",
         "person": "Person",
         "caseReport": "Case Report",
+        "resourceUrl": "Resource URL",
         "jhipster-needle-menu-add-entry": "JHipster will add additional entities here (do not translate!)"
       },
       "account": {

@@ -1,0 +1,26 @@
+{
+    "name": "ResourceURL",
+    "fields": [
+        {
+            "fieldName": "url",
+            "fieldType": "String"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipName": "caseReport",
+            "otherEntityName": "caseReport",
+            "relationshipType": "many-to-one",
+            "otherEntityField": "id"
+        }
+    ],
+    "changelogDate": "20190814011852",
+    "entityTableName": "resource_url",
+    "dto": "no",
+    "pagination": "no",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*"
+}

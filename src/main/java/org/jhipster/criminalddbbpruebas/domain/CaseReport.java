@@ -7,6 +7,8 @@ import javax.persistence.*;
 
 import java.io.Serializable;
 import java.time.Instant;
+import java.util.HashSet;
+import java.util.Set;
 
 /**
  * A CaseReport.
@@ -26,21 +28,23 @@ public class CaseReport implements Serializable {
     @Column(name = "date")
     private Instant date;
 
-    @Column(name = "mugshot")
-    private String mugshot;
-
     @Column(name = "person_details")
     private String personDetails;
 
     @Column(name = "event_description")
     private String eventDescription;
 
-    @Column(name = "evidence_photos")
-    private String evidencePhotos;
-
     @ManyToOne
     @JsonIgnoreProperties("caseReports")
     private Person person;
+
+    @OneToOne
+    @JoinColumn(unique = true)
+    private ResourceURL mugshotReport;
+
+    @OneToMany(mappedBy = "caseReport")
+    @Cache(usage = CacheConcurrencyStrategy.NONSTRICT_READ_WRITE)
+    private Set<ResourceURL> evidencePhotos = new HashSet<>();
 
     // jhipster-needle-entity-add-field - JHipster will add fields here, do not remove
     public Long getId() {
@@ -62,19 +66,6 @@ public class CaseReport implements Serializable {
 
     public void setDate(Instant date) {
         this.date = date;
-    }
-
-    public String getMugshot() {
-        return mugshot;
-    }
-
-    public CaseReport mugshot(String mugshot) {
-        this.mugshot = mugshot;
-        return this;
-    }
-
-    public void setMugshot(String mugshot) {
-        this.mugshot = mugshot;
     }
 
     public String getPersonDetails() {
@@ -103,19 +94,6 @@ public class CaseReport implements Serializable {
         this.eventDescription = eventDescription;
     }
 
-    public String getEvidencePhotos() {
-        return evidencePhotos;
-    }
-
-    public CaseReport evidencePhotos(String evidencePhotos) {
-        this.evidencePhotos = evidencePhotos;
-        return this;
-    }
-
-    public void setEvidencePhotos(String evidencePhotos) {
-        this.evidencePhotos = evidencePhotos;
-    }
-
     public Person getPerson() {
         return person;
     }
@@ -127,6 +105,44 @@ public class CaseReport implements Serializable {
 
     public void setPerson(Person person) {
         this.person = person;
+    }
+
+    public ResourceURL getMugshotReport() {
+        return mugshotReport;
+    }
+
+    public CaseReport mugshotReport(ResourceURL resourceURL) {
+        this.mugshotReport = resourceURL;
+        return this;
+    }
+
+    public void setMugshotReport(ResourceURL resourceURL) {
+        this.mugshotReport = resourceURL;
+    }
+
+    public Set<ResourceURL> getEvidencePhotos() {
+        return evidencePhotos;
+    }
+
+    public CaseReport evidencePhotos(Set<ResourceURL> resourceURLS) {
+        this.evidencePhotos = resourceURLS;
+        return this;
+    }
+
+    public CaseReport addEvidencePhotos(ResourceURL resourceURL) {
+        this.evidencePhotos.add(resourceURL);
+        resourceURL.setCaseReport(this);
+        return this;
+    }
+
+    public CaseReport removeEvidencePhotos(ResourceURL resourceURL) {
+        this.evidencePhotos.remove(resourceURL);
+        resourceURL.setCaseReport(null);
+        return this;
+    }
+
+    public void setEvidencePhotos(Set<ResourceURL> resourceURLS) {
+        this.evidencePhotos = resourceURLS;
     }
     // jhipster-needle-entity-add-getters-setters - JHipster will add getters and setters here, do not remove
 
@@ -151,10 +167,8 @@ public class CaseReport implements Serializable {
         return "CaseReport{" +
             "id=" + getId() +
             ", date='" + getDate() + "'" +
-            ", mugshot='" + getMugshot() + "'" +
             ", personDetails='" + getPersonDetails() + "'" +
             ", eventDescription='" + getEventDescription() + "'" +
-            ", evidencePhotos='" + getEvidencePhotos() + "'" +
             "}";
     }
 }

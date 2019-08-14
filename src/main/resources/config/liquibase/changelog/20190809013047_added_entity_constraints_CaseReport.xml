@@ -14,5 +14,11 @@
                                  referencedColumnNames="id"
                                  referencedTableName="person"/>
 
+        <addForeignKeyConstraint baseColumnNames="mugshot_report_id"
+                                 baseTableName="case_report"
+                                 constraintName="fk_case_report_mugshot_report_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="resource_url"/>
+
     </changeSet>
 </databaseChangeLog>

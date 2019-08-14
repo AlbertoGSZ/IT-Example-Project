@@ -1,0 +1,23 @@
+{
+  "criminalBbddApp": {
+    "resourceURL": {
+      "home": {
+        "title": "Resource URLS",
+        "createLabel": "Crear nuevo Resource URL",
+        "createOrEditLabel": "Crear o editar Resource URL",
+        "notFound": "No Resource URLS found"
+      },
+      "created": "Un nuevo Resource URL ha sido creado con el identificador {{ param }}",
+      "updated": "Un Resource URL ha sido actualizado con el identificador {{ param }}",
+      "deleted": "Un Resource URL ha sido eliminado con el identificador {{ param }}",
+      "delete": {
+        "question": "¿Seguro que quiere eliminar Resource URL {{ id }}?"
+      },
+      "detail": {
+        "title": "Resource URL"
+      },
+      "url": "Url",
+      "caseReport": "Case Report"
+    }
+  }
+}

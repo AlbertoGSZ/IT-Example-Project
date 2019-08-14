@@ -17,11 +17,11 @@
         "title": "Case Report"
       },
       "date": "Date",
-      "mugshot": "Mugshot",
       "personDetails": "Person Details",
       "eventDescription": "Event Description",
-      "evidencePhotos": "Evidence Photos",
-      "person": "Person"
+      "person": "Person",
+      "mugshotReport": "Mugshot Report",
+      "evidencePhotos": "Evidence Photos"
     }
   }
 }

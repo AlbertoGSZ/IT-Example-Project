@@ -6,19 +6,11 @@
             "fieldType": "Instant"
         },
         {
-            "fieldName": "mugshot",
-            "fieldType": "String"
-        },
-        {
             "fieldName": "personDetails",
             "fieldType": "String"
         },
         {
             "fieldName": "eventDescription",
-            "fieldType": "String"
-        },
-        {
-            "fieldName": "evidencePhotos",
             "fieldType": "String"
         }
     ],
@@ -28,6 +20,20 @@
             "otherEntityName": "person",
             "relationshipType": "many-to-one",
             "otherEntityField": "id"
+        },
+        {
+            "relationshipType": "one-to-one",
+            "otherEntityName": "resourceURL",
+            "otherEntityRelationshipName": "caseReport",
+            "relationshipName": "mugshotReport",
+            "otherEntityField": "id",
+            "ownerSide": true
+        },
+        {
+            "relationshipType": "one-to-many",
+            "otherEntityName": "resourceURL",
+            "otherEntityRelationshipName": "caseReport",
+            "relationshipName": "evidencePhotos"
         }
     ],
     "changelogDate": "20190809013047",

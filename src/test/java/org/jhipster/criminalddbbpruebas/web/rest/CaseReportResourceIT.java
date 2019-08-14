@@ -40,17 +40,11 @@ public class CaseReportResourceIT {
     private static final Instant UPDATED_DATE = Instant.now().truncatedTo(ChronoUnit.MILLIS);
     private static final Instant SMALLER_DATE = Instant.ofEpochMilli(-1L);
 
-    private static final String DEFAULT_MUGSHOT = "AAAAAAAAAA";
-    private static final String UPDATED_MUGSHOT = "BBBBBBBBBB";
-
     private static final String DEFAULT_PERSON_DETAILS = "AAAAAAAAAA";
     private static final String UPDATED_PERSON_DETAILS = "BBBBBBBBBB";
 
     private static final String DEFAULT_EVENT_DESCRIPTION = "AAAAAAAAAA";
     private static final String UPDATED_EVENT_DESCRIPTION = "BBBBBBBBBB";
-
-    private static final String DEFAULT_EVIDENCE_PHOTOS = "AAAAAAAAAA";
-    private static final String UPDATED_EVIDENCE_PHOTOS = "BBBBBBBBBB";
 
     @Autowired
     private CaseReportRepository caseReportRepository;
@@ -98,10 +92,8 @@ public class CaseReportResourceIT {
     public static CaseReport createEntity(EntityManager em) {
         CaseReport caseReport = new CaseReport()
             .date(DEFAULT_DATE)
-            .mugshot(DEFAULT_MUGSHOT)
             .personDetails(DEFAULT_PERSON_DETAILS)
-            .eventDescription(DEFAULT_EVENT_DESCRIPTION)
-            .evidencePhotos(DEFAULT_EVIDENCE_PHOTOS);
+            .eventDescription(DEFAULT_EVENT_DESCRIPTION);
         return caseReport;
     }
     /**
@@ -113,10 +105,8 @@ public class CaseReportResourceIT {
     public static CaseReport createUpdatedEntity(EntityManager em) {
         CaseReport caseReport = new CaseReport()
             .date(UPDATED_DATE)
-            .mugshot(UPDATED_MUGSHOT)
             .personDetails(UPDATED_PERSON_DETAILS)
-            .eventDescription(UPDATED_EVENT_DESCRIPTION)
-            .evidencePhotos(UPDATED_EVIDENCE_PHOTOS);
+            .eventDescription(UPDATED_EVENT_DESCRIPTION);
         return caseReport;
     }
 
@@ -141,10 +131,8 @@ public class CaseReportResourceIT {
         assertThat(caseReportList).hasSize(databaseSizeBeforeCreate + 1);
         CaseReport testCaseReport = caseReportList.get(caseReportList.size() - 1);
         assertThat(testCaseReport.getDate()).isEqualTo(DEFAULT_DATE);
-        assertThat(testCaseReport.getMugshot()).isEqualTo(DEFAULT_MUGSHOT);
         assertThat(testCaseReport.getPersonDetails()).isEqualTo(DEFAULT_PERSON_DETAILS);
         assertThat(testCaseReport.getEventDescription()).isEqualTo(DEFAULT_EVENT_DESCRIPTION);
-        assertThat(testCaseReport.getEvidencePhotos()).isEqualTo(DEFAULT_EVIDENCE_PHOTOS);
     }
 
     @Test
@@ -179,10 +167,8 @@ public class CaseReportResourceIT {
             .andExpect(content().contentType(MediaType.APPLICATION_JSON_UTF8_VALUE))
             .andExpect(jsonPath("$.[*].id").value(hasItem(caseReport.getId().intValue())))
             .andExpect(jsonPath("$.[*].date").value(hasItem(DEFAULT_DATE.toString())))
-            .andExpect(jsonPath("$.[*].mugshot").value(hasItem(DEFAULT_MUGSHOT.toString())))
             .andExpect(jsonPath("$.[*].personDetails").value(hasItem(DEFAULT_PERSON_DETAILS.toString())))
-            .andExpect(jsonPath("$.[*].eventDescription").value(hasItem(DEFAULT_EVENT_DESCRIPTION.toString())))
-            .andExpect(jsonPath("$.[*].evidencePhotos").value(hasItem(DEFAULT_EVIDENCE_PHOTOS.toString())));
+            .andExpect(jsonPath("$.[*].eventDescription").value(hasItem(DEFAULT_EVENT_DESCRIPTION.toString())));
     }
     
     @Test
@@ -197,10 +183,8 @@ public class CaseReportResourceIT {
             .andExpect(content().contentType(MediaType.APPLICATION_JSON_UTF8_VALUE))
             .andExpect(jsonPath("$.id").value(caseReport.getId().intValue()))
             .andExpect(jsonPath("$.date").value(DEFAULT_DATE.toString()))
-            .andExpect(jsonPath("$.mugshot").value(DEFAULT_MUGSHOT.toString()))
             .andExpect(jsonPath("$.personDetails").value(DEFAULT_PERSON_DETAILS.toString()))
-            .andExpect(jsonPath("$.eventDescription").value(DEFAULT_EVENT_DESCRIPTION.toString()))
-            .andExpect(jsonPath("$.evidencePhotos").value(DEFAULT_EVIDENCE_PHOTOS.toString()));
+            .andExpect(jsonPath("$.eventDescription").value(DEFAULT_EVENT_DESCRIPTION.toString()));
     }
 
     @Test
@@ -225,10 +209,8 @@ public class CaseReportResourceIT {
         em.detach(updatedCaseReport);
         updatedCaseReport
             .date(UPDATED_DATE)
-            .mugshot(UPDATED_MUGSHOT)
             .personDetails(UPDATED_PERSON_DETAILS)
-            .eventDescription(UPDATED_EVENT_DESCRIPTION)
-            .evidencePhotos(UPDATED_EVIDENCE_PHOTOS);
+            .eventDescription(UPDATED_EVENT_DESCRIPTION);
 
         restCaseReportMockMvc.perform(put("/api/case-reports")
             .contentType(TestUtil.APPLICATION_JSON_UTF8)
@@ -240,10 +222,8 @@ public class CaseReportResourceIT {
         assertThat(caseReportList).hasSize(databaseSizeBeforeUpdate);
         CaseReport testCaseReport = caseReportList.get(caseReportList.size() - 1);
         assertThat(testCaseReport.getDate()).isEqualTo(UPDATED_DATE);
-        assertThat(testCaseReport.getMugshot()).isEqualTo(UPDATED_MUGSHOT);
         assertThat(testCaseReport.getPersonDetails()).isEqualTo(UPDATED_PERSON_DETAILS);
         assertThat(testCaseReport.getEventDescription()).isEqualTo(UPDATED_EVENT_DESCRIPTION);
-        assertThat(testCaseReport.getEvidencePhotos()).isEqualTo(UPDATED_EVIDENCE_PHOTOS);
     }
 
     @Test

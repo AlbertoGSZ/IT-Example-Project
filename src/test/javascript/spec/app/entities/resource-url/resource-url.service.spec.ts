@@ -4,40 +4,31 @@ import { HttpClientTestingModule, HttpTestingController } from '@angular/common/
 import { HttpClient, HttpResponse } from '@angular/common/http';
 import { of } from 'rxjs';
 import { take, map } from 'rxjs/operators';
-import * as moment from 'moment';
-import { DATE_TIME_FORMAT } from 'app/shared/constants/input.constants';
-import { CaseReportService } from 'app/entities/case-report/case-report.service';
-import { ICaseReport, CaseReport } from 'app/shared/model/case-report.model';
+import { ResourceURLService } from 'app/entities/resource-url/resource-url.service';
+import { IResourceURL, ResourceURL } from 'app/shared/model/resource-url.model';
 
 describe('Service Tests', () => {
-  describe('CaseReport Service', () => {
+  describe('ResourceURL Service', () => {
     let injector: TestBed;
-    let service: CaseReportService;
+    let service: ResourceURLService;
     let httpMock: HttpTestingController;
-    let elemDefault: ICaseReport;
+    let elemDefault: IResourceURL;
     let expectedResult;
-    let currentDate: moment.Moment;
     beforeEach(() => {
       TestBed.configureTestingModule({
         imports: [HttpClientTestingModule]
       });
       expectedResult = {};
       injector = getTestBed();
-      service = injector.get(CaseReportService);
+      service = injector.get(ResourceURLService);
       httpMock = injector.get(HttpTestingController);
-      currentDate = moment();
 
-      elemDefault = new CaseReport(0, currentDate, 'AAAAAAA', 'AAAAAAA');
+      elemDefault = new ResourceURL(0, 'AAAAAAA');
     });
 
     describe('Service methods', () => {
       it('should find an element', async () => {
-        const returnedFromService = Object.assign(
-          {
-            date: currentDate.format(DATE_TIME_FORMAT)
-          },
-          elemDefault
-        );
+        const returnedFromService = Object.assign({}, elemDefault);
         service
           .find(123)
           .pipe(take(1))
@@ -48,22 +39,16 @@ describe('Service Tests', () => {
         expect(expectedResult).toMatchObject({ body: elemDefault });
       });
 
-      it('should create a CaseReport', async () => {
+      it('should create a ResourceURL', async () => {
         const returnedFromService = Object.assign(
           {
-            id: 0,
-            date: currentDate.format(DATE_TIME_FORMAT)
+            id: 0
           },
           elemDefault
         );
-        const expected = Object.assign(
-          {
-            date: currentDate
-          },
-          returnedFromService
-        );
+        const expected = Object.assign({}, returnedFromService);
         service
-          .create(new CaseReport(null))
+          .create(new ResourceURL(null))
           .pipe(take(1))
           .subscribe(resp => (expectedResult = resp));
         const req = httpMock.expectOne({ method: 'POST' });
@@ -71,22 +56,15 @@ describe('Service Tests', () => {
         expect(expectedResult).toMatchObject({ body: expected });
       });
 
-      it('should update a CaseReport', async () => {
+      it('should update a ResourceURL', async () => {
         const returnedFromService = Object.assign(
           {
-            date: currentDate.format(DATE_TIME_FORMAT),
-            personDetails: 'BBBBBB',
-            eventDescription: 'BBBBBB'
+            url: 'BBBBBB'
           },
           elemDefault
         );
 
-        const expected = Object.assign(
-          {
-            date: currentDate
-          },
-          returnedFromService
-        );
+        const expected = Object.assign({}, returnedFromService);
         service
           .update(expected)
           .pipe(take(1))
@@ -96,21 +74,14 @@ describe('Service Tests', () => {
         expect(expectedResult).toMatchObject({ body: expected });
       });
 
-      it('should return a list of CaseReport', async () => {
+      it('should return a list of ResourceURL', async () => {
         const returnedFromService = Object.assign(
           {
-            date: currentDate.format(DATE_TIME_FORMAT),
-            personDetails: 'BBBBBB',
-            eventDescription: 'BBBBBB'
+            url: 'BBBBBB'
           },
           elemDefault
         );
-        const expected = Object.assign(
-          {
-            date: currentDate
-          },
-          returnedFromService
-        );
+        const expected = Object.assign({}, returnedFromService);
         service
           .query(expected)
           .pipe(
@@ -124,7 +95,7 @@ describe('Service Tests', () => {
         expect(expectedResult).toContainEqual(expected);
       });
 
-      it('should delete a CaseReport', async () => {
+      it('should delete a ResourceURL', async () => {
         const rxPromise = service.delete(123).subscribe(resp => (expectedResult = resp.ok));
 
         const req = httpMock.expectOne({ method: 'DELETE' });
