@@ -1,7 +1,7 @@
 ﻿# IT-Example-Proyect || Entity relationships
 
 
-### **Relationships**
+### __**Relationships**__
 
 Three entities are found, to be called "Person", "CaseReport" and "ResourceURL".
 
@@ -13,7 +13,7 @@ In the same way, the ¨Person¨ entity will have a list of ¨CaseReport¨ object
 "CaseReport" entity has a _many to many_ relationship with "ResourceURL" (which contains a URL to a resource in another site) as a "CaseReport" can have many URLs related and those URLs can be related to many "CaseReports".
 
 
-### **Entity info: Person**
+### __**Entity info: Person**__
 
 - Name: String.
 - Surname: String.
@@ -33,7 +33,7 @@ Because of logic reasons, I only wanted to designate the presence of a crime as 
 For the same reason I didn´t want to get deeper into certain aspects such as the structural configuration of the DNI (different in each country if there is one), the residence (sometimes you can have an exact location, coordinates of an unnamed site or a general site...), so if I usually lack details that allow me to configure the creation of the object, I prefer to sin cautiously and not delimiting supported by personal assumptions.
 
 
-### **Entity info: CaseReport**
+### __**Entity info: CaseReport**__
 
 - ID: Integer. Non-repeatable random generation.
 - Date: Instant. (Creation of the CaseReport object)
@@ -44,7 +44,7 @@ For the same reason I didn´t want to get deeper into certain aspects such as th
 - FelonyRecordPDF: String list.
 
 
-### **Entity info: ResourceURL**
+### __**Entity info: ResourceURL**__
 
 - ID: Integer. Non-repeatable random generation.
 - URL: String. Required.
