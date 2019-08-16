@@ -43,7 +43,7 @@
 
 ### **AS AN** | Analyst agent that uses the system.
  
-### **I WANT** | To visualize the background of a specific person.
+### **I WANT** | To visualize  an specific crime report of a person.
 
 ### **SO THAT** | Being able to read the information it contains.
 
@@ -53,7 +53,7 @@
 
 ### **AS AN** | Analyst agent that uses the system.
  
-### **I WANT** | To visualize all the background of a person.
+### **I WANT** | To visualize all the crime reports of a person.
 
 ### **SO THAT** | I am able to consider their danger or assess their participation in other events.
 
