@@ -4,7 +4,7 @@
 
 * **URL**
 
-  /caseReport/{idPerson}/{idCaseReport}
+  /caseReport/{idCaseReport}
 
 * **Method:**
 
@@ -14,7 +14,6 @@
 
    **Required:**
  
-   `idPerson=[integer]`
    `idCaseReport=[integer]`
 
 * **Data Params**
