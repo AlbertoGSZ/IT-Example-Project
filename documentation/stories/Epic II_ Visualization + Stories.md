@@ -66,3 +66,13 @@
 ### **I WANT** | To view information regarding a person.
 
 ### **SO THAT** | Being able to observe and value his/her data.
+
+   --------------------------------------------------------------------------------
+   
+### **STORY 7**
+
+### **AS AN** | Analyst agent that uses the system.
+ 
+### **I WANT** | To view the url of a resource.
+
+### **SO THAT** | I can access/know where is it hosted.
