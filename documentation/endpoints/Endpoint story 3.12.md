@@ -22,7 +22,7 @@
 * **Success Response:**
 
   * **Code:** 200 OK<br />
-    **Content:** `{"Deleted url."}`
+    **Content:** `{"Deleted URL."}`
  
 * **Error Response:**
 
