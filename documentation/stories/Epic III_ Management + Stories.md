@@ -88,5 +88,31 @@
 ### **I WANT** | To delete a background report.
 
 ### **SO THAT** | I'm able to delete the record of the same case considering that it has no relation to the case.
+   --------------------------------------------------------------------------------
 
+### **STORY 10**
+
+### **AS A** | User who manages the movements of system records.
+ 
+### **I WANT** | Change the url of a resource.
+
+### **SO THAT** | I can update the info refered on it.
+   --------------------------------------------------------------------------------
+
+### **STORY 11**
+
+### **AS A** | User who manages the movements of system records.
+ 
+### **I WANT** | To enter a url in the system.
+
+### **SO THAT** | I can access the info linked to it.
+   --------------------------------------------------------------------------------
+
+### **STORY 12**
+
+### **AS A** | User who manages the movements of system records.
+ 
+### **I WANT** | To delete a url.
+
+### **SO THAT** | I can correct a wrongly entered url.
 
