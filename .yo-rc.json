@@ -1,14 +1,13 @@
 {
   "generator-jhipster": {
     "promptValues": {
-      "packageName": "org.jhipster.criminalddbbpruebas",
-      "nativeLanguage": "es"
+      "packageName": "org.jhipster.criminalddbb"
     },
     "jhipsterVersion": "6.2.0",
     "applicationType": "monolith",
-    "baseName": "CriminalBBDD",
-    "packageName": "org.jhipster.criminalddbbpruebas",
-    "packageFolder": "org/jhipster/criminalddbbpruebas",
+    "baseName": "criminalddbb",
+    "packageName": "org.jhipster.criminalddbb",
+    "packageFolder": "org/jhipster/criminalddbb",
     "serverPort": "8080",
     "authenticationType": "jwt",
     "cacheProvider": "ehcache",
@@ -16,13 +15,13 @@
     "websocket": false,
     "databaseType": "sql",
     "devDatabaseType": "h2Disk",
-    "prodDatabaseType": "postgresql",
+    "prodDatabaseType": "mysql",
     "searchEngine": false,
     "messageBroker": false,
     "serviceDiscoveryType": false,
     "buildTool": "maven",
     "enableSwaggerCodegen": false,
-    "jwtSecretKey": "OTliMDY1MGZhNDE1Y2E1OGM3MjllOWM2ZDY5NjNmOTRiMjA2NzU2ZTY0NjM1NWI1YzkwNjljMTMwMTM3NTU0MDJkNDk2MTIwODQxMmM0ODUxMjYyZmI5OTMwNmMzY2M5ZGI3ZGUzMGRlYjc1MzUxZWFlMzVhZmM0ZmNiMGVlOTk=",
+    "jwtSecretKey": "MmI1Zjk2NjgzMGRhNGY1ZTYwYjBjOWE5ZDFkZjMwNWNjMzIwYmY3Mzg1NWE1N2UyNTBjOTljMGQ3OTkyYmYyMDc2M2FlZDQxODQzNTBiMjEwNjcwZjlkODI3ZjhiNTJmMjEzMzU2NTgyOTVlYjllOWMxNWMzMTJhY2U0OTFiZmE=",
     "useSass": true,
     "clientPackageManager": "npm",
     "clientFramework": "angularX",
@@ -33,9 +32,7 @@
     "entitySuffix": "",
     "dtoSuffix": "DTO",
     "otherModules": [],
-    "enableTranslation": true,
-    "nativeLanguage": "es",
-    "languages": ["es", "en"],
+    "enableTranslation": false,
     "blueprints": []
   }
 }

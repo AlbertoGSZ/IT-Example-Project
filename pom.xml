@@ -3,11 +3,11 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>org.jhipster.criminalddbbpruebas</groupId>
-    <artifactId>criminal-bbdd</artifactId>
+    <groupId>org.jhipster.criminalddbb</groupId>
+    <artifactId>criminalddbb</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <packaging>jar</packaging>
-    <name>Criminal BBDD</name>
+    <name>Criminalddbb</name>
 
     <repositories>
         <!-- jhipster-needle-maven-repository -->
@@ -165,6 +165,10 @@
             <artifactId>cache-api</artifactId>
         </dependency>
         <dependency>
+            <groupId>mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId>
+        </dependency>
+        <dependency>
             <groupId>org.junit.jupiter</groupId>
             <artifactId>junit-jupiter-engine</artifactId>
             <scope>test</scope>
@@ -206,10 +210,6 @@
         <dependency>
             <groupId>net.logstash.logback</groupId>
             <artifactId>logstash-logback-encoder</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>org.postgresql</groupId>
-            <artifactId>postgresql</artifactId>
         </dependency>
         <dependency>
             <groupId>org.mapstruct</groupId>
@@ -532,7 +532,7 @@
                             <image>adoptopenjdk:11-jre-hotspot</image>
                         </from>
                         <to>
-                            <image>criminalbbdd:latest</image>
+                            <image>criminalddbb:latest</image>
                         </to>
                         <container>
                             <entrypoint>
@@ -559,11 +559,11 @@
                         <changeLogFile>${project.basedir}/src/main/resources/config/liquibase/master.xml</changeLogFile>
                         <diffChangeLogFile>${project.basedir}/src/main/resources/config/liquibase/changelog/${maven.build.timestamp}_changelog.xml</diffChangeLogFile>
                         <driver>org.h2.Driver</driver>
-                        <url>jdbc:h2:file:${project.build.directory}/h2db/db/criminalbbdd</url>
+                        <url>jdbc:h2:file:${project.build.directory}/h2db/db/criminalddbb</url>
                         <defaultSchemaName></defaultSchemaName>
-                        <username>CriminalBBDD</username>
+                        <username>criminalddbb</username>
                         <password></password>
-                        <referenceUrl>hibernate:spring:org.jhipster.criminalddbbpruebas.domain?dialect=org.hibernate.dialect.H2Dialect&amp;hibernate.physical_naming_strategy=org.springframework.boot.orm.jpa.hibernate.SpringPhysicalNamingStrategy&amp;hibernate.implicit_naming_strategy=org.springframework.boot.orm.jpa.hibernate.SpringImplicitNamingStrategy</referenceUrl>
+                        <referenceUrl>hibernate:spring:org.jhipster.criminalddbb.domain?dialect=org.hibernate.dialect.H2Dialect&amp;hibernate.physical_naming_strategy=org.springframework.boot.orm.jpa.hibernate.SpringPhysicalNamingStrategy&amp;hibernate.implicit_naming_strategy=org.springframework.boot.orm.jpa.hibernate.SpringImplicitNamingStrategy</referenceUrl>
                         <verbose>true</verbose>
                         <logging>debug</logging>
                         <contexts>!test</contexts>

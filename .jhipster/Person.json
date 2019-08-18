@@ -61,7 +61,7 @@
             "otherEntityField": "id"
         }
     ],
-    "changelogDate": "20190809013046",
+    "changelogDate": "20190814115552",
     "entityTableName": "person",
     "dto": "no",
     "pagination": "pagination",

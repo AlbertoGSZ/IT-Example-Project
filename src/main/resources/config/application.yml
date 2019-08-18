@@ -57,7 +57,7 @@ management:
 
 spring:
   application:
-    name: CriminalBBDD
+    name: criminalddbb
   profiles:
     # The commented value for `active` can be replaced with valid Spring profiles to load.
     # Otherwise, it will be filled in by maven when building the JAR file
@@ -87,13 +87,13 @@ spring:
       enabled: false
   task:
     execution:
-      thread-name-prefix: criminal-bbdd-task-
+      thread-name-prefix: criminalddbb-task-
       pool:
         core-size: 2
         max-size: 50
         queue-capacity: 10000
     scheduling:
-      thread-name-prefix: criminal-bbdd-scheduling-
+      thread-name-prefix: criminalddbb-scheduling-
       pool:
         size: 2
   thymeleaf:
@@ -118,7 +118,7 @@ info:
 
 jhipster:
   clientApp:
-    name: 'criminalBbddApp'
+    name: 'criminalddbbApp'
   # By default CORS is disabled. Uncomment to enable.
   # cors:
   #     allowed-origins: "*"
@@ -128,11 +128,11 @@ jhipster:
   #     allow-credentials: true
   #     max-age: 1800
   mail:
-    from: CriminalBBDD@localhost
+    from: criminalddbb@localhost
   swagger:
     default-include-pattern: /api/.*
-    title: CriminalBBDD API
-    description: CriminalBBDD API documentation
+    title: criminalddbb API
+    description: criminalddbb API documentation
     version: 0.0.1
     terms-of-service-url:
     contact-name:

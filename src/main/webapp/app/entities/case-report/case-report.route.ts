@@ -39,7 +39,7 @@ export const caseReportRoute: Routes = [
     data: {
       authorities: ['ROLE_USER'],
       defaultSort: 'id,asc',
-      pageTitle: 'criminalBbddApp.caseReport.home.title'
+      pageTitle: 'CaseReports'
     },
     canActivate: [UserRouteAccessService]
   },
@@ -51,7 +51,7 @@ export const caseReportRoute: Routes = [
     },
     data: {
       authorities: ['ROLE_USER'],
-      pageTitle: 'criminalBbddApp.caseReport.home.title'
+      pageTitle: 'CaseReports'
     },
     canActivate: [UserRouteAccessService]
   },
@@ -63,7 +63,7 @@ export const caseReportRoute: Routes = [
     },
     data: {
       authorities: ['ROLE_USER'],
-      pageTitle: 'criminalBbddApp.caseReport.home.title'
+      pageTitle: 'CaseReports'
     },
     canActivate: [UserRouteAccessService]
   },
@@ -75,7 +75,7 @@ export const caseReportRoute: Routes = [
     },
     data: {
       authorities: ['ROLE_USER'],
-      pageTitle: 'criminalBbddApp.caseReport.home.title'
+      pageTitle: 'CaseReports'
     },
     canActivate: [UserRouteAccessService]
   }
@@ -90,7 +90,7 @@ export const caseReportPopupRoute: Routes = [
     },
     data: {
       authorities: ['ROLE_USER'],
-      pageTitle: 'criminalBbddApp.caseReport.home.title'
+      pageTitle: 'CaseReports'
     },
     canActivate: [UserRouteAccessService],
     outlet: 'popup'

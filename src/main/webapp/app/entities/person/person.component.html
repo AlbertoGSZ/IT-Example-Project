@@ -1,9 +1,9 @@
 <div>
     <h2 id="page-heading">
-        <span jhiTranslate="criminalBbddApp.person.home.title">People</span>
+        <span>People</span>
         <button id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-person" [routerLink]="['/person/new']">
             <fa-icon [icon]="'plus'"></fa-icon>
-            <span  jhiTranslate="criminalBbddApp.person.home.createLabel">
+            <span >
             Create a new Person
             </span>
         </button>
@@ -11,23 +11,23 @@
     <jhi-alert></jhi-alert>
     <br/>
     <div class="alert alert-warning" *ngIf="people?.length === 0">
-        <span jhiTranslate="criminalBbddApp.person.home.notFound">No people found</span>
+        <span>No people found</span>
     </div>
     <div class="table-responsive" *ngIf="people?.length > 0">
         <table class="table table-striped">
             <thead>
             <tr jhiSort [(predicate)]="predicate" [(ascending)]="reverse" [callback]="transition.bind(this)">
-            <th jhiSortBy="id"><span jhiTranslate="global.field.id">ID</span> <fa-icon [icon]="'sort'"></fa-icon></th>
-            <th jhiSortBy="name"><span jhiTranslate="criminalBbddApp.person.name">Name</span> <fa-icon [icon]="'sort'"></fa-icon></th>
-            <th jhiSortBy="surname"><span jhiTranslate="criminalBbddApp.person.surname">Surname</span> <fa-icon [icon]="'sort'"></fa-icon></th>
-            <th jhiSortBy="birthDate"><span jhiTranslate="criminalBbddApp.person.birthDate">Birth Date</span> <fa-icon [icon]="'sort'"></fa-icon></th>
-            <th jhiSortBy="age"><span jhiTranslate="criminalBbddApp.person.age">Age</span> <fa-icon [icon]="'sort'"></fa-icon></th>
-            <th jhiSortBy="adress"><span jhiTranslate="criminalBbddApp.person.adress">Adress</span> <fa-icon [icon]="'sort'"></fa-icon></th>
-            <th jhiSortBy="nationality"><span jhiTranslate="criminalBbddApp.person.nationality">Nationality</span> <fa-icon [icon]="'sort'"></fa-icon></th>
-            <th jhiSortBy="sex"><span jhiTranslate="criminalBbddApp.person.sex">Sex</span> <fa-icon [icon]="'sort'"></fa-icon></th>
-            <th jhiSortBy="alias"><span jhiTranslate="criminalBbddApp.person.alias">Alias</span> <fa-icon [icon]="'sort'"></fa-icon></th>
-            <th jhiSortBy="rank"><span jhiTranslate="criminalBbddApp.person.rank">Rank</span> <fa-icon [icon]="'sort'"></fa-icon></th>
-            <th jhiSortBy="chief.id"><span jhiTranslate="criminalBbddApp.person.chief">Chief</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="id"><span>ID</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="name"><span>Name</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="surname"><span>Surname</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="birthDate"><span>Birth Date</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="age"><span>Age</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="adress"><span>Adress</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="nationality"><span>Nationality</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="sex"><span>Sex</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="alias"><span>Alias</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="rank"><span>Rank</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="chief.id"><span>Chief</span> <fa-icon [icon]="'sort'"></fa-icon></th>
             <th></th>
             </tr>
             </thead>
@@ -39,8 +39,8 @@
                 <td>{{person.birthDate | date:'medium'}}</td>
                 <td>{{person.age}}</td>
                 <td>{{person.adress}}</td>
-                <td jhiTranslate="{{'criminalBbddApp.Nationality.' + person.nationality}}">{{person.nationality}}</td>
-                <td jhiTranslate="{{'criminalBbddApp.Sex.' + person.sex}}">{{person.sex}}</td>
+                <td>{{person.nationality}}</td>
+                <td>{{person.sex}}</td>
                 <td>{{person.alias}}</td>
                 <td>{{person.rank}}</td>
                 <td>
@@ -54,13 +54,13 @@
                                 [routerLink]="['/person', person.id, 'view' ]"
                                 class="btn btn-info btn-sm">
                             <fa-icon [icon]="'eye'"></fa-icon>
-                            <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+                            <span class="d-none d-md-inline">View</span>
                         </button>
                         <button type="submit"
                                 [routerLink]="['/person', person.id, 'edit']"
                                 class="btn btn-primary btn-sm">
                             <fa-icon [icon]="'pencil-alt'"></fa-icon>
-                            <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+                            <span class="d-none d-md-inline">Edit</span>
                         </button>
                         <button type="submit"
                                 [routerLink]="['/person', { outlets: { popup: person.id + '/delete'} }]"
@@ -68,7 +68,7 @@
                                 queryParamsHandling="merge"
                                 class="btn btn-danger btn-sm">
                             <fa-icon [icon]="'times'"></fa-icon>
-                            <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+                            <span class="d-none d-md-inline">Delete</span>
                         </button>
                     </div>
                 </td>

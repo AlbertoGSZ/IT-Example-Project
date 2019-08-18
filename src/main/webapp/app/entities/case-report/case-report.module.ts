@@ -1,9 +1,7 @@
 import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { RouterModule } from '@angular/router';
-import { JhiLanguageService } from 'ng-jhipster';
-import { JhiLanguageHelper } from 'app/core';
 
-import { CriminalBbddSharedModule } from 'app/shared';
+import { CriminalddbbSharedModule } from 'app/shared';
 import {
   CaseReportComponent,
   CaseReportDetailComponent,
@@ -17,7 +15,7 @@ import {
 const ENTITY_STATES = [...caseReportRoute, ...caseReportPopupRoute];
 
 @NgModule({
-  imports: [CriminalBbddSharedModule, RouterModule.forChild(ENTITY_STATES)],
+  imports: [CriminalddbbSharedModule, RouterModule.forChild(ENTITY_STATES)],
   declarations: [
     CaseReportComponent,
     CaseReportDetailComponent,
@@ -26,15 +24,6 @@ const ENTITY_STATES = [...caseReportRoute, ...caseReportPopupRoute];
     CaseReportDeletePopupComponent
   ],
   entryComponents: [CaseReportComponent, CaseReportUpdateComponent, CaseReportDeleteDialogComponent, CaseReportDeletePopupComponent],
-  providers: [{ provide: JhiLanguageService, useClass: JhiLanguageService }],
   schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
-export class CriminalBbddCaseReportModule {
-  constructor(private languageService: JhiLanguageService, private languageHelper: JhiLanguageHelper) {
-    this.languageHelper.language.subscribe((languageKey: string) => {
-      if (languageKey) {
-        this.languageService.changeLanguage(languageKey);
-      }
-    });
-  }
-}
+export class CriminalddbbCaseReportModule {}

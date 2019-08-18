@@ -1,9 +1,9 @@
 <div>
     <h2 id="page-heading">
-        <span jhiTranslate="criminalBbddApp.caseReport.home.title">Case Reports</span>
+        <span>Case Reports</span>
         <button id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-case-report" [routerLink]="['/case-report/new']">
             <fa-icon [icon]="'plus'"></fa-icon>
-            <span  jhiTranslate="criminalBbddApp.caseReport.home.createLabel">
+            <span >
             Create a new Case Report
             </span>
         </button>
@@ -11,18 +11,18 @@
     <jhi-alert></jhi-alert>
     <br/>
     <div class="alert alert-warning" *ngIf="caseReports?.length === 0">
-        <span jhiTranslate="criminalBbddApp.caseReport.home.notFound">No caseReports found</span>
+        <span>No caseReports found</span>
     </div>
     <div class="table-responsive" *ngIf="caseReports?.length > 0">
         <table class="table table-striped">
             <thead>
             <tr jhiSort [(predicate)]="predicate" [(ascending)]="reverse" [callback]="transition.bind(this)">
-            <th jhiSortBy="id"><span jhiTranslate="global.field.id">ID</span> <fa-icon [icon]="'sort'"></fa-icon></th>
-            <th jhiSortBy="date"><span jhiTranslate="criminalBbddApp.caseReport.date">Date</span> <fa-icon [icon]="'sort'"></fa-icon></th>
-            <th jhiSortBy="personDetails"><span jhiTranslate="criminalBbddApp.caseReport.personDetails">Person Details</span> <fa-icon [icon]="'sort'"></fa-icon></th>
-            <th jhiSortBy="eventDescription"><span jhiTranslate="criminalBbddApp.caseReport.eventDescription">Event Description</span> <fa-icon [icon]="'sort'"></fa-icon></th>
-            <th jhiSortBy="person.id"><span jhiTranslate="criminalBbddApp.caseReport.person">Person</span> <fa-icon [icon]="'sort'"></fa-icon></th>
-            <th jhiSortBy="mugshotReport.id"><span jhiTranslate="criminalBbddApp.caseReport.mugshotReport">Mugshot Report</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="id"><span>ID</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="date"><span>Date</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="personDetails"><span>Person Details</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="eventDescription"><span>Event Description</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="person.id"><span>Person</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="mugshotReport.id"><span>Mugshot Report</span> <fa-icon [icon]="'sort'"></fa-icon></th>
             <th></th>
             </tr>
             </thead>
@@ -48,13 +48,13 @@
                                 [routerLink]="['/case-report', caseReport.id, 'view' ]"
                                 class="btn btn-info btn-sm">
                             <fa-icon [icon]="'eye'"></fa-icon>
-                            <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+                            <span class="d-none d-md-inline">View</span>
                         </button>
                         <button type="submit"
                                 [routerLink]="['/case-report', caseReport.id, 'edit']"
                                 class="btn btn-primary btn-sm">
                             <fa-icon [icon]="'pencil-alt'"></fa-icon>
-                            <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+                            <span class="d-none d-md-inline">Edit</span>
                         </button>
                         <button type="submit"
                                 [routerLink]="['/case-report', { outlets: { popup: caseReport.id + '/delete'} }]"
@@ -62,7 +62,7 @@
                                 queryParamsHandling="merge"
                                 class="btn btn-danger btn-sm">
                             <fa-icon [icon]="'times'"></fa-icon>
-                            <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+                            <span class="d-none d-md-inline">Delete</span>
                         </button>
                     </div>
                 </td>

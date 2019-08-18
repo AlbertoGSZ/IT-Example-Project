@@ -2,7 +2,7 @@ import { ComponentFixture, TestBed, async } from '@angular/core/testing';
 import { FormBuilder } from '@angular/forms';
 import { Observable, throwError } from 'rxjs';
 
-import { CriminalBbddTestModule } from '../../../test.module';
+import { CriminalddbbTestModule } from '../../../test.module';
 import { AccountService, Account } from 'app/core';
 import { SettingsComponent } from 'app/account/settings/settings.component';
 
@@ -14,7 +14,7 @@ describe('Component Tests', () => {
 
     beforeEach(async(() => {
       TestBed.configureTestingModule({
-        imports: [CriminalBbddTestModule],
+        imports: [CriminalddbbTestModule],
         declarations: [SettingsComponent],
         providers: [FormBuilder]
       })
@@ -36,7 +36,7 @@ describe('Component Tests', () => {
 
         activated: true,
         email: 'john.doe@mail.com',
-        langKey: 'es',
+        langKey: 'en',
         login: 'john'
       };
       mockAuth.setIdentityResponse(accountValues);

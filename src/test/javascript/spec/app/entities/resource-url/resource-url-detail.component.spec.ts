@@ -3,7 +3,7 @@ import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { ActivatedRoute } from '@angular/router';
 import { of } from 'rxjs';
 
-import { CriminalBbddTestModule } from '../../../test.module';
+import { CriminalddbbTestModule } from '../../../test.module';
 import { ResourceURLDetailComponent } from 'app/entities/resource-url/resource-url-detail.component';
 import { ResourceURL } from 'app/shared/model/resource-url.model';
 
@@ -15,7 +15,7 @@ describe('Component Tests', () => {
 
     beforeEach(() => {
       TestBed.configureTestingModule({
-        imports: [CriminalBbddTestModule],
+        imports: [CriminalddbbTestModule],
         declarations: [ResourceURLDetailComponent],
         providers: [{ provide: ActivatedRoute, useValue: route }]
       })

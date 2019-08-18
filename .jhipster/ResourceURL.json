@@ -14,7 +14,7 @@
             "otherEntityField": "id"
         }
     ],
-    "changelogDate": "20190814011852",
+    "changelogDate": "20190814115554",
     "entityTableName": "resource_url",
     "dto": "no",
     "pagination": "no",

@@ -3,7 +3,7 @@ import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { ActivatedRoute } from '@angular/router';
 import { of } from 'rxjs';
 
-import { CriminalBbddTestModule } from '../../../test.module';
+import { CriminalddbbTestModule } from '../../../test.module';
 import { CaseReportDetailComponent } from 'app/entities/case-report/case-report-detail.component';
 import { CaseReport } from 'app/shared/model/case-report.model';
 
@@ -15,7 +15,7 @@ describe('Component Tests', () => {
 
     beforeEach(() => {
       TestBed.configureTestingModule({
-        imports: [CriminalBbddTestModule],
+        imports: [CriminalddbbTestModule],
         declarations: [CaseReportDetailComponent],
         providers: [{ provide: ActivatedRoute, useValue: route }]
       })

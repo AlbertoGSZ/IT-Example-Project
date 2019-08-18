@@ -34,7 +34,7 @@ export const resourceURLRoute: Routes = [
     component: ResourceURLComponent,
     data: {
       authorities: ['ROLE_USER'],
-      pageTitle: 'criminalBbddApp.resourceURL.home.title'
+      pageTitle: 'ResourceURLS'
     },
     canActivate: [UserRouteAccessService]
   },
@@ -46,7 +46,7 @@ export const resourceURLRoute: Routes = [
     },
     data: {
       authorities: ['ROLE_USER'],
-      pageTitle: 'criminalBbddApp.resourceURL.home.title'
+      pageTitle: 'ResourceURLS'
     },
     canActivate: [UserRouteAccessService]
   },
@@ -58,7 +58,7 @@ export const resourceURLRoute: Routes = [
     },
     data: {
       authorities: ['ROLE_USER'],
-      pageTitle: 'criminalBbddApp.resourceURL.home.title'
+      pageTitle: 'ResourceURLS'
     },
     canActivate: [UserRouteAccessService]
   },
@@ -70,7 +70,7 @@ export const resourceURLRoute: Routes = [
     },
     data: {
       authorities: ['ROLE_USER'],
-      pageTitle: 'criminalBbddApp.resourceURL.home.title'
+      pageTitle: 'ResourceURLS'
     },
     canActivate: [UserRouteAccessService]
   }
@@ -85,7 +85,7 @@ export const resourceURLPopupRoute: Routes = [
     },
     data: {
       authorities: ['ROLE_USER'],
-      pageTitle: 'criminalBbddApp.resourceURL.home.title'
+      pageTitle: 'ResourceURLS'
     },
     canActivate: [UserRouteAccessService],
     outlet: 'popup'

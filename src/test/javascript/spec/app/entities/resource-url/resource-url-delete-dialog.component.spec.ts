@@ -4,7 +4,7 @@ import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 import { Observable, of } from 'rxjs';
 import { JhiEventManager } from 'ng-jhipster';
 
-import { CriminalBbddTestModule } from '../../../test.module';
+import { CriminalddbbTestModule } from '../../../test.module';
 import { ResourceURLDeleteDialogComponent } from 'app/entities/resource-url/resource-url-delete-dialog.component';
 import { ResourceURLService } from 'app/entities/resource-url/resource-url.service';
 
@@ -18,7 +18,7 @@ describe('Component Tests', () => {
 
     beforeEach(() => {
       TestBed.configureTestingModule({
-        imports: [CriminalBbddTestModule],
+        imports: [CriminalddbbTestModule],
         declarations: [ResourceURLDeleteDialogComponent]
       })
         .overrideTemplate(ResourceURLDeleteDialogComponent, '')

@@ -1,40 +1,40 @@
 <div class="row justify-content-center">
     <div class="col-8">
         <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
-            <h2 id="jhi-case-report-heading" jhiTranslate="criminalBbddApp.caseReport.home.createOrEditLabel">Create or edit a Case Report</h2>
+            <h2 id="jhi-case-report-heading">Create or edit a Case Report</h2>
             <div>
                 <jhi-alert-error></jhi-alert-error>
                 <div class="form-group" [hidden]="!editForm.get('id').value">
-                    <label for="id" jhiTranslate="global.field.id">ID</label>
+                    <label for="id">ID</label>
                     <input type="text" class="form-control" id="id" name="id" formControlName="id"
                         readonly />
                 </div>
                 <div class="form-group">
-                    <label class="form-control-label" jhiTranslate="criminalBbddApp.caseReport.date" for="field_date">Date</label>
+                    <label class="form-control-label" for="field_date">Date</label>
                     <div class="d-flex">
                         <input id="field_date" type="datetime-local" class="form-control" name="date" formControlName="date" placeholder="YYYY-MM-DD HH:mm"/>
                     </div>
                 </div>
                 <div class="form-group">
-                    <label class="form-control-label" jhiTranslate="criminalBbddApp.caseReport.personDetails" for="field_personDetails">Person Details</label>
+                    <label class="form-control-label" for="field_personDetails">Person Details</label>
                     <input type="text" class="form-control" name="personDetails" id="field_personDetails"
                            formControlName="personDetails"/>
                 </div>
                 <div class="form-group">
-                    <label class="form-control-label" jhiTranslate="criminalBbddApp.caseReport.eventDescription" for="field_eventDescription">Event Description</label>
+                    <label class="form-control-label" for="field_eventDescription">Event Description</label>
                     <input type="text" class="form-control" name="eventDescription" id="field_eventDescription"
                            formControlName="eventDescription"/>
                 </div>
 
                 <div class="form-group">
-                    <label class="form-control-label" jhiTranslate="criminalBbddApp.caseReport.person" for="field_person">Person</label>
+                    <label class="form-control-label" for="field_person">Person</label>
                     <select class="form-control" id="field_person" name="person" formControlName="person">
                         <option [ngValue]="null"></option>
                         <option [ngValue]="personOption.id === editForm.get('person').value?.id ? editForm.get('person').value : personOption" *ngFor="let personOption of people; trackBy: trackPersonById">{{personOption.id}}</option>
                     </select>
                 </div>
                 <div class="form-group">
-                    <label class="form-control-label" jhiTranslate="criminalBbddApp.caseReport.mugshotReport" for="field_mugshotReport">Mugshot Report</label>
+                    <label class="form-control-label" for="field_mugshotReport">Mugshot Report</label>
                     <select class="form-control" id="field_mugshotReport" name="mugshotReport" formControlName="mugshotReport">
                         <option [ngValue]="null"></option>
                         <option [ngValue]="resourceURLOption.id === editForm.get('mugshotReport').value?.id ? editForm.get('mugshotReport').value : resourceURLOption" *ngFor="let resourceURLOption of mugshotreports; trackBy: trackResourceURLById">{{resourceURLOption.id}}</option>
@@ -43,10 +43,10 @@
             </div>
             <div>
                 <button type="button" id="cancel-save" class="btn btn-secondary"  (click)="previousState()">
-                    <fa-icon [icon]="'ban'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+                    <fa-icon [icon]="'ban'"></fa-icon>&nbsp;<span>Cancel</span>
                 </button>
                 <button type="submit" id="save-entity" [disabled]="editForm.invalid || isSaving" class="btn btn-primary">
-                    <fa-icon [icon]="'save'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+                    <fa-icon [icon]="'save'"></fa-icon>&nbsp;<span>Save</span>
                 </button>
             </div>
         </form>

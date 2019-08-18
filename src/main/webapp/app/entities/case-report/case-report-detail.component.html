@@ -1,29 +1,29 @@
 <div class="row justify-content-center">
     <div class="col-8">
         <div *ngIf="caseReport">
-            <h2><span jhiTranslate="criminalBbddApp.caseReport.detail.title">Case Report</span> {{caseReport.id}}</h2>
+            <h2><span>Case Report</span> {{caseReport.id}}</h2>
             <hr>
             <jhi-alert-error></jhi-alert-error>
             <dl class="row-md jh-entity-details">
-                <dt><span jhiTranslate="criminalBbddApp.caseReport.date">Date</span></dt>
+                <dt><span>Date</span></dt>
                 <dd>
                     <span>{{caseReport.date}}</span>
                 </dd>
-                <dt><span jhiTranslate="criminalBbddApp.caseReport.personDetails">Person Details</span></dt>
+                <dt><span>Person Details</span></dt>
                 <dd>
                     <span>{{caseReport.personDetails}}</span>
                 </dd>
-                <dt><span jhiTranslate="criminalBbddApp.caseReport.eventDescription">Event Description</span></dt>
+                <dt><span>Event Description</span></dt>
                 <dd>
                     <span>{{caseReport.eventDescription}}</span>
                 </dd>
-                <dt><span jhiTranslate="criminalBbddApp.caseReport.person">Person</span></dt>
+                <dt><span>Person</span></dt>
                 <dd>
                     <div *ngIf="caseReport.person">
                         <a [routerLink]="['/person', caseReport.person?.id, 'view']">{{caseReport.person?.id}}</a>
                     </div>
                 </dd>
-                <dt><span jhiTranslate="criminalBbddApp.caseReport.mugshotReport">Mugshot Report</span></dt>
+                <dt><span>Mugshot Report</span></dt>
                 <dd>
                     <div *ngIf="caseReport.mugshotReport">
                         <a [routerLink]="['/resource-url', caseReport.mugshotReport?.id, 'view']">{{caseReport.mugshotReport?.id}}</a>
@@ -34,13 +34,13 @@
             <button type="submit"
                     (click)="previousState()"
                     class="btn btn-info">
-                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span> Back</span>
             </button>
 
             <button type="button"
                     [routerLink]="['/case-report', caseReport.id, 'edit']"
                     class="btn btn-primary">
-                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span> Edit</span>
             </button>
         </div>
     </div>

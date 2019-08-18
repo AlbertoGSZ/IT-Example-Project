@@ -37,11 +37,11 @@ For the same reason I didn´t want to get deeper into certain aspects such as th
 
 - ID: Integer. Non-repeatable random generation.
 - Date: Instant. (Creation of the CaseReport object)
-- MugshotReport: ResourceUrl.
+- Mugshot: String.
 - PersonDetails: String. Not empty.  
 - EventDescription: String. Not empty.
 - EvidencePhotos: String list.
-- FelonyRecordPDF: ResourceUrl list.
+- FelonyRecordPDF: String list.
 
 
 ### **Entity info: ResourceURL**

@@ -3,7 +3,7 @@ import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { Observable, of } from 'rxjs';
 import { HttpHeaders, HttpResponse } from '@angular/common/http';
 
-import { CriminalBbddTestModule } from '../../../test.module';
+import { CriminalddbbTestModule } from '../../../test.module';
 import { ResourceURLComponent } from 'app/entities/resource-url/resource-url.component';
 import { ResourceURLService } from 'app/entities/resource-url/resource-url.service';
 import { ResourceURL } from 'app/shared/model/resource-url.model';
@@ -16,7 +16,7 @@ describe('Component Tests', () => {
 
     beforeEach(() => {
       TestBed.configureTestingModule({
-        imports: [CriminalBbddTestModule],
+        imports: [CriminalddbbTestModule],
         declarations: [ResourceURLComponent],
         providers: []
       })

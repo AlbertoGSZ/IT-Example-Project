@@ -6,15 +6,15 @@ import { RouterModule } from '@angular/router';
     RouterModule.forChild([
       {
         path: 'person',
-        loadChildren: () => import('./person/person.module').then(m => m.CriminalBbddPersonModule)
+        loadChildren: () => import('./person/person.module').then(m => m.CriminalddbbPersonModule)
       },
       {
         path: 'case-report',
-        loadChildren: () => import('./case-report/case-report.module').then(m => m.CriminalBbddCaseReportModule)
+        loadChildren: () => import('./case-report/case-report.module').then(m => m.CriminalddbbCaseReportModule)
       },
       {
         path: 'resource-url',
-        loadChildren: () => import('./resource-url/resource-url.module').then(m => m.CriminalBbddResourceURLModule)
+        loadChildren: () => import('./resource-url/resource-url.module').then(m => m.CriminalddbbResourceURLModule)
       }
       /* jhipster-needle-add-entity-route - JHipster will add entity modules routes here */
     ])
@@ -24,4 +24,4 @@ import { RouterModule } from '@angular/router';
   providers: [],
   schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
-export class CriminalBbddEntityModule {}
+export class CriminalddbbEntityModule {}

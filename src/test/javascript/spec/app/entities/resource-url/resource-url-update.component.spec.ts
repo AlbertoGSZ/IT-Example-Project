@@ -4,7 +4,7 @@ import { HttpResponse } from '@angular/common/http';
 import { FormBuilder } from '@angular/forms';
 import { Observable, of } from 'rxjs';
 
-import { CriminalBbddTestModule } from '../../../test.module';
+import { CriminalddbbTestModule } from '../../../test.module';
 import { ResourceURLUpdateComponent } from 'app/entities/resource-url/resource-url-update.component';
 import { ResourceURLService } from 'app/entities/resource-url/resource-url.service';
 import { ResourceURL } from 'app/shared/model/resource-url.model';
@@ -17,7 +17,7 @@ describe('Component Tests', () => {
 
     beforeEach(() => {
       TestBed.configureTestingModule({
-        imports: [CriminalBbddTestModule],
+        imports: [CriminalddbbTestModule],
         declarations: [ResourceURLUpdateComponent],
         providers: [FormBuilder]
       })

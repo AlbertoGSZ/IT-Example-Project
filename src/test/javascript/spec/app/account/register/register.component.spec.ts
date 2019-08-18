@@ -2,9 +2,7 @@ import { ComponentFixture, TestBed, async, inject, tick, fakeAsync } from '@angu
 import { FormBuilder } from '@angular/forms';
 import { Observable, of, throwError } from 'rxjs';
 
-import { JhiLanguageService } from 'ng-jhipster';
-import { MockLanguageService } from '../../../helpers/mock-language.service';
-import { CriminalBbddTestModule } from '../../../test.module';
+import { CriminalddbbTestModule } from '../../../test.module';
 import { EMAIL_ALREADY_USED_TYPE, LOGIN_ALREADY_USED_TYPE } from 'app/shared';
 import { Register } from 'app/account/register/register.service';
 import { RegisterComponent } from 'app/account/register/register.component';
@@ -16,7 +14,7 @@ describe('Component Tests', () => {
 
     beforeEach(async(() => {
       TestBed.configureTestingModule({
-        imports: [CriminalBbddTestModule],
+        imports: [CriminalddbbTestModule],
         declarations: [RegisterComponent],
         providers: [FormBuilder]
       })
@@ -42,8 +40,8 @@ describe('Component Tests', () => {
     });
 
     it('should update success to OK after creating an account', inject(
-      [Register, JhiLanguageService],
-      fakeAsync((service: Register, mockTranslate: MockLanguageService) => {
+      [Register],
+      fakeAsync((service: Register) => {
         spyOn(service, 'save').and.returnValue(of({}));
         comp.registerForm.patchValue({
           password: 'password',
@@ -57,10 +55,9 @@ describe('Component Tests', () => {
           email: '',
           password: 'password',
           login: '',
-          langKey: 'es'
+          langKey: 'en'
         });
         expect(comp.success).toEqual(true);
-        expect(mockTranslate.getCurrentSpy).toHaveBeenCalled();
         expect(comp.errorUserExists).toBeNull();
         expect(comp.errorEmailExists).toBeNull();
         expect(comp.error).toBeNull();

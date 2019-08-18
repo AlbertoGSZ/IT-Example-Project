@@ -39,7 +39,7 @@ export const personRoute: Routes = [
     data: {
       authorities: ['ROLE_USER'],
       defaultSort: 'id,asc',
-      pageTitle: 'criminalBbddApp.person.home.title'
+      pageTitle: 'People'
     },
     canActivate: [UserRouteAccessService]
   },
@@ -51,7 +51,7 @@ export const personRoute: Routes = [
     },
     data: {
       authorities: ['ROLE_USER'],
-      pageTitle: 'criminalBbddApp.person.home.title'
+      pageTitle: 'People'
     },
     canActivate: [UserRouteAccessService]
   },
@@ -63,7 +63,7 @@ export const personRoute: Routes = [
     },
     data: {
       authorities: ['ROLE_USER'],
-      pageTitle: 'criminalBbddApp.person.home.title'
+      pageTitle: 'People'
     },
     canActivate: [UserRouteAccessService]
   },
@@ -75,7 +75,7 @@ export const personRoute: Routes = [
     },
     data: {
       authorities: ['ROLE_USER'],
-      pageTitle: 'criminalBbddApp.person.home.title'
+      pageTitle: 'People'
     },
     canActivate: [UserRouteAccessService]
   }
@@ -90,7 +90,7 @@ export const personPopupRoute: Routes = [
     },
     data: {
       authorities: ['ROLE_USER'],
-      pageTitle: 'criminalBbddApp.person.home.title'
+      pageTitle: 'People'
     },
     canActivate: [UserRouteAccessService],
     outlet: 'popup'

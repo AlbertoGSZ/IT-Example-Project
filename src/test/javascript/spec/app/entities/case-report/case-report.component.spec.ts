@@ -4,7 +4,7 @@ import { Observable, of } from 'rxjs';
 import { HttpHeaders, HttpResponse } from '@angular/common/http';
 import { ActivatedRoute, Data } from '@angular/router';
 
-import { CriminalBbddTestModule } from '../../../test.module';
+import { CriminalddbbTestModule } from '../../../test.module';
 import { CaseReportComponent } from 'app/entities/case-report/case-report.component';
 import { CaseReportService } from 'app/entities/case-report/case-report.service';
 import { CaseReport } from 'app/shared/model/case-report.model';
@@ -17,7 +17,7 @@ describe('Component Tests', () => {
 
     beforeEach(() => {
       TestBed.configureTestingModule({
-        imports: [CriminalBbddTestModule],
+        imports: [CriminalddbbTestModule],
         declarations: [CaseReportComponent],
         providers: [
           {
