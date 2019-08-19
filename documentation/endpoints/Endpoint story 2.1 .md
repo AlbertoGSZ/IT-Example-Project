@@ -4,7 +4,7 @@
 
 * **URL**
 
-  /person/vips
+  /people/vips
 
 * **Method:**
 
