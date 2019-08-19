@@ -4,7 +4,7 @@
 
 * **URL**
 
-  /person/{id}
+  /people/{id}
 
 * **Method:**
 
