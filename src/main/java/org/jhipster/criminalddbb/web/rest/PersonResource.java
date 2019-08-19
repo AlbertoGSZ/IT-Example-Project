@@ -1,5 +1,6 @@
 package org.jhipster.criminalddbb.web.rest;
 
+import org.jhipster.criminalddbb.domain.CaseReport;
 import org.jhipster.criminalddbb.domain.Person;
 import org.jhipster.criminalddbb.service.PersonService;
 import org.jhipster.criminalddbb.web.rest.errors.BadRequestAlertException;
@@ -23,6 +24,7 @@ import java.net.URISyntaxException;
 
 import java.util.List;
 import java.util.Optional;
+import java.util.Set;
 
 /**
  * REST controller for managing {@link org.jhipster.criminalddbb.domain.Person}.
@@ -115,7 +117,40 @@ public class PersonResource {
     //
     //GET VIPS
     //GET MATCHING PEOPLE
+    //SHOW ALL CASE REPORTS OF A PERSON
     //PATCH REL-IMP-UP-DOWN
+
+
+
+/// WIP SHOW ALL CASE REPORTS OF A PERSON ///
+    /**
+     * {@code GET  /people/case-reports/:id} : get all the case reports of the person with matching "id".
+     * @param id the id of the person´s case reports list to retrieve.
+     * @return the {@link ResponseEntity} with status {@code 200 (OK)} and with the person´s case reports list, or with status {@code 404 (Not Found)}.
+     */
+    @GetMapping("/people/case-reports/{id}")
+    public List<CaseReport> getPersonCaseReports(@PathVariable Long id) {     //Modify
+        log.debug("REST request to get all case reports of a person : {}", id);     //Modify
+        return personService.findCaseReports(id);  //Modify
+    }
+///
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

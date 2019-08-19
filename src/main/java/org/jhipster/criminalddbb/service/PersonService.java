@@ -1,10 +1,12 @@
 package org.jhipster.criminalddbb.service;
 
+import org.jhipster.criminalddbb.domain.CaseReport;
 import org.jhipster.criminalddbb.domain.Person;
 
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 
+import java.util.List;
 import java.util.Optional;
 
 /**
@@ -14,7 +16,6 @@ public interface PersonService {
 
     /**
      * Save a person.
-     *
      * @param person the entity to save.
      * @return the persisted entity.
      */
@@ -22,7 +23,6 @@ public interface PersonService {
 
     /**
      * Get all the people.
-     *
      * @param pageable the pagination information.
      * @return the list of entities.
      */
@@ -31,7 +31,6 @@ public interface PersonService {
 
     /**
      * Get the "id" person.
-     *
      * @param id the id of the entity.
      * @return the entity.
      */
@@ -39,8 +38,15 @@ public interface PersonService {
 
     /**
      * Delete the "id" person.
-     *
      * @param id the id of the entity.
      */
     void delete(Long id);
+
+
+    /**
+     * Returns all the case reports of "id" person.
+     * @param id the id of the entity.
+     * @return
+     */
+    List<CaseReport> findCaseReports(Long id);
 }

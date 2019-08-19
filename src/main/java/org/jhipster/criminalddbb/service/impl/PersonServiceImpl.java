@@ -1,5 +1,6 @@
 package org.jhipster.criminalddbb.service.impl;
 
+import org.jhipster.criminalddbb.domain.CaseReport;
 import org.jhipster.criminalddbb.service.PersonService;
 import org.jhipster.criminalddbb.domain.Person;
 import org.jhipster.criminalddbb.repository.PersonRepository;
@@ -11,7 +12,8 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import java.util.Optional;
+import java.util.*;
+import java.util.stream.Collectors;
 
 /**
  * Service Implementation for managing {@link Person}.
@@ -76,5 +78,11 @@ public class PersonServiceImpl implements PersonService {
     public void delete(Long id) {
         log.debug("Request to delete Person : {}", id);
         personRepository.deleteById(id);
+    }
+
+    @Override
+    public List<CaseReport> findCaseReports(Long id) {
+        log.debug("Request to retrieve all case reports of a Person : {}", id);
+        return personRepository.findById(id).map(Person::getFelonyRecordsDigitals).get().stream().collect(Collectors.toList());
     }
 }
