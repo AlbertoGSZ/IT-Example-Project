@@ -14,7 +14,6 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.http.HttpHeaders;
-import org.springframework.http.HttpStatus;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -24,7 +23,6 @@ import java.net.URISyntaxException;
 
 import java.util.List;
 import java.util.Optional;
-import java.util.Set;
 
 /**
  * REST controller for managing {@link org.jhipster.criminalddbb.domain.Person}.
@@ -117,23 +115,31 @@ public class PersonResource {
     //
     //GET VIPS
     //GET MATCHING PEOPLE
-    //SHOW ALL CASE REPORTS OF A PERSON
+    //SHOW ALL CASE REPORTS OF A PERSON (HECHO)
     //PATCH REL-IMP-UP-DOWN
 
 
+    /**
+     * {@code GET  /people/vips} : get every person considered VIP (X or more subordinates).
+     * @return a list of Person entities with status {@code 200 (OK)}, or no list with status {@code 404 (Not Found)}.
+     */
+    @GetMapping("/people/vips")
+    public List<Person> getPersonCaseReports() {
+        log.debug("REST request to get all case reports of a person : {}");
+        return personService.findVIPs();
+    }
 
-/// WIP SHOW ALL CASE REPORTS OF A PERSON ///
     /**
      * {@code GET  /people/case-reports/:id} : get all the case reports of the person with matching "id".
      * @param id the id of the person´s case reports list to retrieve.
-     * @return the {@link ResponseEntity} with status {@code 200 (OK)} and with the person´s case reports list, or with status {@code 404 (Not Found)}.
+     * @return a list of CaseReport entities with status {@code 200 (OK)}, or no list with status {@code 404 (Not Found)}.
      */
-    @GetMapping("/people/case-reports/{id}")
-    public List<CaseReport> getPersonCaseReports(@PathVariable Long id) {     //Modify
-        log.debug("REST request to get all case reports of a person : {}", id);     //Modify
-        return personService.findCaseReports(id);  //Modify
+    @GetMapping("/people/{id}/case-reports")
+    public List<CaseReport> getPersonCaseReports(@PathVariable Long id) {
+        log.debug("REST request to get all case reports of a person : {}", id);
+        return personService.findAllCaseReports(id);
     }
-///
+
 
 
 

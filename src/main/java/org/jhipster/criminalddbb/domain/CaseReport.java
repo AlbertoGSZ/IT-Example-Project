@@ -1,4 +1,5 @@
 package org.jhipster.criminalddbb.domain;
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.hibernate.annotations.Cache;
 import org.hibernate.annotations.CacheConcurrencyStrategy;
@@ -34,6 +35,7 @@ public class CaseReport implements Serializable {
     private String eventDescription;
 
     @ManyToOne
+    @JsonBackReference
     @JsonIgnoreProperties("caseReports")
     private Person person;
 

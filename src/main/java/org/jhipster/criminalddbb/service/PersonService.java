@@ -45,8 +45,15 @@ public interface PersonService {
 
     /**
      * Returns all the case reports of "id" person.
-     * @param id the id of the entity.
-     * @return
+     * @param id the id of the entity Person.
+     * @return a list of found entities.
      */
-    List<CaseReport> findCaseReports(Long id);
+    List<CaseReport> findAllCaseReports(Long id);
+
+
+    /**
+     * Returns all the entities considered VIP.
+     * @return a list of found entities.
+     */
+    List<Person> findVIPs();
 }

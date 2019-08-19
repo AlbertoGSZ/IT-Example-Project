@@ -32,7 +32,6 @@ public class PersonServiceImpl implements PersonService {
 
     /**
      * Save a person.
-     *
      * @param person the entity to save.
      * @return the persisted entity.
      */
@@ -42,9 +41,9 @@ public class PersonServiceImpl implements PersonService {
         return personRepository.save(person);
     }
 
+
     /**
      * Get all the people.
-     *
      * @param pageable the pagination information.
      * @return the list of entities.
      */
@@ -58,7 +57,6 @@ public class PersonServiceImpl implements PersonService {
 
     /**
      * Get one person by id.
-     *
      * @param id the id of the entity.
      * @return the entity.
      */
@@ -69,9 +67,9 @@ public class PersonServiceImpl implements PersonService {
         return personRepository.findById(id);
     }
 
+
     /**
      * Delete the person by id.
-     *
      * @param id the id of the entity.
      */
     @Override
@@ -80,9 +78,21 @@ public class PersonServiceImpl implements PersonService {
         personRepository.deleteById(id);
     }
 
-    @Override
-    public List<CaseReport> findCaseReports(Long id) {
-        log.debug("Request to retrieve all case reports of a Person : {}", id);
+
+    /**
+     * Returns every CaseReport a person has.
+     * @return a list of CaseReport entities.
+     */
+    public List<CaseReport> findAllCaseReports(Long id) {
         return personRepository.findById(id).map(Person::getFelonyRecordsDigitals).get().stream().collect(Collectors.toList());
+    }
+
+
+    /**
+     * Returns every person with more than 50 subordinates.
+     * @return the entity.
+     */
+    public List<Person> findVIPs() {
+        return personRepository.findAll().stream().filter(person -> person.getSubordinates().size()>50).collect(Collectors.toList()) ;
     }
 }
