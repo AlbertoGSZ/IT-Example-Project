@@ -4,7 +4,7 @@
 
 * **URL**
 
-  /caseReport
+  /case-reports
 
 * **Method:**
 
