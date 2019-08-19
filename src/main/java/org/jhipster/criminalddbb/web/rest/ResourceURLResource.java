@@ -40,7 +40,6 @@ public class ResourceURLResource {
 
     /**
      * {@code POST  /resource-urls} : Create a new resourceURL.
-     *
      * @param resourceURL the resourceURL to create.
      * @return the {@link ResponseEntity} with status {@code 201 (Created)} and with body the new resourceURL, or with status {@code 400 (Bad Request)} if the resourceURL has already an ID.
      * @throws URISyntaxException if the Location URI syntax is incorrect.
