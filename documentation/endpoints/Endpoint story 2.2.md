@@ -4,7 +4,7 @@
 
 * **URL**
 
-  /person.php?status=ALIVE&name=Alberto&surname=García&birthDate=15051990&age=29&adress=CalleBonito&nationality=ESPAÑA&sex=HOMBRE&alias=Tardón& felonyRecordsDigital=[]&rank=2&chief=JoseJulian&subordinates=[]
+  /people.php?status=ALIVE&name=Alberto&surname=García&birthDate=15051990&age=29&adress=CalleBonito&nationality=ESPAÑA&sex=HOMBRE&alias=Tardón& felonyRecordsDigital=[]&rank=2&chief=JoseJulian&subordinates=[]
 
 * **Method:**
 
