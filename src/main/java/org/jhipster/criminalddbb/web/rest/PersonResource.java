@@ -111,14 +111,6 @@ public class PersonResource {
     }
 
 
-    //FALTAN:
-    //
-    //GET VIPS
-    //GET MATCHING PEOPLE
-    //SHOW ALL CASE REPORTS OF A PERSON (HECHO)
-    //PATCH REL-IMP-UP-DOWN
-
-
     /**
      * {@code GET  /people/vips} : get every person considered VIP (X or more subordinates).
      * @return a list of Person entities with status {@code 200 (OK)}, or no list with status {@code 404 (Not Found)}.
@@ -128,6 +120,7 @@ public class PersonResource {
         log.debug("REST request to get all case reports of a person : {}");
         return personService.findVIPs();
     }
+
 
     /**
      * {@code GET  /people/case-reports/:id} : get all the case reports of the person with matching "id".
@@ -140,6 +133,33 @@ public class PersonResource {
         return personService.findAllCaseReports(id);
     }
 
+
+    //FALTAN:
+    //
+    //GET MATCHING PEOPLE
+    //PATCH REL-IMP-UP-DOWN
+
+
+
+
+
+
+    ////////// WIP MATCHING PERSON ////////////////////////
+    /**
+     * {@code GET  /people/search} : Receives a person and searches for it in DDBB.
+     * @params person
+     * @return the matching entity with status {@code 201 (Found)} and with body of the matching Person, or with status {@code 404 (Bad Request)} if the person doesn´t match with anyone.
+     * @throws URISyntaxException if the Location URI syntax is incorrect.
+     */
+    @PostMapping("/people/search")
+    public List<Person> searchPerson(@RequestBody Person person) throws URISyntaxException {
+        log.debug("REST request matching Person : {}", person);
+        //if (person.getId() == null) { //personalizar con todo
+        //   throw new BadRequestAlertException("Invalid id", ENTITY_NAME, "idnull");
+        //}
+        return personService.searchPerson(person);
+    }
+    /////////////////////////////////////////////////////////
 
 
 
@@ -168,6 +188,7 @@ public class PersonResource {
     ////////////////////////////////////////////////////////////////////////
     /////////////////////// DESCARTADO DELETE PERSON ///////////////////////
     ////////////////////////////////////////////////////////////////////////
+
 
     /*
      // {@code DELETE  /people/:id} : delete the "id" person.

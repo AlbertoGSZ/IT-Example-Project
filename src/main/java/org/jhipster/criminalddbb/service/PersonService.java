@@ -56,4 +56,11 @@ public interface PersonService {
      * @return a list of found entities.
      */
     List<Person> findVIPs();
+
+
+    /**
+     * Returns a list of every matching person if found in DDBB.
+     * @return a list of entities.
+     */
+    List<Person> searchPerson(Person person);
 }
