@@ -21,6 +21,7 @@ import org.springframework.web.bind.annotation.*;
 import java.net.URI;
 import java.net.URISyntaxException;
 
+import java.util.HashMap;
 import java.util.List;
 import java.util.Optional;
 
@@ -145,19 +146,14 @@ public class PersonResource {
 
 
     ////////// WIP MATCHING PERSON ////////////////////////
-    /**
-     * {@code GET  /people/search} : Receives a person and searches for it in DDBB.
+     /** {@code GET /people/search} : Receives a person and searches for it in DDBB.
      * @params person
      * @return the matching entity with status {@code 201 (Found)} and with body of the matching Person, or with status {@code 404 (Bad Request)} if the person doesn´t match with anyone.
-     * @throws URISyntaxException if the Location URI syntax is incorrect.
-     */
-    @PostMapping("/people/search")
-    public List<Person> searchPerson(@RequestBody Person person) throws URISyntaxException {
-        log.debug("REST request matching Person : {}", person);
-        //if (person.getId() == null) { //personalizar con todo
-        //   throw new BadRequestAlertException("Invalid id", ENTITY_NAME, "idnull");
-        //}
-        return personService.searchPerson(person);
+     * @throws URISyntaxException if the Location URI syntax is incorrect.*/
+    @GetMapping("/people/search")
+    public List<Person> searchPerson(@RequestParam HashMap<String,String> hash) throws URISyntaxException {
+        log.debug("REST request searching Person : {}", hash);
+        return personService.searchPerson(hash);
     }
     /////////////////////////////////////////////////////////
 

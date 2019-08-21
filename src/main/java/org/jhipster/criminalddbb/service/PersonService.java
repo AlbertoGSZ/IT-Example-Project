@@ -6,6 +6,7 @@ import org.jhipster.criminalddbb.domain.Person;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 
+import java.util.HashMap;
 import java.util.List;
 import java.util.Optional;
 
@@ -62,5 +63,5 @@ public interface PersonService {
      * Returns a list of every matching person if found in DDBB.
      * @return a list of entities.
      */
-    List<Person> searchPerson(Person person);
+    List<Person> searchPerson(HashMap<String,String> hash);
 }

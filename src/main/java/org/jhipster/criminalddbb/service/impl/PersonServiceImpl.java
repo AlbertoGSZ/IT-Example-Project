@@ -103,25 +103,15 @@ public class PersonServiceImpl implements PersonService {
      * Returns a list of every matching person if found in DDBB.
      * @return a list of entities.
      */
-    @Override
-    public List<Person> searchPerson(Person person) {
-        List <Person> matchesList = new ArrayList<>();
-
-        //Pedir a repositorio que meta en una lista auxiliar la entity Person que se corresponda con el id especificado, siempre y cuando éste no sea null o menor/igual que cero.
-        if (person.getId()!=null && person.getId()>0) matchesList = personRepository.findAll()
-                                                                                    .stream()
-                                                                                    .filter(Person -> Person.getId()==person.getId())
-                                                                                    .collect(Collectors.toList());
-
-        //Si la lista auxiliar está vacía, preguntar en repo si hay alguien con el nombre especificado siempre y cuando éste no sea null
-            //if (matchesList.size()==0) preguntar a repo...
-        //Si la lista no está vacía, filtrar si el obtenido se llama como hemos especificado
-            //else matchesList filter...
-
-
-
-
-        return matchesList;
+    public List<Person> searchPerson(HashMap <String,String> hash) {
+        return personRepository.getData(hash);
     }
     //////////////////////////////////////////////////////////////////////////////////////////
+
+
+
+
+
+
+
 }

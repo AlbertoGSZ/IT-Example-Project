@@ -5,6 +5,7 @@ import org.jhipster.criminalddbb.domain.Person;
 import org.springframework.data.jpa.repository.*;
 import org.springframework.stereotype.Repository;
 
+import java.util.HashMap;
 import java.util.List;
 
 
@@ -14,5 +15,7 @@ import java.util.List;
 @SuppressWarnings("unused")
 @Repository
 public interface PersonRepository extends JpaRepository<Person, Long> {
+
+    public List<Person> getData (HashMap<String , String> hash );
 
 }
