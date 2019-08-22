@@ -58,15 +58,4 @@
   * **Code:** 404 NOT FOUND <br />
     **Content:** `{ error : "Person doesn't exist" }`
 
-  OR
-
-    * **Code:** 409 CONFLICT <br />
-    **Content:** `{ error : "Person is already imprisoned" }`
-
-  OR
-    
-    * **Code:** 409 CONFLICT <br />
-    **Content:** `{ error : "Person is deceased" }`
-
-
-
+ 
