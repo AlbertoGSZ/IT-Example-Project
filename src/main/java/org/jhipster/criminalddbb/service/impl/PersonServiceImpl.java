@@ -146,7 +146,7 @@ public class PersonServiceImpl implements PersonService {
          * Returns a list of every matching person if found in DDBB.
          * @return a list of entities.
          */
-        public List<Person> searchPerson(HashMap<String,Object>hash) {
+        public List<Person> searchPerson(HashMap<String,String>hash) {
             return personRepository.getData(hash);
         }
         //////////////////////////////////////////////////////////////////////////////////////////

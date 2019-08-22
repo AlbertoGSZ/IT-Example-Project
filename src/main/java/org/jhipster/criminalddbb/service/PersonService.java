@@ -59,11 +59,13 @@ public interface PersonService {
     List<Person> findVIPs();
 
 
+    Optional<Person> modStatusOrRank(Long id, String mod);
+
     /**
      * Returns a list of every matching person if found in DDBB.
      * @return a list of entities.
      */
-    List<Person> searchPerson(HashMap<String,Object>hash);
+    List<Person> searchPerson(HashMap<String,String>hash);
 
-    Optional<Person> modStatusOrRank(Long id, String mod);
+
 }

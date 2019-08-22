@@ -22,9 +22,7 @@ import org.springframework.web.bind.annotation.*;
 import java.net.URI;
 import java.net.URISyntaxException;
 
-import java.util.List;
-import java.util.Map;
-import java.util.Optional;
+import java.util.*;
 
 /**
  * REST controller for managing {@link org.jhipster.criminalddbb.domain.Person}.
@@ -143,15 +141,15 @@ public class PersonResource {
 
 
 
-    ////////// WIP MOD. RANK/STATUS ////////////////////////
-    /** {@code GET /people/search} : Receives a person and searches for it in DDBB.
+    ////////// WIP MOD. RANK/STATUS ////////////////////////     Terminar especificaciones
+    /** {@code GET /people/{id}/{modification}} : Receives a person and searches for it in DDBB.
      * @params person
      * @return the matching entity with status {@code 201 (Found)} and with body of the matching Person, or with status {@code 404 (Bad Request)} if the person doesn´t match with anyone.
      * @throws URISyntaxException if the Location URI syntax is incorrect.*/
-    @PatchMapping("/people/{id}/{mod}")
-    public Optional<Person> searchPerson(@PathVariable Long id, String mod) throws URISyntaxException {
-        log.debug("REST request to patch status or rank : {}", mod);
-        return personService.modStatusOrRank(id,mod);
+    @PatchMapping("/people/{id}/{modification}")
+    public Optional<Person> modStatusOrRank(@PathVariable Long id, String modification) throws URISyntaxException {
+        log.debug("REST request to patch status or rank : {}", modification);
+        return personService.modStatusOrRank(id,modification);
     }
     /////////////////////////////////////////////////////////
 
@@ -168,15 +166,8 @@ public class PersonResource {
     @GetMapping("/people/search")
     public List<Person> searchPerson(@RequestParam Person person) throws URISyntaxException {
         log.debug("REST request searching Person : {}", person);
-        ObjectMapper oMapper = new ObjectMapper();
-        Map<String, Object> map = oMapper.convertValue(person, Map.class);
-        //System.out.println("\n\n\n --------------------------------------------------------------- \n\n");
-        //System.out.println(map);
-        //System.out.println("\n\n --------------------------------------------------------------- \n\n\n");
-
-        return personService.searchPerson(map);
+        return null;
         //return personService.searchPerson(person.toHashMap()); /// Linea de retorno pendiente de cambio
-        //return null;
     }
     /////////////////////////////////////////////////////////
 

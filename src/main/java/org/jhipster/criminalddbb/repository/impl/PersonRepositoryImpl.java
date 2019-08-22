@@ -16,7 +16,7 @@ public class PersonRepositoryImpl {
     @PersistenceContext
     private EntityManager entityManager;
 
-    public List<Person> getData (HashMap<String,Object>hash){   //Cambiar
+    public List<Person> getData (HashMap<String,String>hash){   //Cambiar
         ////////////////////////////////////////////////////////////////////
         System.out.println("\n\n\n ------------------------------------------------------ \n\n");
         System.out.println(hash.toString());
