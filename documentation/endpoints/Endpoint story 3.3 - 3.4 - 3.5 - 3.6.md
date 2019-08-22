@@ -32,6 +32,10 @@
      
   OR
   
+     {"status": "UNKNOWN"} <!--- Understood as released from prison --->
+     
+  OR
+  
      {"rank": "rank +1"}
      
   OR
