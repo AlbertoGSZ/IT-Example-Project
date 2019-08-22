@@ -16,13 +16,20 @@ public class PersonRepositoryImpl {
     @PersistenceContext
     private EntityManager entityManager;
 
-    public List<Person> getData (HashMap<String,String> hash){
+    public List<Person> getData (HashMap<String,Object>hash){   //Cambiar
+        ////////////////////////////////////////////////////////////////////
+        System.out.println("\n\n\n ------------------------------------------------------ \n\n");
+        System.out.println(hash.toString());
+        System.out.println("\n\n ------------------------------------------------------ \n\n\n");
+        ////////////////////////////////////////////////////////////////////
+
+
+
         CriteriaBuilder cb = entityManager .getCriteriaBuilder();
         CriteriaQuery<Person> query = cb.createQuery(Person.class);
         Root<Person> root = query.from (Person. class);
 
         List<Predicate>predicates = new ArrayList<>();
-
         hash.forEach ((field,value) -> {
             switch (field) {
                 case "id":

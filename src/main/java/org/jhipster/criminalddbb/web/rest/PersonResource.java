@@ -1,5 +1,6 @@
 package org.jhipster.criminalddbb.web.rest;
 
+import com.fasterxml.jackson.databind.ObjectMapper;
 import org.jhipster.criminalddbb.domain.CaseReport;
 import org.jhipster.criminalddbb.domain.Person;
 import org.jhipster.criminalddbb.service.PersonService;
@@ -21,8 +22,8 @@ import org.springframework.web.bind.annotation.*;
 import java.net.URI;
 import java.net.URISyntaxException;
 
-import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.Optional;
 
 /**
@@ -142,6 +143,20 @@ public class PersonResource {
 
 
 
+    ////////// WIP MOD. RANK/STATUS ////////////////////////
+    /** {@code GET /people/search} : Receives a person and searches for it in DDBB.
+     * @params person
+     * @return the matching entity with status {@code 201 (Found)} and with body of the matching Person, or with status {@code 404 (Bad Request)} if the person doesn´t match with anyone.
+     * @throws URISyntaxException if the Location URI syntax is incorrect.*/
+    @PatchMapping("/people/{id}/{mod}")
+    public Optional<Person> searchPerson(@PathVariable Long id, String mod) throws URISyntaxException {
+        log.debug("REST request to patch status or rank : {}", mod);
+        return personService.modStatusOrRank(id,mod);
+    }
+    /////////////////////////////////////////////////////////
+
+
+
 
 
 
@@ -151,15 +166,19 @@ public class PersonResource {
      * @return the matching entity with status {@code 201 (Found)} and with body of the matching Person, or with status {@code 404 (Bad Request)} if the person doesn´t match with anyone.
      * @throws URISyntaxException if the Location URI syntax is incorrect.*/
     @GetMapping("/people/search")
-    public List<Person> searchPerson(@RequestParam HashMap<String,String> hash) throws URISyntaxException {
-        log.debug("REST request searching Person : {}", hash);
-        return personService.searchPerson(hash);
+    public List<Person> searchPerson(@RequestParam Person person) throws URISyntaxException {
+        log.debug("REST request searching Person : {}", person);
+        ObjectMapper oMapper = new ObjectMapper();
+        Map<String, Object> map = oMapper.convertValue(person, Map.class);
+        //System.out.println("\n\n\n --------------------------------------------------------------- \n\n");
+        //System.out.println(map);
+        //System.out.println("\n\n --------------------------------------------------------------- \n\n\n");
+
+        return personService.searchPerson(map);
+        //return personService.searchPerson(person.toHashMap()); /// Linea de retorno pendiente de cambio
+        //return null;
     }
     /////////////////////////////////////////////////////////
-
-
-
-
 
 
 

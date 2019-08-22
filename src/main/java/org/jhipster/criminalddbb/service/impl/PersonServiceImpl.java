@@ -1,6 +1,7 @@
 package org.jhipster.criminalddbb.service.impl;
 
 import org.jhipster.criminalddbb.domain.CaseReport;
+import org.jhipster.criminalddbb.domain.enumeration.Status;
 import org.jhipster.criminalddbb.service.PersonService;
 import org.jhipster.criminalddbb.domain.Person;
 import org.jhipster.criminalddbb.repository.PersonRepository;
@@ -98,15 +99,58 @@ public class PersonServiceImpl implements PersonService {
 
 
 
-    ///////////////////////////////WIP SEARCH PERSON///////////////////////////////////////
-    /**
-     * Returns a list of every matching person if found in DDBB.
-     * @return a list of entities.
-     */
-    public List<Person> searchPerson(HashMap <String,String> hash) {
-        return personRepository.getData(hash);
+
+    ///////////////////////////////WIP PATCH RANKorSTATUS///////////////////////////////////////
+    public Optional<Person> modStatusOrRank(Long id, String mod) {   //degrade/ascend
+        if (!personRepository.existsById(id)) try {
+            throw new Exception("Error 404, entity not found.");
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        Status auxStatus = null;
+        if (mod.equalsIgnoreCase("Imprisoned")) auxStatus = Status.IMPRISONED;
+        if (mod.equalsIgnoreCase("Dead")) auxStatus = Status.DEAD;
+        if (mod.equalsIgnoreCase("Alive")) auxStatus = Status.ALIVE;
+        if (mod.equalsIgnoreCase("Unknown")) auxStatus = Status.UNKNOWN;
+
+        if (auxStatus != null) {
+            personRepository.findById(id).get().setStatus(auxStatus);
+            //Insertar método de autoregulación
+        }
+
+        if (mod.equalsIgnoreCase("Ascend")) {
+            personRepository.findById(id).get().setRank(personRepository.findById(id).get().getRank() + 1);
+            //Insertar método de autoregulación
+        }
+
+        if (mod.equalsIgnoreCase("Degrade")) {
+            personRepository.findById(id).get().setRank(personRepository.findById(id).get().getRank() - 1);
+            //Insertar método de autoregulación
+        }
+
+        /*else try {
+            throw new Exception("Error 400, Invalid specified syntax");
+        } catch (Exception e) {
+            e.printStackTrace();
+        }*/
+
+        return personRepository.findById(id);
+        }
+        //////////////////////////////////////////////////////////////////////////////////////////
+
+
+
+        ///////////////////////////////WIP SEARCH PERSON///////////////////////////////////////
+        /**
+         * Returns a list of every matching person if found in DDBB.
+         * @return a list of entities.
+         */
+        public List<Person> searchPerson(HashMap<String,Object>hash) {
+            return personRepository.getData(hash);
+        }
+        //////////////////////////////////////////////////////////////////////////////////////////
     }
-    //////////////////////////////////////////////////////////////////////////////////////////
 
 
 
@@ -114,4 +158,11 @@ public class PersonServiceImpl implements PersonService {
 
 
 
-}
+
+
+
+
+
+
+
+

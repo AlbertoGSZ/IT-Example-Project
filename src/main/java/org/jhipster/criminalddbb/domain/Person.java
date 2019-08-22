@@ -7,12 +7,14 @@ import javax.persistence.*;
 
 import java.io.Serializable;
 import java.time.Instant;
+import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Set;
 
 import org.jhipster.criminalddbb.domain.enumeration.Nationality;
 
 import org.jhipster.criminalddbb.domain.enumeration.Sex;
+import org.jhipster.criminalddbb.domain.enumeration.Status;
 
 /**
  * A Person.
@@ -46,6 +48,10 @@ public class Person implements Serializable {
     @Enumerated(EnumType.STRING)
     @Column(name = "nationality")
     private Nationality nationality;
+
+    @Enumerated(EnumType.STRING)
+    @Column(name = "status")
+    private Status status;
 
     @Enumerated(EnumType.STRING)
     @Column(name = "sex")
@@ -156,6 +162,19 @@ public class Person implements Serializable {
         this.nationality = nationality;
     }
 
+    public Status getStatus() {
+        return status;
+    }
+
+    public Person status(Status status) {
+        this.status = status;
+        return this;
+    }
+
+    public void setStatus(Status status) {
+        this.status = status;
+    }
+
     public Sex getSex() {
         return sex;
     }
@@ -259,6 +278,23 @@ public class Person implements Serializable {
     }
     // jhipster-needle-entity-add-getters-setters - JHipster will add getters and setters here, do not remove
 
+    public HashMap<String,String> toHashMap(){
+        HashMap <String,String> hash = new HashMap<>();
+        hash.put("id", String.valueOf(this.getId()));
+        hash.put("name",this.getName());
+        hash.put("status", String.valueOf(this.getStatus()));
+        hash.put("surname",this.getSurname());
+        hash.put("birthDate", String.valueOf(this.getBirthDate()));
+        hash.put("age",String.valueOf(this.getAge()));
+        hash.put("adress",this.getAdress());
+        hash.put("alias",this.getAlias());
+        hash.put("nationality", String.valueOf(this.getNationality()));
+        hash.put("sex", String.valueOf(this.getSex()));
+        hash.put("rank",String.valueOf(this.getRank()));
+        return hash;
+    }
+
+
     @Override
     public boolean equals(Object o) {
         if (this == o) {
@@ -283,6 +319,7 @@ public class Person implements Serializable {
             ", surname='" + getSurname() + "'" +
             ", birthDate='" + getBirthDate() + "'" +
             ", age=" + getAge() +
+            ", status=" + getStatus() +
             ", adress='" + getAdress() + "'" +
             ", nationality='" + getNationality() + "'" +
             ", sex='" + getSex() + "'" +
