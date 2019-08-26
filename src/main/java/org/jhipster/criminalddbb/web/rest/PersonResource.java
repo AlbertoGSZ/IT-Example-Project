@@ -3,6 +3,9 @@ package org.jhipster.criminalddbb.web.rest;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.jhipster.criminalddbb.domain.CaseReport;
 import org.jhipster.criminalddbb.domain.Person;
+import org.jhipster.criminalddbb.domain.enumeration.Nationality;
+import org.jhipster.criminalddbb.domain.enumeration.Sex;
+import org.jhipster.criminalddbb.domain.enumeration.Status;
 import org.jhipster.criminalddbb.service.PersonService;
 import org.jhipster.criminalddbb.web.rest.errors.BadRequestAlertException;
 
@@ -22,6 +25,7 @@ import org.springframework.web.bind.annotation.*;
 import java.net.URI;
 import java.net.URISyntaxException;
 
+import java.time.Instant;
 import java.util.*;
 
 /**
@@ -164,10 +168,14 @@ public class PersonResource {
      * @return the matching entity with status {@code 201 (Found)} and with body of the matching Person, or with status {@code 404 (Bad Request)} if the person doesn´t match with anyone.
      * @throws URISyntaxException if the Location URI syntax is incorrect.*/
     @GetMapping("/people/search")
-    public List<Person> searchPerson(@RequestParam Person person) throws URISyntaxException {
-        log.debug("REST request searching Person : {}", person);
-        return null;
-        //return personService.searchPerson(person.toHashMap()); /// Linea de retorno pendiente de cambio
+    public List<Person> searchPerson(@RequestParam Long id, String name, String surname, Integer age, Sex sex, String alias, Status status, String adress, Nationality nationality, Integer rank) throws URISyntaxException {
+        log.debug("REST request searching Person : {}", id, name, surname, age, sex, alias, status, adress, nationality, rank);
+        //System.out.println("\n\n\n----------------------------------------------------------\n\n");
+        Person aux= new Person (id, name, surname, age, sex, alias, status, adress, nationality, rank);
+        //System.out.println(aux.toHashMap());
+        //System.out.println("\n\n----------------------------------------------------------\n\n\n");
+        //return null
+        return personService.searchPerson(aux.toHashMap()); /// Linea de retorno pendiente de cambio
     }
     /////////////////////////////////////////////////////////
 

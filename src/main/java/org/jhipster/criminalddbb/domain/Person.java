@@ -75,6 +75,21 @@ public class Person implements Serializable {
     @JsonIgnoreProperties("subordinates")
     private Person chief;
 
+    public Person(){}
+
+    public Person(Long id, String name, String surname, Integer age, Sex sex, String alias, Status status, String adress, Nationality nationality, Integer rank) {
+    this.id=id;
+    this.name=name;
+    this.surname=surname;
+    this.age=age;
+    this.sex=sex;
+    this.alias=alias;
+    this.status=status;
+    this.adress=adress;
+    this.nationality=nationality;
+    this.rank=rank;
+    }
+
     // jhipster-needle-entity-add-field - JHipster will add fields here, do not remove
     public Long getId() {
         return id;
@@ -280,17 +295,16 @@ public class Person implements Serializable {
 
     public HashMap<String,String> toHashMap(){
         HashMap <String,String> hash = new HashMap<>();
-        hash.put("id", String.valueOf(this.getId()));
-        hash.put("name",this.getName());
-        hash.put("status", String.valueOf(this.getStatus()));
-        hash.put("surname",this.getSurname());
-        hash.put("birthDate", String.valueOf(this.getBirthDate()));
-        hash.put("age",String.valueOf(this.getAge()));
-        hash.put("adress",this.getAdress());
-        hash.put("alias",this.getAlias());
-        hash.put("nationality", String.valueOf(this.getNationality()));
-        hash.put("sex", String.valueOf(this.getSex()));
-        hash.put("rank",String.valueOf(this.getRank()));
+        if (this.id!=null) hash.put("id", String.valueOf(this.getId()));
+        if (this.name!=null) hash.put("name",String.valueOf(this.getName()));
+        if (this.status!=null) hash.put("status", String.valueOf(this.getStatus()));
+        if (this.surname!=null) hash.put("surname",String.valueOf(this.getSurname()));
+        if (this.age!=null) hash.put("age",String.valueOf(this.getAge()));
+        if (this.adress!=null) hash.put("adress",String.valueOf(this.getAdress()));
+        if (this.alias!=null) hash.put("alias",String.valueOf(this.getAlias()));
+        if (this.nationality!=null) hash.put("nationality", String.valueOf(this.getNationality()));
+        if (this.sex!=null) hash.put("sex", String.valueOf(this.getSex()));
+        if (this.rank!=null) hash.put("rank", String.valueOf(this.getRank()));
         return hash;
     }
 

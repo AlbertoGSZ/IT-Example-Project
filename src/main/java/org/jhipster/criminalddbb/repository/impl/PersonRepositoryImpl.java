@@ -16,24 +16,15 @@ public class PersonRepositoryImpl {
     @PersistenceContext
     private EntityManager entityManager;
 
-    public List<Person> getData (HashMap<String,String>hash){   //Cambiar
-        ////////////////////////////////////////////////////////////////////
-        System.out.println("\n\n\n ------------------------------------------------------ \n\n");
-        System.out.println(hash.toString());
-        System.out.println("\n\n ------------------------------------------------------ \n\n\n");
-        ////////////////////////////////////////////////////////////////////
-
-
-
+    public List<Person> getData (HashMap<String,String>hash){
         CriteriaBuilder cb = entityManager .getCriteriaBuilder();
         CriteriaQuery<Person> query = cb.createQuery(Person.class);
         Root<Person> root = query.from (Person. class);
-
         List<Predicate>predicates = new ArrayList<>();
         hash.forEach ((field,value) -> {
             switch (field) {
                 case "id":
-                    predicates.add(cb.like(root.get(field), "%" + (String) value + "%"));
+                    predicates.add(cb.like(root.get(field), value));
                     break;
                 case "status":
                     predicates.add(cb.like(root.get(field), "%" + (String) value + "%"));
@@ -47,9 +38,6 @@ public class PersonRepositoryImpl {
                 case "adress":
                     predicates.add(cb.like(root.get(field), "%" + (String) value + "%"));
                     break;
-                case "birthDate":
-                    predicates.add(cb.like(root.get(field), "%" + (String) value + "%"));
-                    break;
                 case "age":
                     predicates.add(cb.like(root.get(field), "%" + (String) value + "%"));
                     break;
@@ -59,14 +47,26 @@ public class PersonRepositoryImpl {
                 case "nationality":
                     predicates.add(cb.like(root.get(field), "%" + (String) value + "%"));
                     break;
+                case "sex":
+                    predicates.add(cb.like(root.get(field), "%" + (String) value + "%"));
+                    break;
                 case "rank":
                     predicates.add(cb.like(root.get(field), "%" + (String) value + "%"));
                     break;
             }
         });
-
         query.select(root).where(predicates.toArray(new Predicate[predicates.size()]));
-        return entityManager.createQuery(query).getResultList();
+
+
+        System.out.println("\n\n\n --------------------------------------------------------1 \n\n");
+        System.out.println(query.toString());
+        System.out.println("\n ------------------------------------------------------------2 \n");
+        System.out.println(entityManager.createQuery(query)); //    <- ERROR EN ESTA LÍNEA, AL CREAR LA QUERY
+        System.out.println("\n ------------------------------------------------------------3 \n");
+        System.out.println(entityManager.createQuery(query).getResultList());
+        System.out.println("\n\n\n --------------------------------------------------------4 \n\n");
+
+        return entityManager.createQuery(query).getResultList();    //    <- ERROR EN ESTA LÍNEA
     }
 
 
