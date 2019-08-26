@@ -65,7 +65,7 @@ public interface PersonService {
      * Returns a list of every matching person if found in DDBB.
      * @return a list of entities.
      */
-    List<Person> searchPerson(HashMap<String,String>hash);
+    List<Person> searchPerson(HashMap<String,Object>hash);
 
 
 }

@@ -16,18 +16,22 @@ public class PersonRepositoryImpl {
     @PersistenceContext
     private EntityManager entityManager;
 
-    public List<Person> getData (HashMap<String,String>hash){
+    public List<Person> getData (HashMap<String,Object>hash){
         CriteriaBuilder cb = entityManager .getCriteriaBuilder();
         CriteriaQuery<Person> query = cb.createQuery(Person.class);
         Root<Person> root = query.from (Person. class);
         List<Predicate>predicates = new ArrayList<>();
+        System.out.println("\n\n\n --------------------------------------------------------X \n\n");
+        System.out.println(hash);
+        System.out.println("\n ------------------------------------------------------------X \n");
+
         hash.forEach ((field,value) -> {
             switch (field) {
                 case "id":
                     predicates.add(cb.like(root.get(field), "%" + (String) value + "%"));
                     break;
                 case "status":
-                    predicates.add(cb.like(root.get(field), "%" + (String) value + "%"));
+                    predicates.add(cb.equal(root.get(field), "%" + (String) value + "%"));
                     break;
                 case "name":
                     predicates.add(cb.like(root.get(field), "%" + (String) value + "%"));
@@ -39,19 +43,19 @@ public class PersonRepositoryImpl {
                     predicates.add(cb.like(root.get(field), "%" + (String) value + "%"));
                     break;
                 case "age":
-                    predicates.add(cb.like(root.get(field), "%" + (String) value + "%"));
+                    predicates.add(cb.equal(root.get(field), "%" + (String) value + "%"));
                     break;
                 case "alias":
                     predicates.add(cb.like(root.get(field), "%" + (String) value + "%"));
                     break;
                 case "nationality":
-                    predicates.add(cb.like(root.get(field), "%" + (String) value + "%"));
+                    predicates.add(cb.equal(root.get(field), "%" + (String) value + "%"));
                     break;
                 case "sex":
-                    predicates.add(cb.like(root.get(field), "%" + (String) value + "%"));
+                    predicates.add(cb.equal(root.get(field), "%" + (String) value + "%"));
                     break;
                 case "rank":
-                    predicates.add(cb.like(root.get(field), "%" + (String) value + "%"));
+                    predicates.add(cb.equal(root.get(field), "%" + (String) value + "%"));
                     break;
             }
         });

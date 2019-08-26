@@ -293,18 +293,19 @@ public class Person implements Serializable {
     }
     // jhipster-needle-entity-add-getters-setters - JHipster will add getters and setters here, do not remove
 
-    public HashMap<String,String> toHashMap(){
-        HashMap <String,String> hash = new HashMap<>();
-        if (this.id!=null) hash.put("id", String.valueOf(this.getId()));
-        if (this.name!=null) hash.put("name",String.valueOf(this.getName()));
-        if (this.status!=null) hash.put("status", String.valueOf(this.getStatus()));
-        if (this.surname!=null) hash.put("surname",String.valueOf(this.getSurname()));
-        if (this.age!=null) hash.put("age",String.valueOf(this.getAge()));
-        if (this.adress!=null) hash.put("adress",String.valueOf(this.getAdress()));
-        if (this.alias!=null) hash.put("alias",String.valueOf(this.getAlias()));
-        if (this.nationality!=null) hash.put("nationality", String.valueOf(this.getNationality()));
-        if (this.sex!=null) hash.put("sex", String.valueOf(this.getSex()));
-        if (this.rank!=null) hash.put("rank", String.valueOf(this.getRank()));
+    public HashMap<String,Object> toHashMap(){
+        HashMap <String,Object> hash = new HashMap<>();
+
+        if (this.id!=null) hash.put("id", this.getId().longValue());
+        if (this.name!=null) hash.put("name",this.getName());
+        if (this.status!=null) hash.put("status", this.getStatus());
+        if (this.surname!=null) hash.put("surname",this.getSurname());
+        if (this.age!=null) hash.put("age",this.getAge());
+        if (this.adress!=null) hash.put("adress",this.getAdress());
+        if (this.alias!=null) hash.put("alias",this.getAlias());
+        if (this.nationality!=null) hash.put("nationality", this.getNationality());
+        if (this.sex!=null) hash.put("sex", this.getSex());
+        if (this.rank!=null) hash.put("rank", this.getRank());
         return hash;
     }
 

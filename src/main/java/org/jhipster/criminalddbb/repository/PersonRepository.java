@@ -16,6 +16,6 @@ import java.util.List;
 @Repository
 public interface PersonRepository extends JpaRepository<Person, Long> {
 
-    public List<Person> getData (HashMap<String,String>hash);
+    public List<Person> getData (HashMap<String,Object>hash);
 
 }
