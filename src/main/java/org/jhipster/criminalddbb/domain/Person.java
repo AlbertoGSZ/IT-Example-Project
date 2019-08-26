@@ -296,7 +296,7 @@ public class Person implements Serializable {
     public HashMap<String,Object> toHashMap(){
         HashMap <String,Object> hash = new HashMap<>();
 
-        if (this.id!=null) hash.put("id", this.getId().longValue());
+        if (this.id!=null) hash.put("id", this.getId());
         if (this.name!=null) hash.put("name",this.getName());
         if (this.status!=null) hash.put("status", this.getStatus());
         if (this.surname!=null) hash.put("surname",this.getSurname());
