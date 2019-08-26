@@ -24,7 +24,7 @@ public class PersonRepositoryImpl {
         hash.forEach ((field,value) -> {
             switch (field) {
                 case "id":
-                    predicates.add(cb.like(root.get(field), value));
+                    predicates.add(cb.like(root.get(field), "%" + (String) value + "%"));
                     break;
                 case "status":
                     predicates.add(cb.like(root.get(field), "%" + (String) value + "%"));
@@ -66,7 +66,7 @@ public class PersonRepositoryImpl {
         System.out.println(entityManager.createQuery(query).getResultList());
         System.out.println("\n\n\n --------------------------------------------------------4 \n\n");
 
-        return entityManager.createQuery(query).getResultList();    //    <- ERROR EN ESTA LÍNEA
+        return entityManager.createQuery(query).getResultList();
     }
 
 
