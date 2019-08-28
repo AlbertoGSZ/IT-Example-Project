@@ -168,13 +168,19 @@ public class PersonResource {
      * @return the matching entity with status {@code 201 (Found)} and with body of the matching Person, or with status {@code 404 (Bad Request)} if the person doesn´t match with anyone.
      * @throws URISyntaxException if the Location URI syntax is incorrect.*/
     @GetMapping("/people/search")
-    public List<Person> searchPerson(@RequestParam Long id, String name, String surname, Integer age, Sex sex, String alias, Status status, String adress, Nationality nationality, Integer rank) throws URISyntaxException {
+    public List<Person> searchPerson(
+                                     @RequestParam (value = "id", required = false)Long id,
+                                     @RequestParam (value = "name", required = false)String name,
+                                     @RequestParam (value = "surname", required = false)String surname,
+                                     @RequestParam (value = "age", required = false)Integer age,
+                                     @RequestParam (value = "sex", required = false)Sex sex,
+                                     @RequestParam (value = "alias", required = false)String alias,
+                                     @RequestParam (value = "status", required = false)Status status,
+                                     @RequestParam (value = "adress", required = false)String adress,
+                                     @RequestParam (value = "nationality", required = false)Nationality nationality,
+                                     @RequestParam (value = "rank", required = false)Integer rank) throws URISyntaxException {
         log.debug("REST request searching Person : {}", id, name, surname, age, sex, alias, status, adress, nationality, rank);
-        //System.out.println("\n\n\n----------------------------------------------------------\n\n");
         Person aux= new Person (id, name, surname, age, sex, alias, status, adress, nationality, rank);
-        //System.out.println(aux.toHashMap());
-        //System.out.println("\n\n----------------------------------------------------------\n\n\n");
-        //return null
         return personService.searchPerson(aux.toHashMap()); /// Linea de retorno pendiente de cambio
     }
     /////////////////////////////////////////////////////////

@@ -21,14 +21,10 @@ public class PersonRepositoryImpl {
         CriteriaQuery<Person> query = cb.createQuery(Person.class);
         Root<Person> root = query.from (Person. class);
         List<Predicate>predicates = new ArrayList<>();
-        System.out.println("\n\n\n --------------------------------------------------------X \n\n");
-        System.out.println(hash);
-        System.out.println("\n ------------------------------------------------------------X \n");
-
         hash.forEach ((field,value) -> {
             switch (field) {
                 case "id":
-                    predicates.add(cb.like(root.get(field), "%" + (String) value + "%"));
+                    predicates.add(cb.equal(root.get(field), value));
                     break;
                 case "status":
                     predicates.add(cb.equal(root.get(field), "%" + (String) value + "%"));
@@ -43,7 +39,7 @@ public class PersonRepositoryImpl {
                     predicates.add(cb.like(root.get(field), "%" + (String) value + "%"));
                     break;
                 case "age":
-                    predicates.add(cb.equal(root.get(field), "%" + (String) value + "%"));
+                    predicates.add(cb.equal(root.get(field), value ));
                     break;
                 case "alias":
                     predicates.add(cb.like(root.get(field), "%" + (String) value + "%"));
@@ -55,21 +51,11 @@ public class PersonRepositoryImpl {
                     predicates.add(cb.equal(root.get(field), "%" + (String) value + "%"));
                     break;
                 case "rank":
-                    predicates.add(cb.equal(root.get(field), "%" + (String) value + "%"));
+                    predicates.add(cb.equal(root.get(field), value ));
                     break;
             }
         });
         query.select(root).where(predicates.toArray(new Predicate[predicates.size()]));
-
-
-        System.out.println("\n\n\n --------------------------------------------------------1 \n\n");
-        System.out.println(query.toString());
-        System.out.println("\n ------------------------------------------------------------2 \n");
-        System.out.println(entityManager.createQuery(query)); //    <- ERROR EN ESTA LÍNEA, AL CREAR LA QUERY
-        System.out.println("\n ------------------------------------------------------------3 \n");
-        System.out.println(entityManager.createQuery(query).getResultList());
-        System.out.println("\n\n\n --------------------------------------------------------4 \n\n");
-
         return entityManager.createQuery(query).getResultList();
     }
 

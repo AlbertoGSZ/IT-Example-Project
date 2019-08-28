@@ -4,6 +4,7 @@ import org.hibernate.annotations.Cache;
 import org.hibernate.annotations.CacheConcurrencyStrategy;
 
 import javax.persistence.*;
+import javax.validation.constraints.Size;
 
 import java.io.Serializable;
 import java.time.Instant;
@@ -40,6 +41,7 @@ public class Person implements Serializable {
     private Instant birthDate;
 
     @Column(name = "age")
+    @Size(min = 0, max =130, message = "Age must be between 0 and 130")
     private Integer age;
 
     @Column(name = "adress")
@@ -61,6 +63,7 @@ public class Person implements Serializable {
     private String alias;
 
     @Column(name = "jhi_rank")
+    @Size(min = 0, max =5, message = "Rank must be between 0 and 5")
     private Integer rank;
 
     @OneToMany(mappedBy = "chief")
@@ -296,7 +299,7 @@ public class Person implements Serializable {
     public HashMap<String,Object> toHashMap(){
         HashMap <String,Object> hash = new HashMap<>();
 
-        if (this.id!=null) hash.put("id", this.getId());
+        if (this.id!=null) hash.put("id",this.getId());
         if (this.name!=null) hash.put("name",this.getName());
         if (this.status!=null) hash.put("status", this.getStatus());
         if (this.surname!=null) hash.put("surname",this.getSurname());
