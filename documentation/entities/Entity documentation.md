@@ -21,6 +21,7 @@ In the same way, the ¨Person¨ entity will have a list of ¨CaseReport¨ object
 - Adress: String.  
 - Nationality: ENUM.
 - Sex: ENUM.
+- Status: ENUM.
 - ID: Integer. Non-repeatable random generation.
 - Alias: String.
 - FelonyRecordsDigital: CaseReport list.
