@@ -1,0 +1,67 @@
+entity Person {
+    id Long,
+    name String,
+    surname String,
+    birthDate Instant,
+    adress String,
+    nationality Nationality,
+    status Status,
+    sex Sex,
+    alias String,
+    rank Integer
+}
+
+entity CaseReport {
+    id Long,
+    date Instant,
+    mugshot String,
+    personDetails String,
+    eventDescription String,
+    evidencePhotos String, //Mod to List<String>
+    felonyRecordsPDFs String //Mod to List<String>
+}
+
+entity PreIncarcerationRegistry {
+    id Long,
+	rank Integer,
+    oldChief Long,
+    oldSubordinates Long //Mod to List<long>
+}
+
+relationship OneToMany {
+  Person{subordinates} to Person {chief}, 
+  Person{felonyRecordsDigital} to CaseReport //Unilateralizar tras generación
+}
+
+relationship OneToOne {
+  Person{preIncarcerationRegistry} to PreIncarcerationRegistry
+}
+
+
+enum Nationality {
+   NORTH_AMERICAN, 
+   ENGLISH, 
+   SPANISH,
+   FRENCH,
+   CANADIAN,
+   ITALIAN,
+   RUSSIAN,
+   UNKNOWN
+}
+
+enum Sex {
+   MALE, 
+   FEMALE,
+   UNKNOWN
+}
+
+enum Status {
+   IMPRISONED, 
+   DEAD,
+   ALIVE,
+   UNKNOWN
+}
+
+paginate Person, CaseReport with pagination
+
+service all with serviceImpl
