@@ -10,7 +10,9 @@ of a tree similar to the genealogical one, in which one figure leaves several in
 Each person can have a boss or not as well as a list of people under his command (if any).
 In the same way, the ¨Person¨ entity will have a list of ¨CaseReport¨ objects that will be the criminal history.
 
-"CaseReport" entity has a _many to many_ relationship with "ResourceURL" (which contains a URL to a resource in another site) as a "CaseReport" can have many URLs related and those URLs can be related to many "CaseReports".
+ "CaseReport" entity contains all person's data refering a felony and it has a unilateralized _ManyToOne_ relationship with "Person".
+ "PreIncarcerationRegistry" contains rank and relationships data of a "Person" when incarcerated, so it is empty until that person status is "Incarcerated" and emptied again when liberated. It has a unilateralized relationship of _OneToOne_.
+
 
 
 ### **Entity info: Person**
