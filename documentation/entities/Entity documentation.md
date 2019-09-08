@@ -15,19 +15,20 @@ In the same way, the ¨Person¨ entity will have a list of ¨CaseReport¨ object
 
 ### **Entity info: Person**
 
-- Name: String.
-- Surname: String.
-- BirthDate: Instant. Requirement date before the present day (have to consider the limits).
-- Adress: String.  
-- Nationality: ENUM.
-- Sex: ENUM.
-- Status: ENUM.
-- ID: Integer. Non-repeatable random generation.
-- Alias: String.
-- FelonyRecordsDigital: CaseReport list.
-- Rank: Integer.
-- Chief: Person.
-- Subordinates: Person list.
+- id: Long. Non-repeatable random generation.
+- name: String.
+- surname: String.
+- birthDate: Instant. Requirement date before the present day (have to consider the limits).
+- adress: String.  
+- nationality: ENUM.
+- sex: ENUM.
+- status: ENUM.
+- alias: String.
+- felonyRecordsDigital: CaseReport list.
+- rank: Integer.
+- chief: Person.
+- subordinates: Person list.
+- preIncarcerationRegistry preIncarcerationRegistry
 
 Because of logic reasons, I only wanted to designate the presence of a crime as necessary to create a Person object since in many cases not few data will be missing, but we will only have a crime that has drawn attention and the need to create a criminal record, without achieving to know even the sex of the criminal.
 
@@ -36,16 +37,20 @@ For the same reason I didn´t want to get deeper into certain aspects such as th
 
 ### **Entity info: CaseReport**
 
-- ID: Integer. Non-repeatable random generation.
-- Date: Instant. (Creation of the CaseReport object)
-- Mugshot: String.
-- PersonDetails: String. Not empty.  
-- EventDescription: String. Not empty.
-- EvidencePhotos: String list.
-- FelonyRecordPDF: String list.
+- id: Long. Non-repeatable random generation.
+- date: Instant. (Creation of the CaseReport object)
+- mugshotURL: String.
+- personDetails: String. Not empty.  
+- eventDescription: String. Not empty.
+- evidencePhotosURL: String list.
+- felonyRecordPDFsURLs: String list.
 
 
-### **Entity info: ResourceURL**
+### **Entity info: PreIncarcerationRegistry**
 
-- ID: Integer. Non-repeatable random generation.
-- URL: String. Required.
+- id: Long. Non-repeatable random generation.
+- rank: Integer.
+- oldChief: Long.
+- oldSubordinates: Long List.
+
+
