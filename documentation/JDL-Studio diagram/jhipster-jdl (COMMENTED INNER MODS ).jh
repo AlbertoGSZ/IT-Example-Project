@@ -30,11 +30,11 @@ entity PreIncarcerationRegistry {
 
 relationship OneToMany {
   Person{subordinates} to Person {chief}, 
-  Person{felonyRecordsDigital} to CaseReport            //Unilateralize after JDL import
+  Person{felonyRecordsDigital} to CaseReport {caseReportHolder}
 }
 
 relationship OneToOne {
-  Person{preIncarcerationRegistry} to PreIncarcerationRegistry
+  Person{preIncarcerationRegistry} to PreIncarcerationRegistry {registryHolder}
 }
 
 
