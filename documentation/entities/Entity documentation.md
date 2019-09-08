@@ -28,7 +28,7 @@ In the same way, the ¨Person¨ entity will have a list of ¨CaseReport¨ object
 - rank: Integer.
 - chief: Person.
 - subordinates: Person list.
-- preIncarcerationRegistry: preIncarcerationRegistry.
+- preIncarcerationRegistry: PreIncarcerationRegistry.
 
 Because of logic reasons, I only wanted to designate the presence of a crime as necessary to create a Person object since in many cases not few data will be missing, but we will only have a crime that has drawn attention and the need to create a criminal record, without achieving to know even the sex of the criminal.
 
