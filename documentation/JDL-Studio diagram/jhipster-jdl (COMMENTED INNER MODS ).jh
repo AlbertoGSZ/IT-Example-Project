@@ -14,11 +14,11 @@ entity Person {
 entity CaseReport {
     id Long,
     date Instant,
-    mugshot String,
+    mugshotURL String,
     personDetails String,
     eventDescription String,
-    evidencePhotos String,            //Mod to List<String> after JDL import
-    felonyRecordsPDFs String            //Mod to List<String> after JDL import
+    evidencePhotosURL String,            //Mod to List<String> after JDL import
+    felonyRecordsPDFsURLs String            //Mod to List<String> after JDL import
 }
 
 entity PreIncarcerationRegistry {
