@@ -17,20 +17,20 @@ entity CaseReport {
     mugshot String,
     personDetails String,
     eventDescription String,
-    evidencePhotos String, //Mod to List<String>
-    felonyRecordsPDFs String //Mod to List<String>
+    evidencePhotos String,            //Mod to List<String> after JDL import
+    felonyRecordsPDFs String            //Mod to List<String> after JDL import
 }
 
 entity PreIncarcerationRegistry {
     id Long,
 	rank Integer,
     oldChief Long,
-    oldSubordinates Long //Mod to List<long>
+    oldSubordinates Long            //Mod to List<long> after JDL import
 }
 
 relationship OneToMany {
   Person{subordinates} to Person {chief}, 
-  Person{felonyRecordsDigital} to CaseReport //Unilateralizar tras generación
+  Person{felonyRecordsDigital} to CaseReport            //Unilateralize after JDL import
 }
 
 relationship OneToOne {
