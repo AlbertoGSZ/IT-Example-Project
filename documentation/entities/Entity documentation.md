@@ -3,7 +3,7 @@
 
 ### **Relationships**
 
-Three entities are found, to be called "Person", "CaseReport" and "ResourceURL".
+Three entities are found, to be called "Person", "CaseReport" and "PreIncarcerationRegistry".
 
 The entity Person has reflexive relationship because it obeys a structure
 of a tree similar to the genealogical one, in which one figure leaves several in branched structure.
