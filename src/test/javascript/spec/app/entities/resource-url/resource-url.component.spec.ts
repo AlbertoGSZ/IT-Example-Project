@@ -3,29 +3,29 @@ import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { Observable, of } from 'rxjs';
 import { HttpHeaders, HttpResponse } from '@angular/common/http';
 
-import { CriminalddbbTestModule } from '../../../test.module';
-import { ResourceURLComponent } from 'app/entities/resource-url/resource-url.component';
-import { ResourceURLService } from 'app/entities/resource-url/resource-url.service';
-import { ResourceURL } from 'app/shared/model/resource-url.model';
+import { CriminalDdbbTestModule } from '../../../test.module';
+import { ResourceUrlComponent } from 'app/entities/resource-url/resource-url.component';
+import { ResourceUrlService } from 'app/entities/resource-url/resource-url.service';
+import { ResourceUrl } from 'app/shared/model/resource-url.model';
 
 describe('Component Tests', () => {
-  describe('ResourceURL Management Component', () => {
-    let comp: ResourceURLComponent;
-    let fixture: ComponentFixture<ResourceURLComponent>;
-    let service: ResourceURLService;
+  describe('ResourceUrl Management Component', () => {
+    let comp: ResourceUrlComponent;
+    let fixture: ComponentFixture<ResourceUrlComponent>;
+    let service: ResourceUrlService;
 
     beforeEach(() => {
       TestBed.configureTestingModule({
-        imports: [CriminalddbbTestModule],
-        declarations: [ResourceURLComponent],
+        imports: [CriminalDdbbTestModule],
+        declarations: [ResourceUrlComponent],
         providers: []
       })
-        .overrideTemplate(ResourceURLComponent, '')
+        .overrideTemplate(ResourceUrlComponent, '')
         .compileComponents();
 
-      fixture = TestBed.createComponent(ResourceURLComponent);
+      fixture = TestBed.createComponent(ResourceUrlComponent);
       comp = fixture.componentInstance;
-      service = fixture.debugElement.injector.get(ResourceURLService);
+      service = fixture.debugElement.injector.get(ResourceUrlService);
     });
 
     it('Should call load all on init', () => {
@@ -34,7 +34,7 @@ describe('Component Tests', () => {
       spyOn(service, 'query').and.returnValue(
         of(
           new HttpResponse({
-            body: [new ResourceURL(123)],
+            body: [new ResourceUrl(123)],
             headers
           })
         )
@@ -45,7 +45,7 @@ describe('Component Tests', () => {
 
       // THEN
       expect(service.query).toHaveBeenCalled();
-      expect(comp.resourceURLS[0]).toEqual(jasmine.objectContaining({ id: 123 }));
+      expect(comp.resourceUrls[0]).toEqual(jasmine.objectContaining({ id: 123 }));
     });
   });
 });

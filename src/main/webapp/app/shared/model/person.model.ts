@@ -1,4 +1,5 @@
 import { Moment } from 'moment';
+import { IPreIncarcerationRegistry } from 'app/shared/model/pre-incarceration-registry.model';
 import { IPerson } from 'app/shared/model/person.model';
 import { ICaseReport } from 'app/shared/model/case-report.model';
 
@@ -9,12 +10,21 @@ export const enum Nationality {
   FRENCH = 'FRENCH',
   CANADIAN = 'CANADIAN',
   ITALIAN = 'ITALIAN',
-  RUSSIAN = 'RUSSIAN'
+  RUSSIAN = 'RUSSIAN',
+  UNKNOWN = 'UNKNOWN'
+}
+
+export const enum Status {
+  IMPRISONED = 'IMPRISONED',
+  DEAD = 'DEAD',
+  ALIVE = 'ALIVE',
+  UNKNOWN = 'UNKNOWN'
 }
 
 export const enum Sex {
-  Male = 'Male',
-  Female = 'Female'
+  MALE = 'MALE',
+  FEMALE = 'FEMALE',
+  UNKNOWN = 'UNKNOWN'
 }
 
 export interface IPerson {
@@ -22,12 +32,14 @@ export interface IPerson {
   name?: string;
   surname?: string;
   birthDate?: Moment;
+  address?: string;
   age?: number;
-  adress?: string;
   nationality?: Nationality;
+  status?: Status;
   sex?: Sex;
   alias?: string;
   rank?: number;
+  preIncarcerationRegistry?: IPreIncarcerationRegistry;
   subordinates?: IPerson[];
   felonyRecordsDigitals?: ICaseReport[];
   chief?: IPerson;
@@ -39,12 +51,14 @@ export class Person implements IPerson {
     public name?: string,
     public surname?: string,
     public birthDate?: Moment,
+    public address?: string,
     public age?: number,
-    public adress?: string,
     public nationality?: Nationality,
+    public status?: Status,
     public sex?: Sex,
     public alias?: string,
     public rank?: number,
+    public preIncarcerationRegistry?: IPreIncarcerationRegistry,
     public subordinates?: IPerson[],
     public felonyRecordsDigitals?: ICaseReport[],
     public chief?: IPerson

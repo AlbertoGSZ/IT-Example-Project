@@ -4,28 +4,28 @@ import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 import { Observable, of } from 'rxjs';
 import { JhiEventManager } from 'ng-jhipster';
 
-import { CriminalddbbTestModule } from '../../../test.module';
-import { ResourceURLDeleteDialogComponent } from 'app/entities/resource-url/resource-url-delete-dialog.component';
-import { ResourceURLService } from 'app/entities/resource-url/resource-url.service';
+import { CriminalDdbbTestModule } from '../../../test.module';
+import { ResourceUrlDeleteDialogComponent } from 'app/entities/resource-url/resource-url-delete-dialog.component';
+import { ResourceUrlService } from 'app/entities/resource-url/resource-url.service';
 
 describe('Component Tests', () => {
-  describe('ResourceURL Management Delete Component', () => {
-    let comp: ResourceURLDeleteDialogComponent;
-    let fixture: ComponentFixture<ResourceURLDeleteDialogComponent>;
-    let service: ResourceURLService;
+  describe('ResourceUrl Management Delete Component', () => {
+    let comp: ResourceUrlDeleteDialogComponent;
+    let fixture: ComponentFixture<ResourceUrlDeleteDialogComponent>;
+    let service: ResourceUrlService;
     let mockEventManager: any;
     let mockActiveModal: any;
 
     beforeEach(() => {
       TestBed.configureTestingModule({
-        imports: [CriminalddbbTestModule],
-        declarations: [ResourceURLDeleteDialogComponent]
+        imports: [CriminalDdbbTestModule],
+        declarations: [ResourceUrlDeleteDialogComponent]
       })
-        .overrideTemplate(ResourceURLDeleteDialogComponent, '')
+        .overrideTemplate(ResourceUrlDeleteDialogComponent, '')
         .compileComponents();
-      fixture = TestBed.createComponent(ResourceURLDeleteDialogComponent);
+      fixture = TestBed.createComponent(ResourceUrlDeleteDialogComponent);
       comp = fixture.componentInstance;
-      service = fixture.debugElement.injector.get(ResourceURLService);
+      service = fixture.debugElement.injector.get(ResourceUrlService);
       mockEventManager = fixture.debugElement.injector.get(JhiEventManager);
       mockActiveModal = fixture.debugElement.injector.get(NgbActiveModal);
     });

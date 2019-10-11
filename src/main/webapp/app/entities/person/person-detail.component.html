@@ -17,17 +17,21 @@
                 <dd>
                     <span>{{person.birthDate}}</span>
                 </dd>
+                <dt><span>Address</span></dt>
+                <dd>
+                    <span>{{person.address}}</span>
+                </dd>
                 <dt><span>Age</span></dt>
                 <dd>
                     <span>{{person.age}}</span>
                 </dd>
-                <dt><span>Adress</span></dt>
-                <dd>
-                    <span>{{person.adress}}</span>
-                </dd>
                 <dt><span>Nationality</span></dt>
                 <dd>
                     <span>{{person.nationality}}</span>
+                </dd>
+                <dt><span>Status</span></dt>
+                <dd>
+                    <span>{{person.status}}</span>
                 </dd>
                 <dt><span>Sex</span></dt>
                 <dd>
@@ -40,6 +44,12 @@
                 <dt><span>Rank</span></dt>
                 <dd>
                     <span>{{person.rank}}</span>
+                </dd>
+                <dt><span>Pre Incarceration Registry</span></dt>
+                <dd>
+                    <div *ngIf="person.preIncarcerationRegistry">
+                        <a [routerLink]="['/pre-incarceration-registry', person.preIncarcerationRegistry?.id, 'view']">{{person.preIncarcerationRegistry?.id}}</a>
+                    </div>
                 </dd>
                 <dt><span>Chief</span></dt>
                 <dd>

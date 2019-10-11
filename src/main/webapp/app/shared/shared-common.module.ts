@@ -1,10 +1,10 @@
 import { NgModule } from '@angular/core';
 
-import { CriminalddbbSharedLibsModule, JhiAlertComponent, JhiAlertErrorComponent } from './';
+import { CriminalDdbbSharedLibsModule, JhiAlertComponent, JhiAlertErrorComponent } from './';
 
 @NgModule({
-  imports: [CriminalddbbSharedLibsModule],
+  imports: [CriminalDdbbSharedLibsModule],
   declarations: [JhiAlertComponent, JhiAlertErrorComponent],
-  exports: [CriminalddbbSharedLibsModule, JhiAlertComponent, JhiAlertErrorComponent]
+  exports: [CriminalDdbbSharedLibsModule, JhiAlertComponent, JhiAlertErrorComponent]
 })
-export class CriminalddbbSharedCommonModule {}
+export class CriminalDdbbSharedCommonModule {}

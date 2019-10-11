@@ -7,7 +7,7 @@ import { take, map } from 'rxjs/operators';
 import * as moment from 'moment';
 import { DATE_TIME_FORMAT } from 'app/shared/constants/input.constants';
 import { PersonService } from 'app/entities/person/person.service';
-import { IPerson, Person, Nationality, Sex } from 'app/shared/model/person.model';
+import { IPerson, Person, Nationality, Status, Sex } from 'app/shared/model/person.model';
 
 describe('Service Tests', () => {
   describe('Person Service', () => {
@@ -27,7 +27,19 @@ describe('Service Tests', () => {
       httpMock = injector.get(HttpTestingController);
       currentDate = moment();
 
-      elemDefault = new Person(0, 'AAAAAAA', 'AAAAAAA', currentDate, 0, 'AAAAAAA', Nationality.NORTH_AMERICAN, Sex.Male, 'AAAAAAA', 0);
+      elemDefault = new Person(
+        0,
+        'AAAAAAA',
+        'AAAAAAA',
+        currentDate,
+        'AAAAAAA',
+        0,
+        Nationality.NORTH_AMERICAN,
+        Status.IMPRISONED,
+        Sex.MALE,
+        'AAAAAAA',
+        0
+      );
     });
 
     describe('Service methods', () => {
@@ -77,9 +89,10 @@ describe('Service Tests', () => {
             name: 'BBBBBB',
             surname: 'BBBBBB',
             birthDate: currentDate.format(DATE_TIME_FORMAT),
+            address: 'BBBBBB',
             age: 1,
-            adress: 'BBBBBB',
             nationality: 'BBBBBB',
+            status: 'BBBBBB',
             sex: 'BBBBBB',
             alias: 'BBBBBB',
             rank: 1
@@ -108,9 +121,10 @@ describe('Service Tests', () => {
             name: 'BBBBBB',
             surname: 'BBBBBB',
             birthDate: currentDate.format(DATE_TIME_FORMAT),
+            address: 'BBBBBB',
             age: 1,
-            adress: 'BBBBBB',
             nationality: 'BBBBBB',
+            status: 'BBBBBB',
             sex: 'BBBBBB',
             alias: 'BBBBBB',
             rank: 1

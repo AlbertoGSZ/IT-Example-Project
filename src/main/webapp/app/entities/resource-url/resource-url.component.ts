@@ -4,36 +4,36 @@ import { Subscription } from 'rxjs';
 import { filter, map } from 'rxjs/operators';
 import { JhiEventManager, JhiAlertService } from 'ng-jhipster';
 
-import { IResourceURL } from 'app/shared/model/resource-url.model';
+import { IResourceUrl } from 'app/shared/model/resource-url.model';
 import { AccountService } from 'app/core';
-import { ResourceURLService } from './resource-url.service';
+import { ResourceUrlService } from './resource-url.service';
 
 @Component({
   selector: 'jhi-resource-url',
   templateUrl: './resource-url.component.html'
 })
-export class ResourceURLComponent implements OnInit, OnDestroy {
-  resourceURLS: IResourceURL[];
+export class ResourceUrlComponent implements OnInit, OnDestroy {
+  resourceUrls: IResourceUrl[];
   currentAccount: any;
   eventSubscriber: Subscription;
 
   constructor(
-    protected resourceURLService: ResourceURLService,
+    protected resourceUrlService: ResourceUrlService,
     protected jhiAlertService: JhiAlertService,
     protected eventManager: JhiEventManager,
     protected accountService: AccountService
   ) {}
 
   loadAll() {
-    this.resourceURLService
+    this.resourceUrlService
       .query()
       .pipe(
-        filter((res: HttpResponse<IResourceURL[]>) => res.ok),
-        map((res: HttpResponse<IResourceURL[]>) => res.body)
+        filter((res: HttpResponse<IResourceUrl[]>) => res.ok),
+        map((res: HttpResponse<IResourceUrl[]>) => res.body)
       )
       .subscribe(
-        (res: IResourceURL[]) => {
-          this.resourceURLS = res;
+        (res: IResourceUrl[]) => {
+          this.resourceUrls = res;
         },
         (res: HttpErrorResponse) => this.onError(res.message)
       );
@@ -44,19 +44,19 @@ export class ResourceURLComponent implements OnInit, OnDestroy {
     this.accountService.identity().then(account => {
       this.currentAccount = account;
     });
-    this.registerChangeInResourceURLS();
+    this.registerChangeInResourceUrls();
   }
 
   ngOnDestroy() {
     this.eventManager.destroy(this.eventSubscriber);
   }
 
-  trackId(index: number, item: IResourceURL) {
+  trackId(index: number, item: IResourceUrl) {
     return item.id;
   }
 
-  registerChangeInResourceURLS() {
-    this.eventSubscriber = this.eventManager.subscribe('resourceURLListModification', response => this.loadAll());
+  registerChangeInResourceUrls() {
+    this.eventSubscriber = this.eventManager.subscribe('resourceUrlListModification', response => this.loadAll());
   }
 
   protected onError(errorMessage: string) {

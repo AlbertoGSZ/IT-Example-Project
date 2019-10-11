@@ -5,8 +5,8 @@ import { ActivatedRoute } from '@angular/router';
 import { Observable } from 'rxjs';
 import { filter, map } from 'rxjs/operators';
 import { JhiAlertService } from 'ng-jhipster';
-import { IResourceURL, ResourceURL } from 'app/shared/model/resource-url.model';
-import { ResourceURLService } from './resource-url.service';
+import { IResourceUrl, ResourceUrl } from 'app/shared/model/resource-url.model';
+import { ResourceUrlService } from './resource-url.service';
 import { ICaseReport } from 'app/shared/model/case-report.model';
 import { CaseReportService } from 'app/entities/case-report';
 
@@ -14,20 +14,20 @@ import { CaseReportService } from 'app/entities/case-report';
   selector: 'jhi-resource-url-update',
   templateUrl: './resource-url-update.component.html'
 })
-export class ResourceURLUpdateComponent implements OnInit {
+export class ResourceUrlUpdateComponent implements OnInit {
   isSaving: boolean;
 
   casereports: ICaseReport[];
 
   editForm = this.fb.group({
     id: [],
-    url: [],
+    urlLink: [],
     caseReport: []
   });
 
   constructor(
     protected jhiAlertService: JhiAlertService,
-    protected resourceURLService: ResourceURLService,
+    protected resourceUrlService: ResourceUrlService,
     protected caseReportService: CaseReportService,
     protected activatedRoute: ActivatedRoute,
     private fb: FormBuilder
@@ -35,8 +35,8 @@ export class ResourceURLUpdateComponent implements OnInit {
 
   ngOnInit() {
     this.isSaving = false;
-    this.activatedRoute.data.subscribe(({ resourceURL }) => {
-      this.updateForm(resourceURL);
+    this.activatedRoute.data.subscribe(({ resourceUrl }) => {
+      this.updateForm(resourceUrl);
     });
     this.caseReportService
       .query()
@@ -47,11 +47,11 @@ export class ResourceURLUpdateComponent implements OnInit {
       .subscribe((res: ICaseReport[]) => (this.casereports = res), (res: HttpErrorResponse) => this.onError(res.message));
   }
 
-  updateForm(resourceURL: IResourceURL) {
+  updateForm(resourceUrl: IResourceUrl) {
     this.editForm.patchValue({
-      id: resourceURL.id,
-      url: resourceURL.url,
-      caseReport: resourceURL.caseReport
+      id: resourceUrl.id,
+      urlLink: resourceUrl.urlLink,
+      caseReport: resourceUrl.caseReport
     });
   }
 
@@ -61,24 +61,24 @@ export class ResourceURLUpdateComponent implements OnInit {
 
   save() {
     this.isSaving = true;
-    const resourceURL = this.createFromForm();
-    if (resourceURL.id !== undefined) {
-      this.subscribeToSaveResponse(this.resourceURLService.update(resourceURL));
+    const resourceUrl = this.createFromForm();
+    if (resourceUrl.id !== undefined) {
+      this.subscribeToSaveResponse(this.resourceUrlService.update(resourceUrl));
     } else {
-      this.subscribeToSaveResponse(this.resourceURLService.create(resourceURL));
+      this.subscribeToSaveResponse(this.resourceUrlService.create(resourceUrl));
     }
   }
 
-  private createFromForm(): IResourceURL {
+  private createFromForm(): IResourceUrl {
     return {
-      ...new ResourceURL(),
+      ...new ResourceUrl(),
       id: this.editForm.get(['id']).value,
-      url: this.editForm.get(['url']).value,
+      urlLink: this.editForm.get(['urlLink']).value,
       caseReport: this.editForm.get(['caseReport']).value
     };
   }
 
-  protected subscribeToSaveResponse(result: Observable<HttpResponse<IResourceURL>>) {
+  protected subscribeToSaveResponse(result: Observable<HttpResponse<IResourceUrl>>) {
     result.subscribe(() => this.onSaveSuccess(), () => this.onSaveError());
   }
 

@@ -4,7 +4,7 @@ import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 import { Observable, of } from 'rxjs';
 import { JhiEventManager } from 'ng-jhipster';
 
-import { CriminalddbbTestModule } from '../../../test.module';
+import { CriminalDdbbTestModule } from '../../../test.module';
 import { CaseReportDeleteDialogComponent } from 'app/entities/case-report/case-report-delete-dialog.component';
 import { CaseReportService } from 'app/entities/case-report/case-report.service';
 
@@ -18,7 +18,7 @@ describe('Component Tests', () => {
 
     beforeEach(() => {
       TestBed.configureTestingModule({
-        imports: [CriminalddbbTestModule],
+        imports: [CriminalDdbbTestModule],
         declarations: [CaseReportDeleteDialogComponent]
       })
         .overrideTemplate(CaseReportDeleteDialogComponent, '')

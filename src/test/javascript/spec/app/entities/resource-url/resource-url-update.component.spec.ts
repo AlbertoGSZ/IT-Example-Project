@@ -4,35 +4,35 @@ import { HttpResponse } from '@angular/common/http';
 import { FormBuilder } from '@angular/forms';
 import { Observable, of } from 'rxjs';
 
-import { CriminalddbbTestModule } from '../../../test.module';
-import { ResourceURLUpdateComponent } from 'app/entities/resource-url/resource-url-update.component';
-import { ResourceURLService } from 'app/entities/resource-url/resource-url.service';
-import { ResourceURL } from 'app/shared/model/resource-url.model';
+import { CriminalDdbbTestModule } from '../../../test.module';
+import { ResourceUrlUpdateComponent } from 'app/entities/resource-url/resource-url-update.component';
+import { ResourceUrlService } from 'app/entities/resource-url/resource-url.service';
+import { ResourceUrl } from 'app/shared/model/resource-url.model';
 
 describe('Component Tests', () => {
-  describe('ResourceURL Management Update Component', () => {
-    let comp: ResourceURLUpdateComponent;
-    let fixture: ComponentFixture<ResourceURLUpdateComponent>;
-    let service: ResourceURLService;
+  describe('ResourceUrl Management Update Component', () => {
+    let comp: ResourceUrlUpdateComponent;
+    let fixture: ComponentFixture<ResourceUrlUpdateComponent>;
+    let service: ResourceUrlService;
 
     beforeEach(() => {
       TestBed.configureTestingModule({
-        imports: [CriminalddbbTestModule],
-        declarations: [ResourceURLUpdateComponent],
+        imports: [CriminalDdbbTestModule],
+        declarations: [ResourceUrlUpdateComponent],
         providers: [FormBuilder]
       })
-        .overrideTemplate(ResourceURLUpdateComponent, '')
+        .overrideTemplate(ResourceUrlUpdateComponent, '')
         .compileComponents();
 
-      fixture = TestBed.createComponent(ResourceURLUpdateComponent);
+      fixture = TestBed.createComponent(ResourceUrlUpdateComponent);
       comp = fixture.componentInstance;
-      service = fixture.debugElement.injector.get(ResourceURLService);
+      service = fixture.debugElement.injector.get(ResourceUrlService);
     });
 
     describe('save', () => {
       it('Should call update service on save for existing entity', fakeAsync(() => {
         // GIVEN
-        const entity = new ResourceURL(123);
+        const entity = new ResourceUrl(123);
         spyOn(service, 'update').and.returnValue(of(new HttpResponse({ body: entity })));
         comp.updateForm(entity);
         // WHEN
@@ -46,7 +46,7 @@ describe('Component Tests', () => {
 
       it('Should call create service on save for new entity', fakeAsync(() => {
         // GIVEN
-        const entity = new ResourceURL();
+        const entity = new ResourceUrl();
         spyOn(service, 'create').and.returnValue(of(new HttpResponse({ body: entity })));
         comp.updateForm(entity);
         // WHEN

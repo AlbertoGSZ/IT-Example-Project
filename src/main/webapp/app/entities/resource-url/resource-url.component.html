@@ -1,53 +1,53 @@
 <div>
     <h2 id="page-heading">
-        <span>Resource URLS</span>
+        <span>Resource Urls</span>
         <button id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-resource-url" [routerLink]="['/resource-url/new']">
             <fa-icon [icon]="'plus'"></fa-icon>
             <span >
-            Create a new Resource URL
+            Create a new Resource Url
             </span>
         </button>
     </h2>
     <jhi-alert></jhi-alert>
     <br/>
-    <div class="alert alert-warning" *ngIf="resourceURLS?.length === 0">
-        <span>No resourceURLS found</span>
+    <div class="alert alert-warning" *ngIf="resourceUrls?.length === 0">
+        <span>No resourceUrls found</span>
     </div>
-    <div class="table-responsive" *ngIf="resourceURLS?.length > 0">
+    <div class="table-responsive" *ngIf="resourceUrls?.length > 0">
         <table class="table table-striped">
             <thead>
             <tr>
             <th><span>ID</span></th>
-            <th><span>Url</span></th>
+            <th><span>Url Link</span></th>
             <th><span>Case Report</span></th>
             <th></th>
             </tr>
             </thead>
             <tbody>
-            <tr *ngFor="let resourceURL of resourceURLS ;trackBy: trackId">
-                <td><a [routerLink]="['/resource-url', resourceURL.id, 'view' ]">{{resourceURL.id}}</a></td>
-                <td>{{resourceURL.url}}</td>
+            <tr *ngFor="let resourceUrl of resourceUrls ;trackBy: trackId">
+                <td><a [routerLink]="['/resource-url', resourceUrl.id, 'view' ]">{{resourceUrl.id}}</a></td>
+                <td>{{resourceUrl.urlLink}}</td>
                 <td>
-                    <div *ngIf="resourceURL.caseReport">
-                        <a [routerLink]="['/case-report', resourceURL.caseReport?.id, 'view' ]" >{{resourceURL.caseReport?.id}}</a>
+                    <div *ngIf="resourceUrl.caseReport">
+                        <a [routerLink]="['/case-report', resourceUrl.caseReport?.id, 'view' ]" >{{resourceUrl.caseReport?.id}}</a>
                     </div>
                 </td>
                 <td class="text-right">
                     <div class="btn-group">
                         <button type="submit"
-                                [routerLink]="['/resource-url', resourceURL.id, 'view' ]"
+                                [routerLink]="['/resource-url', resourceUrl.id, 'view' ]"
                                 class="btn btn-info btn-sm">
                             <fa-icon [icon]="'eye'"></fa-icon>
                             <span class="d-none d-md-inline">View</span>
                         </button>
                         <button type="submit"
-                                [routerLink]="['/resource-url', resourceURL.id, 'edit']"
+                                [routerLink]="['/resource-url', resourceUrl.id, 'edit']"
                                 class="btn btn-primary btn-sm">
                             <fa-icon [icon]="'pencil-alt'"></fa-icon>
                             <span class="d-none d-md-inline">Edit</span>
                         </button>
                         <button type="submit"
-                                [routerLink]="['/resource-url', { outlets: { popup: resourceURL.id + '/delete'} }]"
+                                [routerLink]="['/resource-url', { outlets: { popup: resourceUrl.id + '/delete'} }]"
                                 replaceUrl="true"
                                 queryParamsHandling="merge"
                                 class="btn btn-danger btn-sm">

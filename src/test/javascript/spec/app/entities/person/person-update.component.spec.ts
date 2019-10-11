@@ -4,7 +4,7 @@ import { HttpResponse } from '@angular/common/http';
 import { FormBuilder } from '@angular/forms';
 import { Observable, of } from 'rxjs';
 
-import { CriminalddbbTestModule } from '../../../test.module';
+import { CriminalDdbbTestModule } from '../../../test.module';
 import { PersonUpdateComponent } from 'app/entities/person/person-update.component';
 import { PersonService } from 'app/entities/person/person.service';
 import { Person } from 'app/shared/model/person.model';
@@ -17,7 +17,7 @@ describe('Component Tests', () => {
 
     beforeEach(() => {
       TestBed.configureTestingModule({
-        imports: [CriminalddbbTestModule],
+        imports: [CriminalDdbbTestModule],
         declarations: [PersonUpdateComponent],
         providers: [FormBuilder]
       })

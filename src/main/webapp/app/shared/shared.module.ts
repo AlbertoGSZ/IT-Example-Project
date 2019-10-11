@@ -1,17 +1,17 @@
 import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
-import { CriminalddbbSharedCommonModule, JhiLoginModalComponent, HasAnyAuthorityDirective } from './';
+import { CriminalDdbbSharedCommonModule, JhiLoginModalComponent, HasAnyAuthorityDirective } from './';
 
 @NgModule({
-  imports: [CriminalddbbSharedCommonModule],
+  imports: [CriminalDdbbSharedCommonModule],
   declarations: [JhiLoginModalComponent, HasAnyAuthorityDirective],
   entryComponents: [JhiLoginModalComponent],
-  exports: [CriminalddbbSharedCommonModule, JhiLoginModalComponent, HasAnyAuthorityDirective],
+  exports: [CriminalDdbbSharedCommonModule, JhiLoginModalComponent, HasAnyAuthorityDirective],
   schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
-export class CriminalddbbSharedModule {
+export class CriminalDdbbSharedModule {
   static forRoot() {
     return {
-      ngModule: CriminalddbbSharedModule
+      ngModule: CriminalDdbbSharedModule
     };
   }
 }

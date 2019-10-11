@@ -1,13 +1,13 @@
 {
   "generator-jhipster": {
     "promptValues": {
-      "packageName": "org.jhipster.criminalddbb"
+      "packageName": "com.criminalddbb.app"
     },
     "jhipsterVersion": "6.2.0",
     "applicationType": "monolith",
-    "baseName": "criminalddbb",
-    "packageName": "org.jhipster.criminalddbb",
-    "packageFolder": "org/jhipster/criminalddbb",
+    "baseName": "CriminalDDBB",
+    "packageName": "com.criminalddbb.app",
+    "packageFolder": "com/criminalddbb/app",
     "serverPort": "8080",
     "authenticationType": "jwt",
     "cacheProvider": "ehcache",
@@ -21,7 +21,7 @@
     "serviceDiscoveryType": false,
     "buildTool": "maven",
     "enableSwaggerCodegen": false,
-    "jwtSecretKey": "MmI1Zjk2NjgzMGRhNGY1ZTYwYjBjOWE5ZDFkZjMwNWNjMzIwYmY3Mzg1NWE1N2UyNTBjOTljMGQ3OTkyYmYyMDc2M2FlZDQxODQzNTBiMjEwNjcwZjlkODI3ZjhiNTJmMjEzMzU2NTgyOTVlYjllOWMxNWMzMTJhY2U0OTFiZmE=",
+    "jwtSecretKey": "ZTUzYjljZTIzMGE2ZGRhNDJmMjc3ZDExODU4ZGVmZDBhMWY2N2RlM2JmM2IyZjU3YTMxMTYyNzY2MWM0OTJlMmQyMjA4MmI2MTAwM2M5MDFiNjZlMWNhOTFhZTExNDZlZDNkM2Q3MWU1OTQxODIzMmI3NTQ0NzU3MDlmZDcyNzE=",
     "useSass": true,
     "clientPackageManager": "npm",
     "clientFramework": "angularX",

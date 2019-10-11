@@ -1,29 +1,29 @@
 import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { RouterModule } from '@angular/router';
 
-import { CriminalddbbSharedModule } from 'app/shared';
+import { CriminalDdbbSharedModule } from 'app/shared';
 import {
-  ResourceURLComponent,
-  ResourceURLDetailComponent,
-  ResourceURLUpdateComponent,
-  ResourceURLDeletePopupComponent,
-  ResourceURLDeleteDialogComponent,
-  resourceURLRoute,
-  resourceURLPopupRoute
+  ResourceUrlComponent,
+  ResourceUrlDetailComponent,
+  ResourceUrlUpdateComponent,
+  ResourceUrlDeletePopupComponent,
+  ResourceUrlDeleteDialogComponent,
+  resourceUrlRoute,
+  resourceUrlPopupRoute
 } from './';
 
-const ENTITY_STATES = [...resourceURLRoute, ...resourceURLPopupRoute];
+const ENTITY_STATES = [...resourceUrlRoute, ...resourceUrlPopupRoute];
 
 @NgModule({
-  imports: [CriminalddbbSharedModule, RouterModule.forChild(ENTITY_STATES)],
+  imports: [CriminalDdbbSharedModule, RouterModule.forChild(ENTITY_STATES)],
   declarations: [
-    ResourceURLComponent,
-    ResourceURLDetailComponent,
-    ResourceURLUpdateComponent,
-    ResourceURLDeleteDialogComponent,
-    ResourceURLDeletePopupComponent
+    ResourceUrlComponent,
+    ResourceUrlDetailComponent,
+    ResourceUrlUpdateComponent,
+    ResourceUrlDeleteDialogComponent,
+    ResourceUrlDeletePopupComponent
   ],
-  entryComponents: [ResourceURLComponent, ResourceURLUpdateComponent, ResourceURLDeleteDialogComponent, ResourceURLDeletePopupComponent],
+  entryComponents: [ResourceUrlComponent, ResourceUrlUpdateComponent, ResourceUrlDeleteDialogComponent, ResourceUrlDeletePopupComponent],
   schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
-export class CriminalddbbResourceURLModule {}
+export class CriminalDdbbResourceUrlModule {}

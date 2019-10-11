@@ -21,7 +21,7 @@ import { NgbDateMomentAdapter } from 'app/shared/util/datepicker-adapter';
     DatePipe
   ]
 })
-export class CriminalddbbCoreModule {
+export class CriminalDdbbCoreModule {
   constructor() {
     registerLocaleData(locale);
   }

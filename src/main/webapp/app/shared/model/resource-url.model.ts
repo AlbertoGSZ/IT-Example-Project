@@ -1,11 +1,11 @@
 import { ICaseReport } from 'app/shared/model/case-report.model';
 
-export interface IResourceURL {
+export interface IResourceUrl {
   id?: number;
-  url?: string;
+  urlLink?: string;
   caseReport?: ICaseReport;
 }
 
-export class ResourceURL implements IResourceURL {
-  constructor(public id?: number, public url?: string, public caseReport?: ICaseReport) {}
+export class ResourceUrl implements IResourceUrl {
+  constructor(public id?: number, public urlLink?: string, public caseReport?: ICaseReport) {}
 }

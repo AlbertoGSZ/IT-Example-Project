@@ -1,18 +1,18 @@
 <div class="row justify-content-center">
     <div class="col-8">
-        <div *ngIf="resourceURL">
-            <h2><span>Resource URL</span> {{resourceURL.id}}</h2>
+        <div *ngIf="resourceUrl">
+            <h2><span>Resource Url</span> {{resourceUrl.id}}</h2>
             <hr>
             <jhi-alert-error></jhi-alert-error>
             <dl class="row-md jh-entity-details">
-                <dt><span>Url</span></dt>
+                <dt><span>Url Link</span></dt>
                 <dd>
-                    <span>{{resourceURL.url}}</span>
+                    <span>{{resourceUrl.urlLink}}</span>
                 </dd>
                 <dt><span>Case Report</span></dt>
                 <dd>
-                    <div *ngIf="resourceURL.caseReport">
-                        <a [routerLink]="['/case-report', resourceURL.caseReport?.id, 'view']">{{resourceURL.caseReport?.id}}</a>
+                    <div *ngIf="resourceUrl.caseReport">
+                        <a [routerLink]="['/case-report', resourceUrl.caseReport?.id, 'view']">{{resourceUrl.caseReport?.id}}</a>
                     </div>
                 </dd>
             </dl>
@@ -24,7 +24,7 @@
             </button>
 
             <button type="button"
-                    [routerLink]="['/resource-url', resourceURL.id, 'edit']"
+                    [routerLink]="['/resource-url', resourceUrl.id, 'edit']"
                     class="btn btn-primary">
                 <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span> Edit</span>
             </button>

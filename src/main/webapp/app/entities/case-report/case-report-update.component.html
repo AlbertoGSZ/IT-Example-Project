@@ -16,6 +16,11 @@
                     </div>
                 </div>
                 <div class="form-group">
+                    <label class="form-control-label" for="field_mugshotURL">Mugshot URL</label>
+                    <input type="text" class="form-control" name="mugshotURL" id="field_mugshotURL"
+                           formControlName="mugshotURL"/>
+                </div>
+                <div class="form-group">
                     <label class="form-control-label" for="field_personDetails">Person Details</label>
                     <input type="text" class="form-control" name="personDetails" id="field_personDetails"
                            formControlName="personDetails"/>
@@ -25,19 +30,17 @@
                     <input type="text" class="form-control" name="eventDescription" id="field_eventDescription"
                            formControlName="eventDescription"/>
                 </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_evidencePhotosURL">Evidence Photos URL</label>
+                    <input type="text" class="form-control" name="evidencePhotosURL" id="field_evidencePhotosURL"
+                           formControlName="evidencePhotosURL"/>
+                </div>
 
                 <div class="form-group">
-                    <label class="form-control-label" for="field_person">Person</label>
-                    <select class="form-control" id="field_person" name="person" formControlName="person">
+                    <label class="form-control-label" for="field_caseReportHolder">Case Report Holder</label>
+                    <select class="form-control" id="field_caseReportHolder" name="caseReportHolder" formControlName="caseReportHolder">
                         <option [ngValue]="null"></option>
-                        <option [ngValue]="personOption.id === editForm.get('person').value?.id ? editForm.get('person').value : personOption" *ngFor="let personOption of people; trackBy: trackPersonById">{{personOption.id}}</option>
-                    </select>
-                </div>
-                <div class="form-group">
-                    <label class="form-control-label" for="field_mugshotReport">Mugshot Report</label>
-                    <select class="form-control" id="field_mugshotReport" name="mugshotReport" formControlName="mugshotReport">
-                        <option [ngValue]="null"></option>
-                        <option [ngValue]="resourceURLOption.id === editForm.get('mugshotReport').value?.id ? editForm.get('mugshotReport').value : resourceURLOption" *ngFor="let resourceURLOption of mugshotreports; trackBy: trackResourceURLById">{{resourceURLOption.id}}</option>
+                        <option [ngValue]="personOption.id === editForm.get('caseReportHolder').value?.id ? editForm.get('caseReportHolder').value : personOption" *ngFor="let personOption of people; trackBy: trackPersonById">{{personOption.id}}</option>
                     </select>
                 </div>
             </div>

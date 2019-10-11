@@ -11,12 +11,12 @@ import { AuthInterceptor } from './blocks/interceptor/auth.interceptor';
 import { AuthExpiredInterceptor } from './blocks/interceptor/auth-expired.interceptor';
 import { ErrorHandlerInterceptor } from './blocks/interceptor/errorhandler.interceptor';
 import { NotificationInterceptor } from './blocks/interceptor/notification.interceptor';
-import { CriminalddbbSharedModule } from 'app/shared';
-import { CriminalddbbCoreModule } from 'app/core';
-import { CriminalddbbAppRoutingModule } from './app-routing.module';
-import { CriminalddbbHomeModule } from './home/home.module';
-import { CriminalddbbAccountModule } from './account/account.module';
-import { CriminalddbbEntityModule } from './entities/entity.module';
+import { CriminalDdbbSharedModule } from 'app/shared';
+import { CriminalDdbbCoreModule } from 'app/core';
+import { CriminalDdbbAppRoutingModule } from './app-routing.module';
+import { CriminalDdbbHomeModule } from './home/home.module';
+import { CriminalDdbbAccountModule } from './account/account.module';
+import { CriminalDdbbEntityModule } from './entities/entity.module';
 import * as moment from 'moment';
 // jhipster-needle-angular-add-module-import JHipster will add new module here
 import { JhiMainComponent, NavbarComponent, FooterComponent, PageRibbonComponent, ErrorComponent } from './layouts';
@@ -30,13 +30,13 @@ import { JhiMainComponent, NavbarComponent, FooterComponent, PageRibbonComponent
       alertAsToast: false,
       alertTimeout: 5000
     }),
-    CriminalddbbSharedModule.forRoot(),
-    CriminalddbbCoreModule,
-    CriminalddbbHomeModule,
-    CriminalddbbAccountModule,
+    CriminalDdbbSharedModule.forRoot(),
+    CriminalDdbbCoreModule,
+    CriminalDdbbHomeModule,
+    CriminalDdbbAccountModule,
     // jhipster-needle-angular-add-module JHipster will add new module here
-    CriminalddbbEntityModule,
-    CriminalddbbAppRoutingModule
+    CriminalDdbbEntityModule,
+    CriminalDdbbAppRoutingModule
   ],
   declarations: [JhiMainComponent, NavbarComponent, ErrorComponent, PageRibbonComponent, FooterComponent],
   providers: [
@@ -63,7 +63,7 @@ import { JhiMainComponent, NavbarComponent, FooterComponent, PageRibbonComponent
   ],
   bootstrap: [JhiMainComponent]
 })
-export class CriminalddbbAppModule {
+export class CriminalDdbbAppModule {
   constructor(private dpConfig: NgbDatepickerConfig) {
     this.dpConfig.minDate = { year: moment().year() - 100, month: 1, day: 1 };
   }

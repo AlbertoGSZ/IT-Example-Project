@@ -9,6 +9,10 @@
                 <dd>
                     <span>{{caseReport.date}}</span>
                 </dd>
+                <dt><span>Mugshot URL</span></dt>
+                <dd>
+                    <span>{{caseReport.mugshotURL}}</span>
+                </dd>
                 <dt><span>Person Details</span></dt>
                 <dd>
                     <span>{{caseReport.personDetails}}</span>
@@ -17,16 +21,14 @@
                 <dd>
                     <span>{{caseReport.eventDescription}}</span>
                 </dd>
-                <dt><span>Person</span></dt>
+                <dt><span>Evidence Photos URL</span></dt>
                 <dd>
-                    <div *ngIf="caseReport.person">
-                        <a [routerLink]="['/person', caseReport.person?.id, 'view']">{{caseReport.person?.id}}</a>
-                    </div>
+                    <span>{{caseReport.evidencePhotosURL}}</span>
                 </dd>
-                <dt><span>Mugshot Report</span></dt>
+                <dt><span>Case Report Holder</span></dt>
                 <dd>
-                    <div *ngIf="caseReport.mugshotReport">
-                        <a [routerLink]="['/resource-url', caseReport.mugshotReport?.id, 'view']">{{caseReport.mugshotReport?.id}}</a>
+                    <div *ngIf="caseReport.caseReportHolder">
+                        <a [routerLink]="['/person', caseReport.caseReportHolder?.id, 'view']">{{caseReport.caseReportHolder?.id}}</a>
                     </div>
                 </dd>
             </dl>

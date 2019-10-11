@@ -1,29 +1,28 @@
 <div class="row">
-    <div class="col-md-3">
-        <span class="hipster img-fluid rounded"></span>
-    </div>
+
     <div class="col-md-9">
-        <h1 class="display-4">Welcome, Java Hipster!</h1>
-        <p class="lead">This is your homepage</p>
+        <h1 class="display-4">City of Gotham Police Department</h1>
+        <p class="lead">Base de datos de información criminal</p>
 
         <div [ngSwitch]="isAuthenticated()">
             <div class="alert alert-success" *ngSwitchCase="true">
                 <span id="home-logged-message" *ngIf="account"
-                   > You are logged in as user "{{account.login}}". </span>
+                   > Acceso permitido como usuario "{{account.login}}". </span>
             </div>
 
             <div class="alert alert-warning" *ngSwitchCase="false">
-                <span>If you want to </span>
-                <a class="alert-link" (click)="login()">sign in</a><span>, you can try the default accounts:<br/>- Administrator (login="admin" and password="admin") <br/>- User (login="user" and password="user").</span>
+                <span>Si quieres </span>
+                <a class="alert-link" (click)="login()">acceder</a><span>, prueba las cuentas predeterminadas:<br/>- Administrador (usuario="admin" y contraseña="admin") <br/>- Usuario estándar (usuario="user" and contraseña="user").</span>
             </div>
             <div class="alert alert-warning" *ngSwitchCase="false">
-                <span>You don't have an account yet?</span>&nbsp;
-                <a class="alert-link" routerLink="register">Register a new account</a>
+                <span>¿No tienes cuenta aún?</span>&nbsp;
+                <a class="alert-link" routerLink="register">Registra una nueva cuenta</a>
             </div>
         </div>
 
-        <p>
-            If you have any question on JHipster:
+
+        <!--<p>
+            Si tienes alguna duda sobre JHipster:
         </p>
 
         <ul>
@@ -35,7 +34,15 @@
         </ul>
 
         <p>
-            <span>If you like JHipster, don't forget to give us a star on</span> <a href="https://github.com/jhipster/generator-jhipster" target="_blank" rel="noopener">GitHub</a>!
-        </p>
+            <span>Si te gusta JHipster, no olvides darnos tu valoración</span> <a href="https://github.com/jhipster/generator-jhipster" target="_blank" rel="noopener">GitHub</a>!
+        </p>-->
+    </div>
+
+    <div class="col-md-3">
+        <br>
+        <br>
+        <br>
+        <br>
+        <span class="hipster img-fluid rounded"></span>
     </div>
 </div>

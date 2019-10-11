@@ -19,10 +19,11 @@
             <tr jhiSort [(predicate)]="predicate" [(ascending)]="reverse" [callback]="transition.bind(this)">
             <th jhiSortBy="id"><span>ID</span> <fa-icon [icon]="'sort'"></fa-icon></th>
             <th jhiSortBy="date"><span>Date</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="mugshotURL"><span>Mugshot URL</span> <fa-icon [icon]="'sort'"></fa-icon></th>
             <th jhiSortBy="personDetails"><span>Person Details</span> <fa-icon [icon]="'sort'"></fa-icon></th>
             <th jhiSortBy="eventDescription"><span>Event Description</span> <fa-icon [icon]="'sort'"></fa-icon></th>
-            <th jhiSortBy="person.id"><span>Person</span> <fa-icon [icon]="'sort'"></fa-icon></th>
-            <th jhiSortBy="mugshotReport.id"><span>Mugshot Report</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="evidencePhotosURL"><span>Evidence Photos URL</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="caseReportHolder.id"><span>Case Report Holder</span> <fa-icon [icon]="'sort'"></fa-icon></th>
             <th></th>
             </tr>
             </thead>
@@ -30,16 +31,13 @@
             <tr *ngFor="let caseReport of caseReports ;trackBy: trackId">
                 <td><a [routerLink]="['/case-report', caseReport.id, 'view' ]">{{caseReport.id}}</a></td>
                 <td>{{caseReport.date | date:'medium'}}</td>
+                <td>{{caseReport.mugshotURL}}</td>
                 <td>{{caseReport.personDetails}}</td>
                 <td>{{caseReport.eventDescription}}</td>
+                <td>{{caseReport.evidencePhotosURL}}</td>
                 <td>
-                    <div *ngIf="caseReport.person">
-                        <a [routerLink]="['/person', caseReport.person?.id, 'view' ]" >{{caseReport.person?.id}}</a>
-                    </div>
-                </td>
-                <td>
-                    <div *ngIf="caseReport.mugshotReport">
-                        <a [routerLink]="['/resource-url', caseReport.mugshotReport?.id, 'view' ]" >{{caseReport.mugshotReport?.id}}</a>
+                    <div *ngIf="caseReport.caseReportHolder">
+                        <a [routerLink]="['/person', caseReport.caseReportHolder?.id, 'view' ]" >{{caseReport.caseReportHolder?.id}}</a>
                     </div>
                 </td>
                 <td class="text-right">

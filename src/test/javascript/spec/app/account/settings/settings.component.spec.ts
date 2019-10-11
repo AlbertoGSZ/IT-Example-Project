@@ -2,7 +2,7 @@ import { ComponentFixture, TestBed, async } from '@angular/core/testing';
 import { FormBuilder } from '@angular/forms';
 import { Observable, throwError } from 'rxjs';
 
-import { CriminalddbbTestModule } from '../../../test.module';
+import { CriminalDdbbTestModule } from '../../../test.module';
 import { AccountService, Account } from 'app/core';
 import { SettingsComponent } from 'app/account/settings/settings.component';
 
@@ -14,7 +14,7 @@ describe('Component Tests', () => {
 
     beforeEach(async(() => {
       TestBed.configureTestingModule({
-        imports: [CriminalddbbTestModule],
+        imports: [CriminalDdbbTestModule],
         declarations: [SettingsComponent],
         providers: [FormBuilder]
       })

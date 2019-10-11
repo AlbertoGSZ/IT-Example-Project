@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "criminalddbb": {
+    "criminal-ddbb": {
       "root": "",
       "sourceRoot": "src/main/webapp",
       "projectType": "application",
@@ -29,7 +29,7 @@
       "architect": {}
     }
   },
-  "defaultProject": "criminalddbb",
+  "defaultProject": "criminal-ddbb",
   "cli": {
     "packageManager": "npm"
   }

@@ -4,7 +4,7 @@
         <button id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-person" [routerLink]="['/person/new']">
             <fa-icon [icon]="'plus'"></fa-icon>
             <span >
-            Create a new Person
+            Create a new Peeeeeeeeeeeeerson
             </span>
         </button>
     </h2>
@@ -21,12 +21,14 @@
             <th jhiSortBy="name"><span>Name</span> <fa-icon [icon]="'sort'"></fa-icon></th>
             <th jhiSortBy="surname"><span>Surname</span> <fa-icon [icon]="'sort'"></fa-icon></th>
             <th jhiSortBy="birthDate"><span>Birth Date</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="address"><span>Address</span> <fa-icon [icon]="'sort'"></fa-icon></th>
             <th jhiSortBy="age"><span>Age</span> <fa-icon [icon]="'sort'"></fa-icon></th>
-            <th jhiSortBy="adress"><span>Adress</span> <fa-icon [icon]="'sort'"></fa-icon></th>
             <th jhiSortBy="nationality"><span>Nationality</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="status"><span>Status</span> <fa-icon [icon]="'sort'"></fa-icon></th>
             <th jhiSortBy="sex"><span>Sex</span> <fa-icon [icon]="'sort'"></fa-icon></th>
             <th jhiSortBy="alias"><span>Alias</span> <fa-icon [icon]="'sort'"></fa-icon></th>
             <th jhiSortBy="rank"><span>Rank</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="preIncarcerationRegistry.id"><span>Pre Incarceration Registry</span> <fa-icon [icon]="'sort'"></fa-icon></th>
             <th jhiSortBy="chief.id"><span>Chief</span> <fa-icon [icon]="'sort'"></fa-icon></th>
             <th></th>
             </tr>
@@ -37,12 +39,18 @@
                 <td>{{person.name}}</td>
                 <td>{{person.surname}}</td>
                 <td>{{person.birthDate | date:'medium'}}</td>
+                <td>{{person.address}}</td>
                 <td>{{person.age}}</td>
-                <td>{{person.adress}}</td>
                 <td>{{person.nationality}}</td>
+                <td>{{person.status}}</td>
                 <td>{{person.sex}}</td>
                 <td>{{person.alias}}</td>
                 <td>{{person.rank}}</td>
+                <td>
+                    <div *ngIf="person.preIncarcerationRegistry">
+                        <a [routerLink]="['/pre-incarceration-registry', person.preIncarcerationRegistry?.id, 'view' ]" >{{person.preIncarcerationRegistry?.id}}</a>
+                    </div>
+                </td>
                 <td>
                     <div *ngIf="person.chief">
                         <a [routerLink]="['/person', person.chief?.id, 'view' ]" >{{person.chief?.id}}</a>

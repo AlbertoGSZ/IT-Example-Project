@@ -3,25 +3,25 @@ import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { ActivatedRoute } from '@angular/router';
 import { of } from 'rxjs';
 
-import { CriminalddbbTestModule } from '../../../test.module';
-import { ResourceURLDetailComponent } from 'app/entities/resource-url/resource-url-detail.component';
-import { ResourceURL } from 'app/shared/model/resource-url.model';
+import { CriminalDdbbTestModule } from '../../../test.module';
+import { ResourceUrlDetailComponent } from 'app/entities/resource-url/resource-url-detail.component';
+import { ResourceUrl } from 'app/shared/model/resource-url.model';
 
 describe('Component Tests', () => {
-  describe('ResourceURL Management Detail Component', () => {
-    let comp: ResourceURLDetailComponent;
-    let fixture: ComponentFixture<ResourceURLDetailComponent>;
-    const route = ({ data: of({ resourceURL: new ResourceURL(123) }) } as any) as ActivatedRoute;
+  describe('ResourceUrl Management Detail Component', () => {
+    let comp: ResourceUrlDetailComponent;
+    let fixture: ComponentFixture<ResourceUrlDetailComponent>;
+    const route = ({ data: of({ resourceUrl: new ResourceUrl(123) }) } as any) as ActivatedRoute;
 
     beforeEach(() => {
       TestBed.configureTestingModule({
-        imports: [CriminalddbbTestModule],
-        declarations: [ResourceURLDetailComponent],
+        imports: [CriminalDdbbTestModule],
+        declarations: [ResourceUrlDetailComponent],
         providers: [{ provide: ActivatedRoute, useValue: route }]
       })
-        .overrideTemplate(ResourceURLDetailComponent, '')
+        .overrideTemplate(ResourceUrlDetailComponent, '')
         .compileComponents();
-      fixture = TestBed.createComponent(ResourceURLDetailComponent);
+      fixture = TestBed.createComponent(ResourceUrlDetailComponent);
       comp = fixture.componentInstance;
     });
 
@@ -33,7 +33,7 @@ describe('Component Tests', () => {
         comp.ngOnInit();
 
         // THEN
-        expect(comp.resourceURL).toEqual(jasmine.objectContaining({ id: 123 }));
+        expect(comp.resourceUrl).toEqual(jasmine.objectContaining({ id: 123 }));
       });
     });
   });

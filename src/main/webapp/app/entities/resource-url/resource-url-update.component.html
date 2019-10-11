@@ -1,7 +1,7 @@
 <div class="row justify-content-center">
     <div class="col-8">
         <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
-            <h2 id="jhi-resource-url-heading">Create or edit a Resource URL</h2>
+            <h2 id="jhi-resource-url-heading">Create or edit a Resource Url</h2>
             <div>
                 <jhi-alert-error></jhi-alert-error>
                 <div class="form-group" [hidden]="!editForm.get('id').value">
@@ -10,9 +10,9 @@
                         readonly />
                 </div>
                 <div class="form-group">
-                    <label class="form-control-label" for="field_url">Url</label>
-                    <input type="text" class="form-control" name="url" id="field_url"
-                           formControlName="url"/>
+                    <label class="form-control-label" for="field_urlLink">Url Link</label>
+                    <input type="text" class="form-control" name="urlLink" id="field_urlLink"
+                           formControlName="urlLink"/>
                 </div>
 
                 <div class="form-group">

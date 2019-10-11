@@ -4,15 +4,15 @@ import { HttpClientTestingModule, HttpTestingController } from '@angular/common/
 import { HttpClient, HttpResponse } from '@angular/common/http';
 import { of } from 'rxjs';
 import { take, map } from 'rxjs/operators';
-import { ResourceURLService } from 'app/entities/resource-url/resource-url.service';
-import { IResourceURL, ResourceURL } from 'app/shared/model/resource-url.model';
+import { ResourceUrlService } from 'app/entities/resource-url/resource-url.service';
+import { IResourceUrl, ResourceUrl } from 'app/shared/model/resource-url.model';
 
 describe('Service Tests', () => {
-  describe('ResourceURL Service', () => {
+  describe('ResourceUrl Service', () => {
     let injector: TestBed;
-    let service: ResourceURLService;
+    let service: ResourceUrlService;
     let httpMock: HttpTestingController;
-    let elemDefault: IResourceURL;
+    let elemDefault: IResourceUrl;
     let expectedResult;
     beforeEach(() => {
       TestBed.configureTestingModule({
@@ -20,10 +20,10 @@ describe('Service Tests', () => {
       });
       expectedResult = {};
       injector = getTestBed();
-      service = injector.get(ResourceURLService);
+      service = injector.get(ResourceUrlService);
       httpMock = injector.get(HttpTestingController);
 
-      elemDefault = new ResourceURL(0, 'AAAAAAA');
+      elemDefault = new ResourceUrl(0, 'AAAAAAA');
     });
 
     describe('Service methods', () => {
@@ -39,7 +39,7 @@ describe('Service Tests', () => {
         expect(expectedResult).toMatchObject({ body: elemDefault });
       });
 
-      it('should create a ResourceURL', async () => {
+      it('should create a ResourceUrl', async () => {
         const returnedFromService = Object.assign(
           {
             id: 0
@@ -48,7 +48,7 @@ describe('Service Tests', () => {
         );
         const expected = Object.assign({}, returnedFromService);
         service
-          .create(new ResourceURL(null))
+          .create(new ResourceUrl(null))
           .pipe(take(1))
           .subscribe(resp => (expectedResult = resp));
         const req = httpMock.expectOne({ method: 'POST' });
@@ -56,10 +56,10 @@ describe('Service Tests', () => {
         expect(expectedResult).toMatchObject({ body: expected });
       });
 
-      it('should update a ResourceURL', async () => {
+      it('should update a ResourceUrl', async () => {
         const returnedFromService = Object.assign(
           {
-            url: 'BBBBBB'
+            urlLink: 'BBBBBB'
           },
           elemDefault
         );
@@ -74,10 +74,10 @@ describe('Service Tests', () => {
         expect(expectedResult).toMatchObject({ body: expected });
       });
 
-      it('should return a list of ResourceURL', async () => {
+      it('should return a list of ResourceUrl', async () => {
         const returnedFromService = Object.assign(
           {
-            url: 'BBBBBB'
+            urlLink: 'BBBBBB'
           },
           elemDefault
         );
@@ -95,7 +95,7 @@ describe('Service Tests', () => {
         expect(expectedResult).toContainEqual(expected);
       });
 
-      it('should delete a ResourceURL', async () => {
+      it('should delete a ResourceUrl', async () => {
         const rxPromise = service.delete(123).subscribe(resp => (expectedResult = resp.ok));
 
         const req = httpMock.expectOne({ method: 'DELETE' });

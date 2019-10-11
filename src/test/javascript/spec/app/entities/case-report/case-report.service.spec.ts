@@ -27,7 +27,7 @@ describe('Service Tests', () => {
       httpMock = injector.get(HttpTestingController);
       currentDate = moment();
 
-      elemDefault = new CaseReport(0, currentDate, 'AAAAAAA', 'AAAAAAA');
+      elemDefault = new CaseReport(0, currentDate, 'AAAAAAA', 'AAAAAAA', 'AAAAAAA', 'AAAAAAA');
     });
 
     describe('Service methods', () => {
@@ -75,8 +75,10 @@ describe('Service Tests', () => {
         const returnedFromService = Object.assign(
           {
             date: currentDate.format(DATE_TIME_FORMAT),
+            mugshotURL: 'BBBBBB',
             personDetails: 'BBBBBB',
-            eventDescription: 'BBBBBB'
+            eventDescription: 'BBBBBB',
+            evidencePhotosURL: 'BBBBBB'
           },
           elemDefault
         );
@@ -100,8 +102,10 @@ describe('Service Tests', () => {
         const returnedFromService = Object.assign(
           {
             date: currentDate.format(DATE_TIME_FORMAT),
+            mugshotURL: 'BBBBBB',
             personDetails: 'BBBBBB',
-            eventDescription: 'BBBBBB'
+            eventDescription: 'BBBBBB',
+            evidencePhotosURL: 'BBBBBB'
           },
           elemDefault
         );

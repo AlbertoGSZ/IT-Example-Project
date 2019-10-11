@@ -11,7 +11,7 @@ const LAYOUT_ROUTES = [navbarRoute, ...errorRoute];
       [
         {
           path: 'admin',
-          loadChildren: () => import('./admin/admin.module').then(m => m.CriminalddbbAdminModule)
+          loadChildren: () => import('./admin/admin.module').then(m => m.CriminalDdbbAdminModule)
         },
         ...LAYOUT_ROUTES
       ],
@@ -20,4 +20,4 @@ const LAYOUT_ROUTES = [navbarRoute, ...errorRoute];
   ],
   exports: [RouterModule]
 })
-export class CriminalddbbAppRoutingModule {}
+export class CriminalDdbbAppRoutingModule {}

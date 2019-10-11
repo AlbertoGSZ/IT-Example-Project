@@ -1,20 +1,20 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 
-import { IResourceURL } from 'app/shared/model/resource-url.model';
+import { IResourceUrl } from 'app/shared/model/resource-url.model';
 
 @Component({
   selector: 'jhi-resource-url-detail',
   templateUrl: './resource-url-detail.component.html'
 })
-export class ResourceURLDetailComponent implements OnInit {
-  resourceURL: IResourceURL;
+export class ResourceUrlDetailComponent implements OnInit {
+  resourceUrl: IResourceUrl;
 
   constructor(protected activatedRoute: ActivatedRoute) {}
 
   ngOnInit() {
-    this.activatedRoute.data.subscribe(({ resourceURL }) => {
-      this.resourceURL = resourceURL;
+    this.activatedRoute.data.subscribe(({ resourceUrl }) => {
+      this.resourceUrl = resourceUrl;
     });
   }
 

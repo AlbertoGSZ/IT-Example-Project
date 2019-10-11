@@ -4,18 +4,18 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { NgbActiveModal, NgbModal, NgbModalRef } from '@ng-bootstrap/ng-bootstrap';
 import { JhiEventManager } from 'ng-jhipster';
 
-import { IResourceURL } from 'app/shared/model/resource-url.model';
-import { ResourceURLService } from './resource-url.service';
+import { IResourceUrl } from 'app/shared/model/resource-url.model';
+import { ResourceUrlService } from './resource-url.service';
 
 @Component({
   selector: 'jhi-resource-url-delete-dialog',
   templateUrl: './resource-url-delete-dialog.component.html'
 })
-export class ResourceURLDeleteDialogComponent {
-  resourceURL: IResourceURL;
+export class ResourceUrlDeleteDialogComponent {
+  resourceUrl: IResourceUrl;
 
   constructor(
-    protected resourceURLService: ResourceURLService,
+    protected resourceUrlService: ResourceUrlService,
     public activeModal: NgbActiveModal,
     protected eventManager: JhiEventManager
   ) {}
@@ -25,10 +25,10 @@ export class ResourceURLDeleteDialogComponent {
   }
 
   confirmDelete(id: number) {
-    this.resourceURLService.delete(id).subscribe(response => {
+    this.resourceUrlService.delete(id).subscribe(response => {
       this.eventManager.broadcast({
-        name: 'resourceURLListModification',
-        content: 'Deleted an resourceURL'
+        name: 'resourceUrlListModification',
+        content: 'Deleted an resourceUrl'
       });
       this.activeModal.dismiss(true);
     });
@@ -39,16 +39,16 @@ export class ResourceURLDeleteDialogComponent {
   selector: 'jhi-resource-url-delete-popup',
   template: ''
 })
-export class ResourceURLDeletePopupComponent implements OnInit, OnDestroy {
+export class ResourceUrlDeletePopupComponent implements OnInit, OnDestroy {
   protected ngbModalRef: NgbModalRef;
 
   constructor(protected activatedRoute: ActivatedRoute, protected router: Router, protected modalService: NgbModal) {}
 
   ngOnInit() {
-    this.activatedRoute.data.subscribe(({ resourceURL }) => {
+    this.activatedRoute.data.subscribe(({ resourceUrl }) => {
       setTimeout(() => {
-        this.ngbModalRef = this.modalService.open(ResourceURLDeleteDialogComponent as Component, { size: 'lg', backdrop: 'static' });
-        this.ngbModalRef.componentInstance.resourceURL = resourceURL;
+        this.ngbModalRef = this.modalService.open(ResourceUrlDeleteDialogComponent as Component, { size: 'lg', backdrop: 'static' });
+        this.ngbModalRef.componentInstance.resourceUrl = resourceUrl;
         this.ngbModalRef.result.then(
           result => {
             this.router.navigate(['/resource-url', { outlets: { popup: null } }]);

@@ -1,7 +1,7 @@
 {
-  "name": "criminalddbb",
+  "name": "criminal-ddbb",
   "version": "0.0.0",
-  "description": "Description for criminalddbb",
+  "description": "Description for CriminalDDBB",
   "private": true,
   "license": "UNLICENSED",
   "cacheDirectories": [

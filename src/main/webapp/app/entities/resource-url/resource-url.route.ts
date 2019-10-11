@@ -4,88 +4,88 @@ import { Resolve, ActivatedRouteSnapshot, RouterStateSnapshot, Routes } from '@a
 import { UserRouteAccessService } from 'app/core';
 import { Observable, of } from 'rxjs';
 import { filter, map } from 'rxjs/operators';
-import { ResourceURL } from 'app/shared/model/resource-url.model';
-import { ResourceURLService } from './resource-url.service';
-import { ResourceURLComponent } from './resource-url.component';
-import { ResourceURLDetailComponent } from './resource-url-detail.component';
-import { ResourceURLUpdateComponent } from './resource-url-update.component';
-import { ResourceURLDeletePopupComponent } from './resource-url-delete-dialog.component';
-import { IResourceURL } from 'app/shared/model/resource-url.model';
+import { ResourceUrl } from 'app/shared/model/resource-url.model';
+import { ResourceUrlService } from './resource-url.service';
+import { ResourceUrlComponent } from './resource-url.component';
+import { ResourceUrlDetailComponent } from './resource-url-detail.component';
+import { ResourceUrlUpdateComponent } from './resource-url-update.component';
+import { ResourceUrlDeletePopupComponent } from './resource-url-delete-dialog.component';
+import { IResourceUrl } from 'app/shared/model/resource-url.model';
 
 @Injectable({ providedIn: 'root' })
-export class ResourceURLResolve implements Resolve<IResourceURL> {
-  constructor(private service: ResourceURLService) {}
+export class ResourceUrlResolve implements Resolve<IResourceUrl> {
+  constructor(private service: ResourceUrlService) {}
 
-  resolve(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<IResourceURL> {
+  resolve(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<IResourceUrl> {
     const id = route.params['id'];
     if (id) {
       return this.service.find(id).pipe(
-        filter((response: HttpResponse<ResourceURL>) => response.ok),
-        map((resourceURL: HttpResponse<ResourceURL>) => resourceURL.body)
+        filter((response: HttpResponse<ResourceUrl>) => response.ok),
+        map((resourceUrl: HttpResponse<ResourceUrl>) => resourceUrl.body)
       );
     }
-    return of(new ResourceURL());
+    return of(new ResourceUrl());
   }
 }
 
-export const resourceURLRoute: Routes = [
+export const resourceUrlRoute: Routes = [
   {
     path: '',
-    component: ResourceURLComponent,
+    component: ResourceUrlComponent,
     data: {
       authorities: ['ROLE_USER'],
-      pageTitle: 'ResourceURLS'
+      pageTitle: 'ResourceUrls'
     },
     canActivate: [UserRouteAccessService]
   },
   {
     path: ':id/view',
-    component: ResourceURLDetailComponent,
+    component: ResourceUrlDetailComponent,
     resolve: {
-      resourceURL: ResourceURLResolve
+      resourceUrl: ResourceUrlResolve
     },
     data: {
       authorities: ['ROLE_USER'],
-      pageTitle: 'ResourceURLS'
+      pageTitle: 'ResourceUrls'
     },
     canActivate: [UserRouteAccessService]
   },
   {
     path: 'new',
-    component: ResourceURLUpdateComponent,
+    component: ResourceUrlUpdateComponent,
     resolve: {
-      resourceURL: ResourceURLResolve
+      resourceUrl: ResourceUrlResolve
     },
     data: {
       authorities: ['ROLE_USER'],
-      pageTitle: 'ResourceURLS'
+      pageTitle: 'ResourceUrls'
     },
     canActivate: [UserRouteAccessService]
   },
   {
     path: ':id/edit',
-    component: ResourceURLUpdateComponent,
+    component: ResourceUrlUpdateComponent,
     resolve: {
-      resourceURL: ResourceURLResolve
+      resourceUrl: ResourceUrlResolve
     },
     data: {
       authorities: ['ROLE_USER'],
-      pageTitle: 'ResourceURLS'
+      pageTitle: 'ResourceUrls'
     },
     canActivate: [UserRouteAccessService]
   }
 ];
 
-export const resourceURLPopupRoute: Routes = [
+export const resourceUrlPopupRoute: Routes = [
   {
     path: ':id/delete',
-    component: ResourceURLDeletePopupComponent,
+    component: ResourceUrlDeletePopupComponent,
     resolve: {
-      resourceURL: ResourceURLResolve
+      resourceUrl: ResourceUrlResolve
     },
     data: {
       authorities: ['ROLE_USER'],
-      pageTitle: 'ResourceURLS'
+      pageTitle: 'ResourceUrls'
     },
     canActivate: [UserRouteAccessService],
     outlet: 'popup'
