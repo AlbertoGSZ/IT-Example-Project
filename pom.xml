@@ -405,7 +405,7 @@
                     </execution>
                 </executions>
                 <configuration>
-                    <mainClass>${start-class}</mainClass>
+                    <mainClass>com.criminalddbb.app.CriminalDdbbApp</mainClass>
                     <executable>true</executable>
                     <fork>true</fork>
                     <!--
