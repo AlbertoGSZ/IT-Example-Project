@@ -17,24 +17,29 @@ entity CaseReport {
     mugshotURL String,
     personDetails String,
     eventDescription String,
-    evidencePhotosURL String,            //Mod to List<String> after JDL import
-    felonyRecordsPDFsURLs String            //Mod to List<String> after JDL import
+    evidencePhotosURL String
 }
 
 entity PreIncarcerationRegistry {
     id Long,
-	rank Integer,
+	oldRank Integer,
     oldChief Long,
-    oldSubordinates Long            //Mod to List<long> after JDL import
+    oldSubordinates String
+}
+
+entity ResourceUrl {
+    id Long,
+	urlLink String
 }
 
 relationship OneToMany {
   Person{subordinates} to Person {chief}, 
-  Person{felonyRecordsDigital} to CaseReport {caseReportHolder}
+  Person{felonyRecordsDigital} to CaseReport {caseReportHolder},
+  CaseReport {felonyRecordsPDFsURLs} to ResourceUrl
 }
 
 relationship OneToOne {
-  Person{preIncarcerationRegistry} to PreIncarcerationRegistry {registryHolder}
+  Person{preIncarcerationRegistry} to PreIncarcerationRegistry
 }
 
 
