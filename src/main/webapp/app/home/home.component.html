@@ -1,48 +1,76 @@
-<div class="row">
+<div class="row" style="min-height: 750px;">
+    <div class="col-md-11">
+      <h1 style="font-family: Georgia, regular" class="display-4">City of Gotham Police Department</h1>
+      <h2 style="font-family: Georgia, bold" class="display-7">Base de datos de información criminal</h2>
+    </div>
 
-    <div class="col-md-9">
-        <h1 class="display-4">City of Gotham Police Department</h1>
-        <p class="lead">Base de datos de información criminal</p>
+    <div class="col-md-1">
+      <a href="https://en.wikipedia.org/wiki/Gotham_City_Police_Department" target="_blank"><span class="hipster img-fluid "></span></a>
+    </div>
 
+    <div class="col-md-12"   style="position: absolute; top: 140px;">
+      <hr style="background-color:black; height:4px;" >
+    </div>
+
+
+    <!--<div class="col-md-3"  style="position: absolute; top: 150px; right: 10px;"">
         <div [ngSwitch]="isAuthenticated()">
             <div class="alert alert-success" *ngSwitchCase="true">
                 <span id="home-logged-message" *ngIf="account"
                    > Acceso permitido como usuario "{{account.login}}". </span>
             </div>
+          </div>
+    </div>-->
 
+
+
+    <div class="col-md-5"  style="margin:0 auto;">
+        <div [ngSwitch]="isAuthenticated()">
+              <div class="alert alert-primary" *ngSwitchCase="true">
+                <h3>Bienvenid@</h3>
+                <fa-icon icon="bell" style="position: absolute; top: 10px; right: 10px;"></fa-icon>
+                  <span id="home-logged-message" *ngIf="account"
+                    > Esta aplicación permite la gestión de perfiles criminales, así como la relación entre los mismos, sus antecedentes,
+                    pruebas y registros carcelarios, ayudando con ello a conocer el historial delictivo y las relaciones entre sujetos. <br/><br>
+                    Para comenzar haz click en las pestañas de Operaciones y Administración. <br/><br>
+                    Para más información sobre este proyecto:<br/><br/><br/><br/>
+                      <div style="position: absolute; bottom: 0px; left: 115px;">
+                        <a href="mailto:gsz.alberto@gmail.com" target="_blank"><button class="button" style="margin: 30px;">gsz.alberto@gmail.com</button></a>
+                        <a href="https://github.com/AlbertoGSZ" target="_blank"><button class="button" style="margin: 30px;">github.com/AlbertoGSZ</button></a>
+                      </div>
+
+                  </span>
+             </div>
+        </div>
+    </div>
+
+
+
+
+    <div class="col-md-4"  style="position: absolute; top: 650px; right: 0px;">
+        <div [ngSwitch]="isAuthenticated()">
             <div class="alert alert-warning" *ngSwitchCase="false">
+                <fa-icon icon="bell" style="position: absolute; top: 10px; right: 10px;"></fa-icon>
                 <span>Si quieres </span>
                 <a class="alert-link" (click)="login()">acceder</a><span>, prueba las cuentas predeterminadas:<br/>- Administrador (usuario="admin" y contraseña="admin") <br/>- Usuario estándar (usuario="user" and contraseña="user").</span>
-            </div>
-            <div class="alert alert-warning" *ngSwitchCase="false">
+                <br><br>
                 <span>¿No tienes cuenta aún?</span>&nbsp;
                 <a class="alert-link" routerLink="register">Registra una nueva cuenta</a>
             </div>
         </div>
-
-
-        <!--<p>
-            Si tienes alguna duda sobre JHipster:
-        </p>
-
-        <ul>
-            <li><a href="https://www.jhipster.tech/" target="_blank" rel="noopener">JHipster homepage</a></li>
-            <li><a href="http://stackoverflow.com/tags/jhipster/info" target="_blank" rel="noopener">JHipster on Stack Overflow</a></li>
-            <li><a href="https://github.com/jhipster/generator-jhipster/issues?state=open" target="_blank" rel="noopener">JHipster bug tracker</a></li>
-            <li><a href="https://gitter.im/jhipster/generator-jhipster" target="_blank" rel="noopener">JHipster public chat room</a></li>
-            <li><a href="https://twitter.com/java_hipster" target="_blank" rel="noopener">follow @java_hipster on Twitter</a></li>
-        </ul>
-
-        <p>
-            <span>Si te gusta JHipster, no olvides darnos tu valoración</span> <a href="https://github.com/jhipster/generator-jhipster" target="_blank" rel="noopener">GitHub</a>!
-        </p>-->
     </div>
 
-    <div class="col-md-3">
-        <br>
-        <br>
-        <br>
-        <br>
-        <span class="hipster img-fluid rounded"></span>
+
+
+
+    <div class="col-md-4" style="position: absolute; bottom: 0px; center: 0px">
+        <div [ngSwitch]="isAuthenticated()">
+            <div class="alert alert-warning" *ngSwitchCase="false">
+              <a class="dropdown-item" (click)="login()" id="login">
+                  <span>Login</span>
+              </a>
+            </div>
+        </div>
     </div>
+
 </div>

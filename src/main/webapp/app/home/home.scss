@@ -4,10 +4,30 @@ Main page styles
 
 .hipster {
   display: inline-block;
-  width: 347px;
-  height: 497px;
-  background: url('../../content/images/police-logo.png') no-repeat center top;
+  width: 400px;
+  height: 100px;
+  background: url('../../content/images/police-logo.png') no-repeat ;
   background-size: contain;
+}
+
+.hrcustom{
+  background-color: black;
+  size: 80px;
+}
+
+.button {
+  border-radius: 2px;
+  background-color: #4C56AE;
+  border: none;
+  color: white;
+  padding: 7px 12px;
+  text-align: center;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.button:hover {
+  background-color: #757AAF;
 }
 
 /* wait autoprefixer update to allow simple generation of high pixel density media query */
@@ -15,9 +35,4 @@ Main page styles
   only screen and (-moz-min-device-pixel-ratio: 2),
   only screen and (-o-min-device-pixel-ratio: 2/1),
   only screen and (min-resolution: 192dpi),
-  only screen and (min-resolution: 2dppx) {
-  .hipster {
-    background: url('../../content/images/police-logo.png') no-repeat right top;
-    background-size: contain;
-  }
-}
+  only screen and (min-resolution: 2dppx) {}
